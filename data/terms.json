@@ -1328,5 +1328,607 @@
     "category": "Criminal Law",
     "definition": "The legally authorised killing of a person as punishment for a crime.",
     "example": "Capital punishment remains legal in several US states for first-degree murder."
+  },
+  {
+    "term_eng": "Corporation",
+    "term_rus": "Корпорация",
+    "category": "Corporate Law",
+    "definition": "A legal entity separate from its owners, capable of owning property and entering contracts.",
+    "example": "The corporation was incorporated under Delaware law."
+  },
+  {
+    "term_eng": "Shareholder",
+    "term_rus": "Акционер",
+    "category": "Corporate Law",
+    "definition": "A person or entity that owns shares in a corporation.",
+    "example": "The shareholder voted against the proposed merger at the annual general meeting."
+  },
+  {
+    "term_eng": "Board of Directors",
+    "term_rus": "Совет директоров",
+    "category": "Corporate Law",
+    "definition": "The governing body of a corporation elected by shareholders.",
+    "example": "The Board of Directors approved the acquisition at its quarterly meeting."
+  },
+  {
+    "term_eng": "Fiduciary duty",
+    "term_rus": "Фидуциарная обязанность",
+    "category": "Corporate Law",
+    "definition": "An obligation to act in the best interests of another party.",
+    "example": "Directors owe a fiduciary duty of loyalty to the corporation and its shareholders."
+  },
+  {
+    "term_eng": "Articles of incorporation",
+    "term_rus": "Устав корпорации",
+    "category": "Corporate Law",
+    "definition": "The document filed to formally create a corporation.",
+    "example": "The articles of incorporation were filed with the Secretary of State."
+  },
+  {
+    "term_eng": "Bylaws",
+    "term_rus": "Внутренний регламент",
+    "category": "Corporate Law",
+    "definition": "Internal rules governing the operation and management of a corporation.",
+    "example": "The bylaws specified quorum requirements for board meetings."
+  },
+  {
+    "term_eng": "Dividend",
+    "term_rus": "Дивиденд",
+    "category": "Corporate Law",
+    "definition": "A distribution of profits to shareholders.",
+    "example": "The board declared a quarterly dividend of $0.50 per share."
+  },
+  {
+    "term_eng": "Merger",
+    "term_rus": "Слияние",
+    "category": "Corporate Law",
+    "definition": "The combination of two companies into a single entity.",
+    "example": "The merger created the largest bank in the country."
+  },
+  {
+    "term_eng": "Acquisition",
+    "term_rus": "Поглощение",
+    "category": "Corporate Law",
+    "definition": "The purchase of one company by another.",
+    "example": "The acquisition of the startup was completed for $500 million."
+  },
+  {
+    "term_eng": "Hostile takeover",
+    "term_rus": "Враждебное поглощение",
+    "category": "Corporate Law",
+    "definition": "An acquisition pursued against the wishes of the target company's management.",
+    "example": "The board adopted a poison pill to defend against the hostile takeover."
+  },
+  {
+    "term_eng": "Poison pill",
+    "term_rus": "Защита от поглощения (ядовитая пилюля)",
+    "category": "Corporate Law",
+    "definition": "A shareholder rights plan that makes a hostile takeover prohibitively expensive.",
+    "example": "The company's poison pill allowed existing shareholders to buy shares at a discount."
+  },
+  {
+    "term_eng": "Golden parachute",
+    "term_rus": "Золотой парашют",
+    "category": "Corporate Law",
+    "definition": "Lucrative benefits granted to executives upon termination following a takeover.",
+    "example": "The CEO's golden parachute was worth $20 million."
+  },
+  {
+    "term_eng": "Initial public offering",
+    "term_rus": "Первичное публичное предложение акций",
+    "category": "Corporate Law",
+    "definition": "The first sale of a company's shares to the public.",
+    "example": "The company raised $2 billion in its initial public offering."
+  },
+  {
+    "term_eng": "Prospectus",
+    "term_rus": "Проспект эмиссии",
+    "category": "Corporate Law",
+    "definition": "A formal document disclosing information to investors before a securities offering.",
+    "example": "Investors reviewed the prospectus before subscribing to the IPO."
+  },
+  {
+    "term_eng": "Equity",
+    "term_rus": "Акционерный капитал",
+    "category": "Corporate Law",
+    "definition": "The ownership interest in a company represented by shares.",
+    "example": "The venture capitalist acquired 20% equity in exchange for its investment."
+  },
+  {
+    "term_eng": "Debt financing",
+    "term_rus": "Долговое финансирование",
+    "category": "Corporate Law",
+    "definition": "Raising capital by borrowing money to be repaid with interest.",
+    "example": "The company chose debt financing to avoid diluting shareholders."
+  },
+  {
+    "term_eng": "Equity financing",
+    "term_rus": "Долевое финансирование",
+    "category": "Corporate Law",
+    "definition": "Raising capital by issuing shares in exchange for investment.",
+    "example": "The startup used equity financing to fund its expansion plans."
+  },
+  {
+    "term_eng": "Venture capital",
+    "term_rus": "Венчурный капитал",
+    "category": "Corporate Law",
+    "definition": "Investment in early-stage high-growth companies in exchange for equity.",
+    "example": "The startup attracted $5 million in venture capital funding."
+  },
+  {
+    "term_eng": "Private equity",
+    "term_rus": "Частный акционерный капитал",
+    "category": "Corporate Law",
+    "definition": "Investment in companies not listed on a public stock exchange.",
+    "example": "The private equity firm acquired the retailer through a leveraged buyout."
+  },
+  {
+    "term_eng": "Leveraged buyout",
+    "term_rus": "Выкуп с использованием заёмных средств",
+    "category": "Corporate Law",
+    "definition": "Acquisition of a company using a significant amount of borrowed money.",
+    "example": "The leveraged buyout loaded the target with $800 million of debt."
+  },
+  {
+    "term_eng": "Spin-off",
+    "term_rus": "Выделение дочерней компании",
+    "category": "Corporate Law",
+    "definition": "The creation of an independent company from a division of an existing one.",
+    "example": "The conglomerate completed a spin-off of its pharmaceutical division."
+  },
+  {
+    "term_eng": "Divestiture",
+    "term_rus": "Дивестирование",
+    "category": "Corporate Law",
+    "definition": "The sale or disposal of a business unit or asset.",
+    "example": "The regulator required divestiture of overlapping businesses as a merger condition."
+  },
+  {
+    "term_eng": "Winding up",
+    "term_rus": "Ликвидация",
+    "category": "Corporate Law",
+    "definition": "The process of dissolving a company by realising its assets and paying its debts.",
+    "example": "The court ordered the winding up of the insolvent company."
+  },
+  {
+    "term_eng": "Liquidation",
+    "term_rus": "Ликвидация (распродажа активов)",
+    "category": "Corporate Law",
+    "definition": "Converting a company's assets into cash to pay creditors and distribute to shareholders.",
+    "example": "In liquidation, secured creditors were paid before shareholders received anything."
+  },
+  {
+    "term_eng": "Insolvency",
+    "term_rus": "Несостоятельность (неплатёжеспособность)",
+    "category": "Corporate Law",
+    "definition": "The inability to pay debts as they fall due.",
+    "example": "The company filed for administration after months of insolvency."
+  },
+  {
+    "term_eng": "Bankruptcy",
+    "term_rus": "Банкротство",
+    "category": "Corporate Law",
+    "definition": "A legal process allowing individuals or companies to seek relief from debts.",
+    "example": "The retailer filed for Chapter 11 bankruptcy to restructure its debts."
+  },
+  {
+    "term_eng": "Receivership",
+    "term_rus": "Назначение арбитражного управляющего",
+    "category": "Corporate Law",
+    "definition": "A process where a court-appointed receiver manages a company's assets.",
+    "example": "The bank placed the borrower into receivership after payment default."
+  },
+  {
+    "term_eng": "Administration",
+    "term_rus": "Внешнее управление",
+    "category": "Corporate Law",
+    "definition": "An insolvency procedure protecting a company from creditors while restructuring.",
+    "example": "The retailer entered administration to allow a sale of the business as a going concern."
+  },
+  {
+    "term_eng": "Corporate governance",
+    "term_rus": "Корпоративное управление",
+    "category": "Corporate Law",
+    "definition": "The system of rules and practices directing a corporation.",
+    "example": "Weak corporate governance contributed to the scandal."
+  },
+  {
+    "term_eng": "Duty of care",
+    "term_rus": "Обязанность проявлять должную осмотрительность",
+    "category": "Corporate Law",
+    "definition": "The obligation of directors to act with reasonable care and diligence.",
+    "example": "The director breached his duty of care by approving the investment without analysis."
+  },
+  {
+    "term_eng": "Business judgment rule",
+    "term_rus": "Правило делового суждения",
+    "category": "Corporate Law",
+    "definition": "A presumption that directors make informed, good-faith decisions in the company's interest.",
+    "example": "The court applied the business judgment rule and declined to second-guess the board."
+  },
+  {
+    "term_eng": "Piercing the corporate veil",
+    "term_rus": "Снятие корпоративной вуали",
+    "category": "Corporate Law",
+    "definition": "Holding shareholders personally liable for the corporation's obligations.",
+    "example": "The court pierced the corporate veil because the company was used to commit fraud."
+  },
+  {
+    "term_eng": "Limited liability",
+    "term_rus": "Ограниченная ответственность",
+    "category": "Corporate Law",
+    "definition": "Protection of shareholders from personal liability beyond their investment.",
+    "example": "Limited liability meant shareholders lost only the value of their shares."
+  },
+  {
+    "term_eng": "Minority shareholder",
+    "term_rus": "Миноритарный акционер",
+    "category": "Corporate Law",
+    "definition": "A shareholder owning less than 50% of a company's shares.",
+    "example": "Minority shareholders challenged the related-party transaction."
+  },
+  {
+    "term_eng": "Majority shareholder",
+    "term_rus": "Мажоритарный акционер",
+    "category": "Corporate Law",
+    "definition": "A shareholder owning more than 50% of a company's shares.",
+    "example": "The majority shareholder forced through the resolution over minority objections."
+  },
+  {
+    "term_eng": "Proxy",
+    "term_rus": "Доверенность на голосование",
+    "category": "Corporate Law",
+    "definition": "Authorization for one person to vote on behalf of a shareholder.",
+    "example": "The institutional investor submitted a proxy to vote against the remuneration report."
+  },
+  {
+    "term_eng": "Annual general meeting",
+    "term_rus": "Годовое общее собрание акционеров",
+    "category": "Corporate Law",
+    "definition": "A yearly meeting at which shareholders vote on company matters.",
+    "example": "The annual general meeting approved the reappointment of auditors."
+  },
+  {
+    "term_eng": "Extraordinary general meeting",
+    "term_rus": "Внеочередное общее собрание акционеров",
+    "category": "Corporate Law",
+    "definition": "A shareholders' meeting called outside the regular schedule for urgent matters.",
+    "example": "An extraordinary general meeting was convened to approve the emergency capital raise."
+  },
+  {
+    "term_eng": "Quorum",
+    "term_rus": "Кворум",
+    "category": "Corporate Law",
+    "definition": "The minimum number of members required to conduct valid business.",
+    "example": "Without a quorum, the board meeting was adjourned."
+  },
+  {
+    "term_eng": "Share capital",
+    "term_rus": "Акционерный капитал",
+    "category": "Corporate Law",
+    "definition": "The total value of shares a company is authorised to issue.",
+    "example": "The company increased its share capital by issuing new shares."
+  },
+  {
+    "term_eng": "Authorised shares",
+    "term_rus": "Разрешённые к выпуску акции",
+    "category": "Corporate Law",
+    "definition": "The maximum number of shares a company may issue under its articles.",
+    "example": "The board resolved to increase the number of authorised shares."
+  },
+  {
+    "term_eng": "Issued shares",
+    "term_rus": "Выпущенные акции",
+    "category": "Corporate Law",
+    "definition": "Shares that have been allocated and given to shareholders.",
+    "example": "Of 10 million authorised shares, 7 million had been issued."
+  },
+  {
+    "term_eng": "Treasury shares",
+    "term_rus": "Казначейские акции",
+    "category": "Corporate Law",
+    "definition": "A company's own shares that have been repurchased and held by it.",
+    "example": "The company held 2 million treasury shares following the buyback programme."
+  },
+  {
+    "term_eng": "Share buyback",
+    "term_rus": "Обратный выкуп акций",
+    "category": "Corporate Law",
+    "definition": "A company's repurchase of its own outstanding shares.",
+    "example": "The board approved a $500 million share buyback programme."
+  },
+  {
+    "term_eng": "Rights issue",
+    "term_rus": "Выпуск прав на покупку акций",
+    "category": "Corporate Law",
+    "definition": "An offer of new shares to existing shareholders at a discount.",
+    "example": "The bank launched a rights issue to strengthen its capital base."
+  },
+  {
+    "term_eng": "Preference shares",
+    "term_rus": "Привилегированные акции",
+    "category": "Corporate Law",
+    "definition": "Shares with priority over ordinary shares for dividends and capital on winding up.",
+    "example": "Preference shareholders received their dividend before ordinary shareholders."
+  },
+  {
+    "term_eng": "Ordinary shares",
+    "term_rus": "Обыкновенные акции",
+    "category": "Corporate Law",
+    "definition": "Standard shares with voting rights and entitlement to residual profits.",
+    "example": "Ordinary shareholders voted at the AGM on the proposed acquisition."
+  },
+  {
+    "term_eng": "Convertible note",
+    "term_rus": "Конвертируемая нота",
+    "category": "Corporate Law",
+    "definition": "A debt instrument that converts into equity upon a trigger event.",
+    "example": "The startup issued a convertible note that would convert on the next funding round."
+  },
+  {
+    "term_eng": "Shareholder agreement",
+    "term_rus": "Акционерное соглашение",
+    "category": "Corporate Law",
+    "definition": "A contract between shareholders governing their rights and obligations.",
+    "example": "The shareholder agreement restricted transfers of shares without consent."
+  },
+  {
+    "term_eng": "Joint venture",
+    "term_rus": "Совместное предприятие",
+    "category": "Corporate Law",
+    "definition": "A business arrangement where two or more parties co-operate on a project.",
+    "example": "The companies formed a joint venture to develop the new software platform."
+  },
+  {
+    "term_eng": "Special purpose vehicle",
+    "term_rus": "Специальная проектная компания",
+    "category": "Corporate Law",
+    "definition": "A subsidiary created to isolate financial risk for a specific project.",
+    "example": "The deal was structured through a special purpose vehicle."
+  },
+  {
+    "term_eng": "Holding company",
+    "term_rus": "Холдинговая компания",
+    "category": "Corporate Law",
+    "definition": "A company that owns controlling interests in other companies.",
+    "example": "The holding company owned subsidiaries in twelve countries."
+  },
+  {
+    "term_eng": "Subsidiary",
+    "term_rus": "Дочерняя компания",
+    "category": "Corporate Law",
+    "definition": "A company controlled by a parent or holding company.",
+    "example": "The subsidiary operated independently but reported to the parent board."
+  },
+  {
+    "term_eng": "Parent company",
+    "term_rus": "Материнская компания",
+    "category": "Corporate Law",
+    "definition": "A company that owns or controls one or more subsidiaries.",
+    "example": "The parent company guaranteed the subsidiary's debt obligations."
+  },
+  {
+    "term_eng": "Related party transaction",
+    "term_rus": "Сделка с заинтересованностью",
+    "category": "Corporate Law",
+    "definition": "A transaction between a company and a party connected to it.",
+    "example": "The related party transaction required independent board approval."
+  },
+  {
+    "term_eng": "Conflict of interest",
+    "term_rus": "Конфликт интересов",
+    "category": "Corporate Law",
+    "definition": "A situation where personal interests may improperly influence a decision.",
+    "example": "The director disclosed a conflict of interest and abstained from the vote."
+  },
+  {
+    "term_eng": "Ultra vires",
+    "term_rus": "Сверх полномочий",
+    "category": "Corporate Law",
+    "definition": "An act beyond the legal powers of a corporation or its officers.",
+    "example": "The transaction was challenged as ultra vires the company's constitution."
+  },
+  {
+    "term_eng": "Derivative action",
+    "term_rus": "Производный иск",
+    "category": "Corporate Law",
+    "definition": "A lawsuit brought by a shareholder on behalf of the corporation.",
+    "example": "Minority shareholders brought a derivative action against the directors."
+  },
+  {
+    "term_eng": "Oppression remedy",
+    "term_rus": "Защита от ущемления прав миноритариев",
+    "category": "Corporate Law",
+    "definition": "A court remedy for conduct that unfairly prejudices minority shareholders.",
+    "example": "The court granted the oppression remedy and ordered the majority to buy out the claimant."
+  },
+  {
+    "term_eng": "Registered agent",
+    "term_rus": "Зарегистрированный агент",
+    "category": "Corporate Law",
+    "definition": "A person or entity designated to receive legal documents on behalf of a company.",
+    "example": "Service of process was made on the company's registered agent."
+  },
+  {
+    "term_eng": "Certificate of incorporation",
+    "term_rus": "Свидетельство о регистрации",
+    "category": "Corporate Law",
+    "definition": "An official document confirming that a company has been incorporated.",
+    "example": "The bank required a certified copy of the certificate of incorporation."
+  },
+  {
+    "term_eng": "Director",
+    "term_rus": "Директор",
+    "category": "Corporate Law",
+    "definition": "A person appointed to manage and oversee a company's affairs.",
+    "example": "The director signed the contract on behalf of the company."
+  },
+  {
+    "term_eng": "Officer",
+    "term_rus": "Должностное лицо компании",
+    "category": "Corporate Law",
+    "definition": "A senior executive appointed to run the day-to-day operations of a corporation.",
+    "example": "The chief financial officer presented the annual results."
+  },
+  {
+    "term_eng": "Corporate secretary",
+    "term_rus": "Корпоративный секретарь",
+    "category": "Corporate Law",
+    "definition": "An officer responsible for compliance and maintaining corporate records.",
+    "example": "The corporate secretary filed the annual return with the Companies Register."
+  },
+  {
+    "term_eng": "Audit committee",
+    "term_rus": "Ревизионная комиссия",
+    "category": "Corporate Law",
+    "definition": "A board committee overseeing financial reporting and internal controls.",
+    "example": "The audit committee reviewed the external auditor's findings."
+  },
+  {
+    "term_eng": "Remuneration committee",
+    "term_rus": "Комитет по вознаграждениям",
+    "category": "Corporate Law",
+    "definition": "A board committee setting executive pay and incentive plans.",
+    "example": "The remuneration committee approved the CEO's bonus structure."
+  },
+  {
+    "term_eng": "Non-executive director",
+    "term_rus": "Независимый директор",
+    "category": "Corporate Law",
+    "definition": "A board member who does not participate in day-to-day management.",
+    "example": "The non-executive director chaired the audit committee."
+  },
+  {
+    "term_eng": "Debenture",
+    "term_rus": "Облигация (корпоративный долговой инструмент)",
+    "category": "Corporate Law",
+    "definition": "A long-term debt instrument issued by a company, secured or unsecured.",
+    "example": "The company issued debentures to raise long-term capital."
+  },
+  {
+    "term_eng": "Prospectus liability",
+    "term_rus": "Ответственность за проспект эмиссии",
+    "category": "Corporate Law",
+    "definition": "Liability for false or misleading statements in an offering document.",
+    "example": "Investors sued for prospectus liability after the shares collapsed on listing."
+  },
+  {
+    "term_eng": "Securities fraud",
+    "term_rus": "Мошенничество с ценными бумагами",
+    "category": "Corporate Law",
+    "definition": "Deceptive practices in the stock or commodities markets.",
+    "example": "The CEO was charged with securities fraud for inflating earnings reports."
+  },
+  {
+    "term_eng": "Market manipulation",
+    "term_rus": "Манипулирование рынком",
+    "category": "Corporate Law",
+    "definition": "Artificial inflation or deflation of a security's price.",
+    "example": "The traders were prosecuted for market manipulation through coordinated buying."
+  },
+  {
+    "term_eng": "Disclosure",
+    "term_rus": "Раскрытие информации",
+    "category": "Corporate Law",
+    "definition": "The obligation to make material information available to investors and the public.",
+    "example": "Timely disclosure of the profit warning was required under listing rules."
+  },
+  {
+    "term_eng": "Material information",
+    "term_rus": "Существенная информация",
+    "category": "Corporate Law",
+    "definition": "Information that would influence a reasonable investor's decision.",
+    "example": "The contract win was material information requiring immediate announcement."
+  },
+  {
+    "term_eng": "Concurrent directors",
+    "term_rus": "Одновременное членство в советах директоров",
+    "category": "Corporate Law",
+    "definition": "Serving as director on multiple company boards at the same time.",
+    "example": "Concurrent directorships raised concerns about conflicts of interest."
+  },
+  {
+    "term_eng": "Going concern",
+    "term_rus": "Действующее предприятие",
+    "category": "Corporate Law",
+    "definition": "The assumption that a business will continue to operate for the foreseeable future.",
+    "example": "The auditors expressed doubt about the company's going concern status."
+  },
+  {
+    "term_eng": "Goodwill",
+    "term_rus": "Гудвилл (деловая репутация)",
+    "category": "Corporate Law",
+    "definition": "An intangible asset representing the excess of purchase price over net asset value.",
+    "example": "The acquisition generated $200 million of goodwill on the balance sheet."
+  },
+  {
+    "term_eng": "Registered office",
+    "term_rus": "Зарегистрированный офис",
+    "category": "Corporate Law",
+    "definition": "The official address of a company for legal and regulatory purposes.",
+    "example": "All official correspondence must be sent to the registered office."
+  },
+  {
+    "term_eng": "Corporate restructuring",
+    "term_rus": "Корпоративная реструктуризация",
+    "category": "Corporate Law",
+    "definition": "Significant modification of a company's structure, finances, or operations.",
+    "example": "Corporate restructuring reduced headcount and consolidated subsidiaries."
+  },
+  {
+    "term_eng": "Scheme of arrangement",
+    "term_rus": "Схема реорганизации",
+    "category": "Corporate Law",
+    "definition": "A court-sanctioned compromise between a company and its creditors or shareholders.",
+    "example": "The debt was restructured through a scheme of arrangement."
+  },
+  {
+    "term_eng": "Preemptive rights",
+    "term_rus": "Преимущественные права акционеров",
+    "category": "Corporate Law",
+    "definition": "Rights allowing existing shareholders to buy new shares before outside investors.",
+    "example": "Preemptive rights prevented dilution without shareholder approval."
+  },
+  {
+    "term_eng": "Indemnification of directors",
+    "term_rus": "Возмещение убытков директорам",
+    "category": "Corporate Law",
+    "definition": "A company's obligation to reimburse directors for costs of legal proceedings.",
+    "example": "The articles provided for indemnification of directors against third-party claims."
+  },
+  {
+    "term_eng": "D&O insurance",
+    "term_rus": "Страхование ответственности директоров",
+    "category": "Corporate Law",
+    "definition": "Insurance covering directors and officers against personal liability claims.",
+    "example": "The company maintained D&O insurance with a $50 million limit."
+  },
+  {
+    "term_eng": "Listing rules",
+    "term_rus": "Правила листинга",
+    "category": "Corporate Law",
+    "definition": "Regulations governing companies listed on a stock exchange.",
+    "example": "The company breached listing rules by failing to disclose the transaction promptly."
+  },
+  {
+    "term_eng": "Regulatory compliance",
+    "term_rus": "Соответствие нормативным требованиям",
+    "category": "Corporate Law",
+    "definition": "Adherence to laws and regulations governing a company's industry.",
+    "example": "The compliance officer ensured regulatory compliance across all jurisdictions."
+  },
+  {
+    "term_eng": "Anti-money laundering",
+    "term_rus": "Противодействие отмыванию денег",
+    "category": "Corporate Law",
+    "definition": "Laws and procedures to prevent the concealment of illegally obtained funds.",
+    "example": "The bank enhanced its anti-money laundering controls after the regulatory fine."
+  },
+  {
+    "term_eng": "Know your customer",
+    "term_rus": "Знай своего клиента",
+    "category": "Corporate Law",
+    "definition": "Due diligence procedures to verify the identity of clients.",
+    "example": "The broker's know your customer process identified a politically exposed person."
   }
 ]
