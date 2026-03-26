@@ -1099,13 +1099,6 @@
     "example": "The defendant entered a nolo contendere plea to avoid a civil judgment."
   },
   {
-    "term_eng": "Arraignment",
-    "term_rus": "Первичное судебное слушание",
-    "category": "Criminal Law",
-    "definition": "The initial court appearance where charges are read and a plea entered.",
-    "example": "At arraignment, the defendant pleaded not guilty and bail was set."
-  },
-  {
     "term_eng": "Criminal negligence",
     "term_rus": "Преступная халатность",
     "category": "Criminal Law",
@@ -6998,5 +6991,12 @@
     "category": "Property Law",
     "definition": "A tenancy arising by operation of statute after a contractual tenancy expires.",
     "example": "On expiry of the lease the business tenant held over under a statutory tenancy."
+  },
+  {
+    "term_eng": "Constructive notice",
+    "term_rus": "Предполагаемое уведомление",
+    "category": "Property Law",
+    "definition": "Knowledge that a person is presumed to have by virtue of their position or registration.",
+    "example": "Registration of the charge gave all subsequent buyers constructive notice of it."
   }
 ]
