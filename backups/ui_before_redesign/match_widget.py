@@ -160,12 +160,13 @@ class MatchWidget(QWidget):
     def _click_left(self, idx):
         if idx in self.matched or self.left_buttons[idx].isEnabled() is False:
             return
+        # Deselect previous
         if self.selected_left is not None:
             self.left_buttons[self.selected_left].setObjectName("matchBtn")
             self.left_buttons[self.selected_left].setStyleSheet("")
         self.selected_left = idx
-        self.left_buttons[idx].setStyleSheet(
-            "border: 2px solid #82aaff; background: #141c38; color: #eeffff;")
+        self.left_buttons[idx].setObjectName("matchBtnSelected")
+        self.left_buttons[idx].setStyleSheet("border: 2px solid #4fc3f7;")
         self._try_match()
 
     def _click_right(self, pos):
@@ -175,8 +176,7 @@ class MatchWidget(QWidget):
         if self.selected_right is not None:
             self.right_buttons[self.selected_right].setStyleSheet("")
         self.selected_right = pos
-        self.right_buttons[pos].setStyleSheet(
-            "border: 2px solid #82aaff; background: #141c38; color: #eeffff;")
+        self.right_buttons[pos].setStyleSheet("border: 2px solid #4fc3f7;")
         self._try_match()
 
     def _try_match(self):
@@ -191,24 +191,19 @@ class MatchWidget(QWidget):
             self.correct += 1
             self.matched.add(left_idx)
             self.left_buttons[left_idx].setEnabled(False)
-            self.left_buttons[left_idx].setStyleSheet(
-                "color: #c3e88d; border: 2px solid #4a9830;"
-                " background: #0e2010;")
+            self.left_buttons[left_idx].setStyleSheet("color: #66bb6a; border: 2px solid #66bb6a;")
             self.right_buttons[right_pos].setEnabled(False)
-            self.right_buttons[right_pos].setStyleSheet(
-                "color: #c3e88d; border: 2px solid #4a9830;"
-                " background: #0e2010;")
+            self.right_buttons[right_pos].setStyleSheet("color: #66bb6a; border: 2px solid #66bb6a;")
             self.scheduler.review(self.terms[left_idx].id, 5)
             self._sounds.play("correct")
         else:
             # Wrong
-            self.left_buttons[left_idx].setStyleSheet(
-                "border: 2px solid #f07178; background: #2a0a10; color: #f07178;")
-            self.right_buttons[right_pos].setStyleSheet(
-                "border: 2px solid #f07178; background: #2a0a10; color: #f07178;")
+            self.left_buttons[left_idx].setStyleSheet("border: 2px solid #ef5350;")
+            self.right_buttons[right_pos].setStyleSheet("border: 2px solid #ef5350;")
             self._sounds.play("wrong")
             self._shake(self.left_buttons[left_idx])
             self._shake(self.right_buttons[right_pos])
+            # Reset after brief flash
             from PyQt6.QtCore import QTimer
             QTimer.singleShot(600, lambda: self._reset_wrong(left_idx, right_pos))
 

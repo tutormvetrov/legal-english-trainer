@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
     QComboBox, QFrame, QSizePolicy, QGraphicsOpacityEffect
 )
-from PyQt6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QTimer
+from PyQt6.QtCore import Qt, QPropertyAnimation, QEasingCurve
 from PyQt6.QtGui import QFont
 
 from ..models.term import Term
@@ -12,23 +12,6 @@ from ..utils import tts_manager
 from ..utils.settings_manager import get_settings
 
 QUIZ_EVERY = 10   # значение по умолчанию, переопределяется настройками
-
-# ── Category accent colours ────────────────────────────────────────────────
-# (text_colour, background, border/left-bar colour)
-_CAT_COLORS = {
-    "Contract Law":      ("#ffcb6b", "#241a08", "#c89020"),
-    "Criminal Law":      ("#f07178", "#240c12", "#b03040"),
-    "Property Law":      ("#c3e88d", "#101e0a", "#4a9030"),
-    "Corporate Law":     ("#c792ea", "#1c0e28", "#9050c0"),
-    "Civil Procedure":   ("#89ddff", "#081820", "#3090b8"),
-    "International Law": ("#82aaff", "#0c1428", "#4060c0"),
-    "Latin Terms":       ("#e8c060", "#201808", "#b08020"),
-}
-_DEFAULT_CAT = ("#82aaff", "#0c1428", "#4060c0")
-
-# Flash colours for know / don't-know
-_FLASH_CORRECT = "#0e2e1c"
-_FLASH_WRONG   = "#2e0e16"
 
 
 class FlashcardsWidget(QWidget):
@@ -40,24 +23,21 @@ class FlashcardsWidget(QWidget):
         self.direction_eng_to_rus = True
         self.translation_shown = False
         self._sounds = get_sound_manager()
-        self._fade_anim = None      # translation reveal animation
-        self._nav_anim = None       # card navigation fade-out
-        self._nav_anim_in = None    # card navigation fade-in
-        self._rated_count = 0
-        self._rated_ids: list[int] = []
+        self._fade_anim = None
+        self._rated_count = 0          # счётчик для квиза
+        self._rated_ids: list[int] = []  # id оценённых терминов для квиза
         self._build_ui()
         self._load_categories()
         self._next_term()
-
-    # ── Build UI ───────────────────────────────────────────────────────────
 
     def _build_ui(self):
         root = QVBoxLayout(self)
         root.setContentsMargins(24, 24, 24, 24)
         root.setSpacing(16)
 
-        # Controls row
+        # ── Top controls ──────────────────────────────────────────────
         controls = QHBoxLayout()
+
         self.category_combo = QComboBox()
         self.category_combo.setMinimumWidth(200)
         self.category_combo.currentIndexChanged.connect(self._next_term)
@@ -77,9 +57,10 @@ class FlashcardsWidget(QWidget):
         self.counter_label = QLabel("")
         self.counter_label.setAlignment(Qt.AlignmentFlag.AlignRight)
         controls.addWidget(self.counter_label)
+
         root.addLayout(controls)
 
-        # Card
+        # ── Card area ─────────────────────────────────────────────────
         self.card_frame = QFrame()
         self.card_frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.card_frame.setObjectName("card")
@@ -87,16 +68,17 @@ class FlashcardsWidget(QWidget):
         card_layout.setContentsMargins(32, 32, 32, 32)
         card_layout.setSpacing(20)
 
-        # Category tag row (balanced by a left spacer)
+        # Category tag + star button in one row
         top_row = QHBoxLayout()
+        self.category_tag = QLabel("")
+        self.category_tag.setObjectName("categoryTag")
+        self.category_tag.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        # Left spacer balances the 44px star button on the right
         _left_spacer = QWidget()
         _left_spacer.setFixedSize(44, 44)
         top_row.addWidget(_left_spacer)
         top_row.addStretch()
-
-        self.category_tag = QLabel("")
-        self.category_tag.setObjectName("categoryTag")
-        self.category_tag.setAlignment(Qt.AlignmentFlag.AlignCenter)
         top_row.addWidget(self.category_tag)
         top_row.addStretch()
 
@@ -104,9 +86,9 @@ class FlashcardsWidget(QWidget):
         self.star_btn.setFixedSize(44, 44)
         self.star_btn.setToolTip("Добавить в избранное")
         self.star_btn.setStyleSheet(
-            "QPushButton { font-size: 26px; border: 1px solid #4a4e72;"
-            " border-radius: 8px; background: #2a2e4a; padding: 0; }"
-            "QPushButton:hover { background: #363a5e; color: #ffd700; }"
+            "QPushButton { font-size: 26px; border: 1px solid #5a5d7a;"
+            " border-radius: 8px; background: #3e4060; padding: 0; }"
+            "QPushButton:hover { background: #4e5170; color: #ffd700; }"
         )
         self.star_btn.clicked.connect(self._toggle_star)
         top_row.addWidget(self.star_btn)
@@ -157,7 +139,7 @@ class FlashcardsWidget(QWidget):
 
         root.addWidget(self.card_frame, stretch=1)
 
-        # Buttons row
+        # ── Buttons ───────────────────────────────────────────────────
         btn_row = QHBoxLayout()
         btn_row.setSpacing(12)
 
@@ -188,31 +170,10 @@ class FlashcardsWidget(QWidget):
 
         self.skip_btn = QPushButton("Пропустить →")
         self.skip_btn.setMinimumHeight(44)
-        self.skip_btn.clicked.connect(self._next_term_animated)
+        self.skip_btn.clicked.connect(self._next_term)
         btn_row.addWidget(self.skip_btn)
 
         root.addLayout(btn_row)
-
-    # ── Category helpers ───────────────────────────────────────────────────
-
-    def _cat_colors(self):
-        if self.current_term is None:
-            return _DEFAULT_CAT
-        return _CAT_COLORS.get(self.current_term.category, _DEFAULT_CAT)
-
-    def _card_style(self, bg: str = "#252840") -> str:
-        _, _, border_c = self._cat_colors()
-        return (
-            f"QFrame#card {{ background-color: {bg};"
-            f" border: 1px solid #3a3d5c;"
-            f" border-left: 3px solid {border_c};"
-            f" border-radius: 14px; }}"
-        )
-
-    def _apply_card_style(self):
-        self.card_frame.setStyleSheet(self._card_style())
-
-    # ── Data loading ───────────────────────────────────────────────────────
 
     def _load_categories(self):
         self.category_combo.blockSignals(True)
@@ -259,76 +220,22 @@ class FlashcardsWidget(QWidget):
         self.know_btn.hide()
         self.dontknow_btn.hide()
 
-        # Category tag with per-category accent color
-        cat = self.current_term.category or ""
-        text_c, bg_c, border_c = self._cat_colors()
-        self.category_tag.setText(cat.upper())
-        self.category_tag.setStyleSheet(
-            f"background-color: {bg_c}; color: {text_c};"
-            f" border: 1px solid {border_c}; border-radius: 10px;"
-            f" padding: 3px 14px; font-weight: bold;"
-            f" font-size: 11px; letter-spacing: 1px;"
-        )
-
-        # Card left-border accent
-        self._apply_card_style()
+        self.category_tag.setText(self.current_term.category)
 
         if self.direction_eng_to_rus:
             self.term_label.setText(self.current_term.term_eng)
         else:
             self.term_label.setText(self.current_term.term_rus)
 
+        # Update star button state
         starred = getattr(self.current_term, "starred", 0)
         self.star_btn.setText("★" if starred else "☆")
         color = "color: #ffd700; " if starred else ""
         self.star_btn.setStyleSheet(
-            f"QPushButton {{ font-size: 26px; border: 1px solid #4a4e72;"
-            f" border-radius: 8px; background: #2a2e4a; padding: 0; {color}}}"
-            "QPushButton:hover { background: #363a5e; color: #ffd700; }"
+            f"QPushButton {{ font-size: 26px; border: 1px solid #5a5d7a;"
+            f" border-radius: 8px; background: #3e4060; padding: 0; {color}}}"
+            "QPushButton:hover { background: #4e5170; color: #ffd700; }"
         )
-
-    # ── Animations ─────────────────────────────────────────────────────────
-
-    def _next_term_animated(self):
-        """Fade card out → load next term → fade card in."""
-        effect = QGraphicsOpacityEffect(self.card_frame)
-        self.card_frame.setGraphicsEffect(effect)
-        anim = QPropertyAnimation(effect, b"opacity")
-        anim.setDuration(100)
-        anim.setStartValue(1.0)
-        anim.setEndValue(0.0)
-        anim.setEasingCurve(QEasingCurve.Type.InQuad)
-        anim.finished.connect(self._on_card_fade_out)
-        self._nav_anim = anim
-        anim.start()
-
-    def _on_card_fade_out(self):
-        self._next_term()
-        effect = self.card_frame.graphicsEffect()
-        if effect is None:
-            return
-        anim = QPropertyAnimation(effect, b"opacity")
-        anim.setDuration(180)
-        anim.setStartValue(0.0)
-        anim.setEndValue(1.0)
-        anim.setEasingCurve(QEasingCurve.Type.OutQuad)
-        anim.finished.connect(lambda: self.card_frame.setGraphicsEffect(None))
-        self._nav_anim_in = anim
-        anim.start()
-
-    def _flash_then_next(self, flash_bg: str):
-        """Flash card with colour, then animate to the next term."""
-        self.card_frame.setStyleSheet(
-            f"QFrame#card {{ background-color: {flash_bg};"
-            f" border: 1px solid #3a3d5c; border-radius: 14px; }}"
-        )
-        QTimer.singleShot(220, self._start_nav_after_flash)
-
-    def _start_nav_after_flash(self):
-        self._apply_card_style()
-        self._next_term_animated()
-
-    # ── Interaction ────────────────────────────────────────────────────────
 
     def _show_translation(self):
         if self.current_term is None:
@@ -351,13 +258,14 @@ class FlashcardsWidget(QWidget):
         self.know_btn.show()
         self.dontknow_btn.show()
 
+        # Fade-in animation
         effect = QGraphicsOpacityEffect(self.translation_frame)
         self.translation_frame.setGraphicsEffect(effect)
         self._fade_anim = QPropertyAnimation(effect, b"opacity")
-        self._fade_anim.setDuration(300)
+        self._fade_anim.setDuration(280)
         self._fade_anim.setStartValue(0.0)
         self._fade_anim.setEndValue(1.0)
-        self._fade_anim.setEasingCurve(QEasingCurve.Type.OutCubic)
+        self._fade_anim.setEasingCurve(QEasingCurve.Type.InOutQuad)
         self._fade_anim.start()
 
     def _rate(self, quality: int):
@@ -367,18 +275,20 @@ class FlashcardsWidget(QWidget):
             self._rated_count += 1
         self._sounds.play("correct" if quality >= 4 else "wrong")
 
-        flash_color = _FLASH_CORRECT if quality >= 4 else _FLASH_WRONG
-        self._flash_then_next(flash_color)
-
+        # Trigger quiz every QUIZ_EVERY rated cards
         quiz_every = get_settings().get("quiz_every", QUIZ_EVERY)
         if self._rated_count > 0 and self._rated_count % quiz_every == 0:
-            QTimer.singleShot(420, self._launch_quiz)
+            self._next_term()
+            self._launch_quiz()
+        else:
+            self._next_term()
 
     def _toggle_star(self):
         if self.current_term is None:
             return
         new_state = not bool(getattr(self.current_term, "starred", 0))
         self.db.set_starred(self.current_term.id, new_state)
+        # Refresh term from DB to get updated starred field
         row = self.db.get_term(self.current_term.id)
         if row:
             self.current_term = Term.from_row(row)
@@ -387,11 +297,11 @@ class FlashcardsWidget(QWidget):
     def _highlight_term(self, text: str, term: str) -> str:
         import re, html
         if not text or not term:
-            return html.escape(text) if text else ""
+            return html.escape(text)
         escaped_text = html.escape(text)
         escaped_term = html.escape(term)
         highlighted = (
-            f'<span style="background-color:#3a2800; color:#ffcb6b;'
+            f'<span style="background-color:#4a3800; color:#ffd700;'
             f' border-radius:3px; padding:0 2px;">{escaped_term}</span>'
         )
         return re.sub(re.escape(escaped_term), highlighted,
