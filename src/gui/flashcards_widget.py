@@ -1,12 +1,16 @@
 import random
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
-    QComboBox, QFrame, QSizePolicy
+    QComboBox, QFrame, QSizePolicy, QGraphicsOpacityEffect
 )
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QPropertyAnimation, QEasingCurve
 from PyQt6.QtGui import QFont
 
 from ..models.term import Term
+from ..utils.sound_manager import get_sound_manager
+from ..utils import tts_manager
+
+QUIZ_EVERY = 10   # запускать мини-тест каждые N оценённых карточек
 
 
 class FlashcardsWidget(QWidget):
@@ -15,8 +19,12 @@ class FlashcardsWidget(QWidget):
         self.db = db_manager
         self.scheduler = scheduler
         self.current_term = None
-        self.direction_eng_to_rus = True  # True = EN→RU, False = RU→EN
+        self.direction_eng_to_rus = True
         self.translation_shown = False
+        self._sounds = get_sound_manager()
+        self._fade_anim = None
+        self._rated_count = 0          # счётчик для квиза
+        self._rated_ids: list[int] = []  # id оценённых терминов для квиза
         self._build_ui()
         self._load_categories()
         self._next_term()
@@ -59,10 +67,26 @@ class FlashcardsWidget(QWidget):
         card_layout.setContentsMargins(32, 32, 32, 32)
         card_layout.setSpacing(20)
 
+        # Category tag + star button in one row
+        top_row = QHBoxLayout()
         self.category_tag = QLabel("")
         self.category_tag.setObjectName("categoryTag")
         self.category_tag.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        card_layout.addWidget(self.category_tag)
+        top_row.addStretch()
+        top_row.addWidget(self.category_tag)
+        top_row.addStretch()
+
+        self.star_btn = QPushButton("☆")
+        self.star_btn.setFixedSize(44, 44)
+        self.star_btn.setToolTip("Добавить в избранное")
+        self.star_btn.setStyleSheet(
+            "QPushButton { font-size: 26px; border: 1px solid #5a5d7a;"
+            " border-radius: 8px; background: #3e4060; padding: 0; }"
+            "QPushButton:hover { background: #4e5170; color: #ffd700; }"
+        )
+        self.star_btn.clicked.connect(self._toggle_star)
+        top_row.addWidget(self.star_btn)
+        card_layout.addLayout(top_row)
 
         self.term_label = QLabel("")
         self.term_label.setObjectName("termLabel")
@@ -94,6 +118,7 @@ class FlashcardsWidget(QWidget):
         self.definition_label.setObjectName("definitionLabel")
         self.definition_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.definition_label.setWordWrap(True)
+        self.definition_label.setTextFormat(Qt.TextFormat.RichText)
         trans_layout.addWidget(self.definition_label)
 
         self.example_label = QLabel("")
@@ -110,7 +135,13 @@ class FlashcardsWidget(QWidget):
 
         # ── Buttons ───────────────────────────────────────────────────
         btn_row = QHBoxLayout()
-        btn_row.setSpacing(16)
+        btn_row.setSpacing(12)
+
+        self.listen_btn = QPushButton("🔊")
+        self.listen_btn.setFixedSize(44, 44)
+        self.listen_btn.setToolTip("Прослушать произношение")
+        self.listen_btn.clicked.connect(self._listen)
+        btn_row.addWidget(self.listen_btn)
 
         self.show_btn = QPushButton("Показать перевод")
         self.show_btn.setMinimumHeight(44)
@@ -157,7 +188,6 @@ class FlashcardsWidget(QWidget):
 
     def _next_term(self):
         cat = self._current_category()
-        # Prefer due terms; fall back to random
         due_ids = self.scheduler.get_due_terms(category=cat, limit=20)
         if due_ids:
             term_id = random.choice(due_ids)
@@ -172,7 +202,6 @@ class FlashcardsWidget(QWidget):
         self.current_term = Term.from_row(row)
         self._render_term()
 
-        # Update due count
         total_due = len(self.scheduler.get_due_terms(category=cat, limit=1000))
         self.counter_label.setText(f"К повторению: {total_due}")
 
@@ -192,6 +221,16 @@ class FlashcardsWidget(QWidget):
         else:
             self.term_label.setText(self.current_term.term_rus)
 
+        # Update star button state
+        starred = getattr(self.current_term, "starred", 0)
+        self.star_btn.setText("★" if starred else "☆")
+        color = "color: #ffd700; " if starred else ""
+        self.star_btn.setStyleSheet(
+            f"QPushButton {{ font-size: 26px; border: 1px solid #5a5d7a;"
+            f" border-radius: 8px; background: #3e4060; padding: 0; {color}}}"
+            "QPushButton:hover { background: #4e5170; color: #ffd700; }"
+        )
+
     def _show_translation(self):
         if self.current_term is None:
             return
@@ -202,7 +241,10 @@ class FlashcardsWidget(QWidget):
         else:
             self.translation_label.setText(self.current_term.term_eng)
 
-        self.definition_label.setText(self.current_term.definition)
+        self.definition_label.setText(
+            self._highlight_term(self.current_term.definition,
+                                 self.current_term.term_eng)
+        )
         self.example_label.setText(f'"{self.current_term.example}"')
 
         self.translation_frame.show()
@@ -210,7 +252,61 @@ class FlashcardsWidget(QWidget):
         self.know_btn.show()
         self.dontknow_btn.show()
 
+        # Fade-in animation
+        effect = QGraphicsOpacityEffect(self.translation_frame)
+        self.translation_frame.setGraphicsEffect(effect)
+        self._fade_anim = QPropertyAnimation(effect, b"opacity")
+        self._fade_anim.setDuration(280)
+        self._fade_anim.setStartValue(0.0)
+        self._fade_anim.setEndValue(1.0)
+        self._fade_anim.setEasingCurve(QEasingCurve.Type.InOutQuad)
+        self._fade_anim.start()
+
     def _rate(self, quality: int):
         if self.current_term:
             self.scheduler.review(self.current_term.id, quality)
-        self._next_term()
+            self._rated_ids.append(self.current_term.id)
+            self._rated_count += 1
+        self._sounds.play("correct" if quality >= 4 else "wrong")
+
+        # Trigger quiz every QUIZ_EVERY rated cards
+        if self._rated_count > 0 and self._rated_count % QUIZ_EVERY == 0:
+            self._next_term()
+            self._launch_quiz()
+        else:
+            self._next_term()
+
+    def _toggle_star(self):
+        if self.current_term is None:
+            return
+        new_state = not bool(getattr(self.current_term, "starred", 0))
+        self.db.set_starred(self.current_term.id, new_state)
+        # Refresh term from DB to get updated starred field
+        row = self.db.get_term(self.current_term.id)
+        if row:
+            self.current_term = Term.from_row(row)
+        self._render_term()
+
+    def _highlight_term(self, text: str, term: str) -> str:
+        import re, html
+        if not text or not term:
+            return html.escape(text)
+        escaped_text = html.escape(text)
+        escaped_term = html.escape(term)
+        highlighted = (
+            f'<span style="background-color:#4a3800; color:#ffd700;'
+            f' border-radius:3px; padding:0 2px;">{escaped_term}</span>'
+        )
+        return re.sub(re.escape(escaped_term), highlighted,
+                      escaped_text, flags=re.IGNORECASE)
+
+    def _listen(self):
+        if self.current_term is None:
+            return
+        text = self.current_term.term_eng if self.direction_eng_to_rus else self.current_term.term_rus
+        tts_manager.speak(text)
+
+    def _launch_quiz(self):
+        from .quiz_dialog import QuizDialog
+        dlg = QuizDialog(self.db, list(self._rated_ids[-QUIZ_EVERY:]), self)
+        dlg.exec()

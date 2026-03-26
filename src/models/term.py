@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -9,6 +9,7 @@ class Term:
     definition: str
     category: str
     example: str
+    starred: int = 0
 
     @classmethod
     def from_row(cls, row) -> "Term":
@@ -19,4 +20,5 @@ class Term:
             definition=row["definition"] or "",
             category=row["category"] or "",
             example=row["example"] or "",
+            starred=row["starred"] if "starred" in row.keys() else 0,
         )

@@ -16,7 +16,12 @@ class DBManager:
         schema_path = Path(__file__).parent / "schema.sql"
         with open(schema_path, "r", encoding="utf-8") as f:
             self.conn.executescript(f.read())
-        self.conn.commit()
+        # Migration: add starred column for existing DBs
+        try:
+            self.conn.execute("ALTER TABLE terms ADD COLUMN starred INTEGER DEFAULT 0")
+            self.conn.commit()
+        except Exception:
+            pass  # column already exists
 
     def is_terms_empty(self) -> bool:
         cur = self.conn.execute("SELECT COUNT(*) FROM terms")
@@ -142,6 +147,45 @@ class DBManager:
             writer.writerow(["Термин (EN)", "Термин (RU)", "Категория",
                              "Последнее повторение", "Правильных ответов", "Коэффициент лёгкости"])
             writer.writerows(cur.fetchall())
+
+    def get_weak_terms(self, limit: int = 20) -> list:
+        """Термины с наименьшим ease_factor (чаще всего ошибаются)."""
+        cur = self.conn.execute(
+            """SELECT t.term_eng, t.term_rus, t.category,
+                      p.ease_factor, p.correct_count,
+                      (p.repetition - p.correct_count) AS errors
+               FROM terms t
+               JOIN progress p ON t.id = p.term_id
+               WHERE p.repetition > 0
+               ORDER BY p.ease_factor ASC, errors DESC
+               LIMIT ?""",
+            (limit,)
+        )
+        return cur.fetchall()
+
+    def set_starred(self, term_id: int, starred: bool) -> None:
+        self.conn.execute(
+            "UPDATE terms SET starred = ? WHERE id = ?",
+            (1 if starred else 0, term_id)
+        )
+        self.conn.commit()
+
+    def get_starred_terms(self) -> list:
+        cur = self.conn.execute(
+            "SELECT * FROM terms WHERE starred = 1 ORDER BY category, term_eng"
+        )
+        return cur.fetchall()
+
+    def get_random_terms_for_quiz(self, exclude_ids: list[int],
+                                  n: int = 3) -> list:
+        """Возвращает n случайных терминов, не входящих в exclude_ids."""
+        placeholders = ",".join("?" * len(exclude_ids)) if exclude_ids else "0"
+        cur = self.conn.execute(
+            f"SELECT * FROM terms WHERE id NOT IN ({placeholders}) "
+            f"ORDER BY RANDOM() LIMIT ?",
+            (*exclude_ids, n)
+        )
+        return cur.fetchall()
 
     def close(self):
         self.conn.close()

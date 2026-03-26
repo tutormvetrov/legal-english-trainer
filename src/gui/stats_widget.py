@@ -6,6 +6,8 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
+from .import_dialog import ImportDialog
+
 
 class StatsWidget(QWidget):
     def __init__(self, db_manager):
@@ -63,6 +65,28 @@ class StatsWidget(QWidget):
         self.table.verticalHeader().setVisible(False)
         root.addWidget(self.table, stretch=1)
 
+        # ── Weak terms table ──────────────────────────────────────────
+        weak_label = QLabel("Сложные термины (чаще всего ошибаетесь):")
+        weak_label.setFont(QFont("", 12, QFont.Weight.Bold))
+        root.addWidget(weak_label)
+
+        self.weak_table = QTableWidget()
+        self.weak_table.setColumnCount(5)
+        self.weak_table.setHorizontalHeaderLabels(
+            ["Термин (EN)", "Термин (RU)", "Категория", "Лёгкость", "Ошибок"]
+        )
+        wh = self.weak_table.horizontalHeader()
+        wh.setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents)
+        wh.setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
+        wh.setSectionResizeMode(2, QHeaderView.ResizeMode.Stretch)
+        wh.setSectionResizeMode(3, QHeaderView.ResizeMode.ResizeToContents)
+        wh.setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
+        self.weak_table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
+        self.weak_table.setAlternatingRowColors(True)
+        self.weak_table.verticalHeader().setVisible(False)
+        self.weak_table.setFixedHeight(180)
+        root.addWidget(self.weak_table)
+
         # ── Buttons ───────────────────────────────────────────────────
         btn_row = QHBoxLayout()
         refresh_btn = QPushButton("Обновить")
@@ -74,6 +98,12 @@ class StatsWidget(QWidget):
         export_btn.setMinimumHeight(36)
         export_btn.clicked.connect(self._export_csv)
         btn_row.addWidget(export_btn)
+
+        import_btn = QPushButton("Импорт терминов…")
+        import_btn.setMinimumHeight(36)
+        import_btn.clicked.connect(self._import_terms)
+        btn_row.addWidget(import_btn)
+
         btn_row.addStretch()
         root.addLayout(btn_row)
 
@@ -116,6 +146,8 @@ class StatsWidget(QWidget):
         self._set_card(self.today_card, str(stats["today_reviews"]))
         self._set_card(self.ef_card, f"{stats['avg_ease_factor']:.2f}")
 
+        self._refresh_weak_table()
+
         rows = self.db.get_stats_by_category()
         self.table.setRowCount(len(rows))
         for i, row in enumerate(rows):
@@ -132,6 +164,29 @@ class StatsWidget(QWidget):
         item = QTableWidgetItem(text)
         item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
         return item
+
+    def _refresh_weak_table(self):
+        rows = self.db.get_weak_terms(limit=20)
+        self.weak_table.setRowCount(0)
+        for row in rows:
+            r = self.weak_table.rowCount()
+            self.weak_table.insertRow(r)
+            self.weak_table.setItem(r, 0, QTableWidgetItem(row[0]))
+            self.weak_table.setItem(r, 1, QTableWidgetItem(row[1]))
+            self.weak_table.setItem(r, 2, QTableWidgetItem(row[2]))
+            ef_item = self._centered(f"{row[3]:.2f}")
+            # Colorise: red if ef < 2.0, yellow if < 2.5, green otherwise
+            if row[3] < 2.0:
+                ef_item.setForeground(__import__('PyQt6.QtGui', fromlist=['QColor']).QColor("#f38ba8"))
+            elif row[3] < 2.5:
+                ef_item.setForeground(__import__('PyQt6.QtGui', fromlist=['QColor']).QColor("#ffa726"))
+            self.weak_table.setItem(r, 3, ef_item)
+            self.weak_table.setItem(r, 4, self._centered(str(max(0, row[5]))))
+
+    def _import_terms(self):
+        dlg = ImportDialog(self.db, self)
+        if dlg.exec():
+            self.refresh()
 
     def _export_csv(self):
         path, _ = QFileDialog.getSaveFileName(

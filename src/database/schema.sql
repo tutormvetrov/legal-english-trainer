@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS terms (
     term_rus TEXT NOT NULL,
     definition TEXT,
     category TEXT,
-    example TEXT
+    example TEXT,
+    starred INTEGER DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS progress (

@@ -2,11 +2,12 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
     QComboBox, QLineEdit, QFrame
 )
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QPropertyAnimation, QPoint, QEasingCurve
 from PyQt6.QtGui import QFont
 
 from ..models.term import Term
 from ..utils.helpers import answers_match
+from ..utils.sound_manager import get_sound_manager
 
 
 class TypingWidget(QWidget):
@@ -18,6 +19,8 @@ class TypingWidget(QWidget):
         self.direction_eng_to_rus = True
         self.attempts = 0
         self.score = 0
+        self._sounds = get_sound_manager()
+        self._shake_anim = None
         self._build_ui()
         self._load_categories()
         self._next_term()
@@ -185,7 +188,10 @@ class TypingWidget(QWidget):
             self.input_field.setEnabled(False)
             self.check_btn.hide()
             self.next_btn.show()
+            self._sounds.play("correct")
         else:
+            self._sounds.play("wrong")
+            self._shake_input()
             if self.attempts >= 3:
                 self.scheduler.review(self.current_term.id, 0)
                 self.feedback_label.setText(
@@ -202,6 +208,19 @@ class TypingWidget(QWidget):
                 self.feedback_label.setStyleSheet("color: #ffa726;")
                 self.input_field.selectAll()
                 self.input_field.setFocus()
+
+    def _shake_input(self):
+        orig = self.input_field.pos()
+        self._shake_anim = QPropertyAnimation(self.input_field, b"pos")
+        self._shake_anim.setDuration(300)
+        self._shake_anim.setKeyValueAt(0.0, orig)
+        self._shake_anim.setKeyValueAt(0.2, QPoint(orig.x() - 7, orig.y()))
+        self._shake_anim.setKeyValueAt(0.4, QPoint(orig.x() + 7, orig.y()))
+        self._shake_anim.setKeyValueAt(0.6, QPoint(orig.x() - 5, orig.y()))
+        self._shake_anim.setKeyValueAt(0.8, QPoint(orig.x() + 5, orig.y()))
+        self._shake_anim.setKeyValueAt(1.0, orig)
+        self._shake_anim.setEasingCurve(QEasingCurve.Type.Linear)
+        self._shake_anim.start()
 
     def _skip(self):
         if self.current_term:

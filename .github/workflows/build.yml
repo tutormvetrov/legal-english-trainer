@@ -1,0 +1,94 @@
+name: Build
+
+on:
+  push:
+    branches: [master, main]
+    tags: ['v*']
+  workflow_dispatch:   # кнопка "Run workflow" в интерфейсе GitHub
+
+jobs:
+  # ── Windows → .exe ─────────────────────────────────────────────────
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyinstaller PyQt6 --quiet
+
+      - name: Build EXE
+        run: >
+          pyinstaller --onefile --windowed
+          --name "LegalEnglishTrainer"
+          --add-data "data/terms.json;data"
+          --add-data "src/database/schema.sql;src/database"
+          --add-data "assets;assets"
+          run.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LegalEnglishTrainer-Windows
+          path: dist/LegalEnglishTrainer.exe
+
+  # ── macOS → .dmg ───────────────────────────────────────────────────
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyinstaller PyQt6 --quiet
+
+      - name: Build APP
+        run: >
+          pyinstaller --windowed
+          --name "LegalEnglishTrainer"
+          --add-data "data/terms.json:data"
+          --add-data "src/database/schema.sql:src/database"
+          --add-data "assets:assets"
+          run.py
+
+      - name: Create DMG
+        run: >
+          hdiutil create
+          -volname "LegalEnglishTrainer"
+          -srcfolder dist/LegalEnglishTrainer.app
+          -ov -format UDZO
+          dist/LegalEnglishTrainer.dmg
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LegalEnglishTrainer-macOS
+          path: dist/LegalEnglishTrainer.dmg
+
+  # ── Release (только при создании тега вида v1.0.0) ─────────────────
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [build-windows, build-macos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+
+      - name: Publish Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Legal English Trainer ${{ github.ref_name }}"
+          body: |
+            ## Установка
+            - **Windows**: скачай `LegalEnglishTrainer.exe`, запусти.
+            - **macOS**: скачай `LegalEnglishTrainer.dmg`, открой, перетащи в Applications.
+          files: |
+            LegalEnglishTrainer-Windows/LegalEnglishTrainer.exe
+            LegalEnglishTrainer-macOS/LegalEnglishTrainer.dmg

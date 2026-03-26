@@ -3,10 +3,11 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
     QComboBox, QSpinBox, QGridLayout, QFrame
 )
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QPropertyAnimation, QPoint, QEasingCurve
 from PyQt6.QtGui import QFont
 
 from ..models.term import Term
+from ..utils.sound_manager import get_sound_manager
 
 
 class MatchWidget(QWidget):
@@ -22,6 +23,8 @@ class MatchWidget(QWidget):
         self.left_buttons = []
         self.right_buttons = []
         self.right_order = []       # shuffled indices for right column
+        self._sounds = get_sound_manager()
+        self._shake_anims = []
         self._build_ui()
         self._load_categories()
 
@@ -192,10 +195,14 @@ class MatchWidget(QWidget):
             self.right_buttons[right_pos].setEnabled(False)
             self.right_buttons[right_pos].setStyleSheet("color: #66bb6a; border: 2px solid #66bb6a;")
             self.scheduler.review(self.terms[left_idx].id, 5)
+            self._sounds.play("correct")
         else:
             # Wrong
             self.left_buttons[left_idx].setStyleSheet("border: 2px solid #ef5350;")
             self.right_buttons[right_pos].setStyleSheet("border: 2px solid #ef5350;")
+            self._sounds.play("wrong")
+            self._shake(self.left_buttons[left_idx])
+            self._shake(self.right_buttons[right_pos])
             # Reset after brief flash
             from PyQt6.QtCore import QTimer
             QTimer.singleShot(600, lambda: self._reset_wrong(left_idx, right_pos))
@@ -205,8 +212,24 @@ class MatchWidget(QWidget):
         self.score_label.setText(f"Совпадений: {self.correct} / {len(self.terms)}")
 
         if self.correct == len(self.terms):
+            self._sounds.play("complete")
             self.result_label.setText(f"Правильно: {self.correct} из {len(self.terms)} 🎉")
             self.result_label.show()
+
+    def _shake(self, widget):
+        orig = widget.pos()
+        anim = QPropertyAnimation(widget, b"pos")
+        anim.setDuration(320)
+        anim.setKeyValueAt(0.0, orig)
+        anim.setKeyValueAt(0.2, QPoint(orig.x() - 7, orig.y()))
+        anim.setKeyValueAt(0.4, QPoint(orig.x() + 7, orig.y()))
+        anim.setKeyValueAt(0.6, QPoint(orig.x() - 5, orig.y()))
+        anim.setKeyValueAt(0.8, QPoint(orig.x() + 5, orig.y()))
+        anim.setKeyValueAt(1.0, orig)
+        anim.setEasingCurve(QEasingCurve.Type.Linear)
+        anim.start()
+        self._shake_anims.append(anim)
+        anim.finished.connect(lambda: self._shake_anims.remove(anim) if anim in self._shake_anims else None)
 
     def _reset_wrong(self, left_idx, right_pos):
         if self.left_buttons[left_idx].isEnabled():
