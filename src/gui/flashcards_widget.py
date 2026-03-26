@@ -303,6 +303,11 @@ class FlashcardsWidget(QWidget):
         anim.start()
 
     def _on_card_fade_out(self):
+        # Defer to next event-loop tick so the current paint cycle finishes
+        # before we update widget content — prevents QPainter double-begin.
+        QTimer.singleShot(0, self._load_next_and_fade_in)
+
+    def _load_next_and_fade_in(self):
         self._next_term()
         effect = self.card_frame.graphicsEffect()
         if effect is None:
