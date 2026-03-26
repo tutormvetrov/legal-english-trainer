@@ -1,5 +1,6 @@
 import sys
 import os
+import pathlib
 
 # Resolve paths for both normal run and PyInstaller bundle
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -7,12 +8,15 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 if getattr(sys, "frozen", False):
     # Running inside a PyInstaller bundle
     _ROOT = sys._MEIPASS
+    # _MEIPASS is read-only on macOS — store user data in ~/.letapp/
+    _USER_DATA = pathlib.Path.home() / ".letapp"
+    _USER_DATA.mkdir(parents=True, exist_ok=True)
+    DB_PATH = str(_USER_DATA / "legal_english.db")
 else:
     # Running from source: src/ → parent is project root
     _ROOT = os.path.join(BASE_DIR, "..")
+    DB_PATH = os.path.join(_ROOT, "data", "legal_english.db")
 
-DATA_DIR = os.path.join(_ROOT, "data")
-DB_PATH = os.path.join(DATA_DIR, "legal_english.db")
 TERMS_JSON = os.path.join(_ROOT, "data", "terms.json")
 
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
