@@ -5010,5 +5010,1993 @@
     "category": "Property Law",
     "definition": "An assessment of the market value of a property.",
     "example": "A RICS valuation was required by the mortgage lender."
+  },
+  {
+    "term_eng": "Choice of law",
+    "term_rus": "Выбор применимого права",
+    "category": "Contract Law",
+    "definition": "The contractual selection of the legal system to govern the agreement.",
+    "example": "The choice of law clause specified New York law."
+  },
+  {
+    "term_eng": "Consent",
+    "term_rus": "Согласие",
+    "category": "Contract Law",
+    "definition": "Voluntary agreement to the terms of a contract.",
+    "example": "Free and informed consent is required for a valid contract."
+  },
+  {
+    "term_eng": "Contractual liability",
+    "term_rus": "Договорная ответственность",
+    "category": "Contract Law",
+    "definition": "Liability arising from breach of a contractual obligation.",
+    "example": "The supplier faced contractual liability for late delivery."
+  },
+  {
+    "term_eng": "Cost-plus contract",
+    "term_rus": "Контракт «стоимость плюс»",
+    "category": "Contract Law",
+    "definition": "A contract where the buyer pays all costs plus an agreed profit margin.",
+    "example": "A cost-plus contract was used for the construction to manage uncertain costs."
+  },
+  {
+    "term_eng": "Discharge by agreement",
+    "term_rus": "Прекращение обязательства по соглашению",
+    "category": "Contract Law",
+    "definition": "Release of both parties from obligations by mutual consent.",
+    "example": "Discharge by agreement was documented in a deed of release."
+  },
+  {
+    "term_eng": "Electronic contract",
+    "term_rus": "Электронный договор",
+    "category": "Contract Law",
+    "definition": "A contract formed and concluded by electronic communication.",
+    "example": "The electronic contract was binding upon clicking 'I agree'."
+  },
+  {
+    "term_eng": "Framework agreement",
+    "term_rus": "Рамочное соглашение",
+    "category": "Contract Law",
+    "definition": "An agreement setting terms for future orders without committing to specific quantities.",
+    "example": "The framework agreement covered all purchases over a two-year period."
+  },
+  {
+    "term_eng": "Gross negligence",
+    "term_rus": "Грубая небрежность",
+    "category": "Contract Law",
+    "definition": "A serious departure from the standard of care that goes beyond ordinary negligence.",
+    "example": "The limitation clause did not protect against gross negligence."
+  },
+  {
+    "term_eng": "Hardship clause",
+    "term_rus": "Оговорка о затруднениях",
+    "category": "Contract Law",
+    "definition": "A provision allowing renegotiation if circumstances change fundamentally.",
+    "example": "The hardship clause was triggered by the 40% rise in raw material prices."
+  },
+  {
+    "term_eng": "Implied warranty",
+    "term_rus": "Подразумеваемая гарантия",
+    "category": "Contract Law",
+    "definition": "A guarantee implied by law rather than expressly stated.",
+    "example": "An implied warranty of fitness for purpose applied to the equipment sale."
+  },
+  {
+    "term_eng": "Lump sum contract",
+    "term_rus": "Контракт с единовременной выплатой",
+    "category": "Contract Law",
+    "definition": "A fixed-price contract where the contractor is paid a set total.",
+    "example": "Under the lump sum contract, cost overruns were the contractor's risk."
+  },
+  {
+    "term_eng": "Material adverse change",
+    "term_rus": "Существенное негативное изменение",
+    "category": "Contract Law",
+    "definition": "A clause allowing termination if significant adverse changes occur.",
+    "example": "The buyer invoked the material adverse change clause to exit the deal."
+  },
+  {
+    "term_eng": "Offeree",
+    "term_rus": "Адресат оферты",
+    "category": "Contract Law",
+    "definition": "The person to whom an offer is made.",
+    "example": "The offeree accepted the terms without modification."
+  },
+  {
+    "term_eng": "Offeror",
+    "term_rus": "Оферент",
+    "category": "Contract Law",
+    "definition": "The person who makes an offer.",
+    "example": "The offeror withdrew the offer before acceptance."
+  },
+  {
+    "term_eng": "Output contract",
+    "term_rus": "Договор о поставке всей продукции",
+    "category": "Contract Law",
+    "definition": "A contract where the buyer agrees to buy all of the seller's output.",
+    "example": "The brewery entered an output contract with a local supplier."
+  },
+  {
+    "term_eng": "Payment terms",
+    "term_rus": "Условия оплаты",
+    "category": "Contract Law",
+    "definition": "The agreed schedule and method for making payments.",
+    "example": "Payment terms required settlement within 30 days of invoice."
+  },
+  {
+    "term_eng": "Repudiation",
+    "term_rus": "Отказ от исполнения договора",
+    "category": "Contract Law",
+    "definition": "A refusal to perform contractual obligations.",
+    "example": "The seller's repudiation entitled the buyer to treat the contract as at an end."
+  },
+  {
+    "term_eng": "Retention of title",
+    "term_rus": "Оговорка о сохранении права собственности",
+    "category": "Contract Law",
+    "definition": "A clause keeping title with the seller until full payment.",
+    "example": "The retention of title clause allowed the seller to recover goods from the insolvent buyer."
+  },
+  {
+    "term_eng": "Risk allocation",
+    "term_rus": "Распределение рисков",
+    "category": "Contract Law",
+    "definition": "The contractual assignment of responsibility for specified risks.",
+    "example": "Risk allocation in the contract placed currency risk on the buyer."
+  },
+  {
+    "term_eng": "Variation clause",
+    "term_rus": "Оговорка об изменении договора",
+    "category": "Contract Law",
+    "definition": "A provision permitting changes to the contract under specified conditions.",
+    "example": "The variation clause required changes to be agreed in writing."
+  },
+  {
+    "term_eng": "Absolute discharge",
+    "term_rus": "Безусловное освобождение от наказания",
+    "category": "Criminal Law",
+    "definition": "A conviction without punishment, recognising moral blameworthiness is low.",
+    "example": "An absolute discharge was granted given the defendant's age and remorse."
+  },
+  {
+    "term_eng": "Bench warrant",
+    "term_rus": "Приказ об аресте (судебный)",
+    "category": "Criminal Law",
+    "definition": "An arrest warrant issued by a judge for failure to appear in court.",
+    "example": "A bench warrant was issued after the defendant failed to attend trial."
+  },
+  {
+    "term_eng": "Bind over",
+    "term_rus": "Обязательство вести себя законопослушно",
+    "category": "Criminal Law",
+    "definition": "An order requiring a person to keep the peace for a specified period.",
+    "example": "Both parties were bound over to keep the peace for 12 months."
+  },
+  {
+    "term_eng": "Charge (criminal)",
+    "term_rus": "Предъявление обвинения",
+    "category": "Criminal Law",
+    "definition": "The formal accusation of a criminal offence.",
+    "example": "Three charges were laid: assault, theft and handling stolen goods."
+  },
+  {
+    "term_eng": "Complainant",
+    "term_rus": "Потерпевший (заявитель)",
+    "category": "Criminal Law",
+    "definition": "The victim who reports a crime to the authorities.",
+    "example": "The complainant gave evidence via video link to protect their identity."
+  },
+  {
+    "term_eng": "Concurrent jurisdiction",
+    "term_rus": "Параллельная юрисдикция",
+    "category": "Criminal Law",
+    "definition": "A situation where multiple courts have authority to hear the same case.",
+    "example": "State and federal courts had concurrent jurisdiction over the fraud offence."
+  },
+  {
+    "term_eng": "Criminal procedure",
+    "term_rus": "Уголовный процесс",
+    "category": "Criminal Law",
+    "definition": "The rules governing the conduct of criminal cases.",
+    "example": "The suspect's rights under criminal procedure were read at the time of arrest."
+  },
+  {
+    "term_eng": "Custody",
+    "term_rus": "Содержание под стражей",
+    "category": "Criminal Law",
+    "definition": "The state of being held by police or detained in prison.",
+    "example": "The suspect was taken into custody pending a bail hearing."
+  },
+  {
+    "term_eng": "Deterrence",
+    "term_rus": "Превентивная функция наказания",
+    "category": "Criminal Law",
+    "definition": "The aim of punishment to discourage future offending.",
+    "example": "Deterrence was cited as a reason for imposing a custodial sentence."
+  },
+  {
+    "term_eng": "Examination of witnesses",
+    "term_rus": "Допрос свидетелей",
+    "category": "Criminal Law",
+    "definition": "The questioning of witnesses at trial.",
+    "example": "Examination of witnesses took three days."
+  },
+  {
+    "term_eng": "Extenuating circumstances",
+    "term_rus": "Смягчающие обстоятельства",
+    "category": "Criminal Law",
+    "definition": "Factors that reduce the moral culpability of an offence.",
+    "example": "Extenuating circumstances reduced the sentence from five to three years."
+  },
+  {
+    "term_eng": "Imprisonment",
+    "term_rus": "Лишение свободы",
+    "category": "Criminal Law",
+    "definition": "Confinement as a form of criminal punishment.",
+    "example": "Imprisonment was imposed for the most serious offences."
+  },
+  {
+    "term_eng": "Nolo contendere plea",
+    "term_rus": "Отказ от оспаривания обвинения",
+    "category": "Criminal Law",
+    "definition": "A plea that does not contest guilt, avoiding an admission.",
+    "example": "The company entered a nolo contendere plea to the corporate charge."
+  },
+  {
+    "term_eng": "Offender",
+    "term_rus": "Правонарушитель",
+    "category": "Criminal Law",
+    "definition": "A person who has committed a criminal offence.",
+    "example": "The offender was sentenced to two years' imprisonment."
+  },
+  {
+    "term_eng": "Police caution",
+    "term_rus": "Полицейское предупреждение",
+    "category": "Criminal Law",
+    "definition": "A formal warning issued by police instead of a prosecution.",
+    "example": "A police caution was issued for the minor possession offence."
+  },
+  {
+    "term_eng": "Prosecution witness",
+    "term_rus": "Свидетель обвинения",
+    "category": "Criminal Law",
+    "definition": "A witness called by the prosecution to support its case.",
+    "example": "The key prosecution witness identified the defendant in court."
+  },
+  {
+    "term_eng": "Public prosecutor",
+    "term_rus": "Прокурор",
+    "category": "Criminal Law",
+    "definition": "A state official who conducts criminal prosecutions.",
+    "example": "The public prosecutor sought the maximum sentence."
+  },
+  {
+    "term_eng": "Rehabilitation",
+    "term_rus": "Реабилитация",
+    "category": "Criminal Law",
+    "definition": "The aim of punishment to reform and reintegrate offenders.",
+    "example": "The sentence included a rehabilitation programme for substance dependency."
+  },
+  {
+    "term_eng": "Remand",
+    "term_rus": "Предварительное заключение",
+    "category": "Criminal Law",
+    "definition": "Detention in custody or on bail pending trial.",
+    "example": "The defendant was remanded in custody for three weeks."
+  },
+  {
+    "term_eng": "Youth offender",
+    "term_rus": "Несовершеннолетний правонарушитель",
+    "category": "Criminal Law",
+    "definition": "A person under the age of criminal majority who has committed an offence.",
+    "example": "The youth offender was referred to a rehabilitation programme."
+  },
+  {
+    "term_eng": "Acquisition agreement",
+    "term_rus": "Договор приобретения",
+    "category": "Corporate Law",
+    "definition": "A contract governing the purchase of a company or its assets.",
+    "example": "The acquisition agreement was signed after three months of negotiation."
+  },
+  {
+    "term_eng": "Business combination",
+    "term_rus": "Объединение предприятий",
+    "category": "Corporate Law",
+    "definition": "A transaction combining two or more entities into one economic unit.",
+    "example": "The business combination was accounted for using the acquisition method."
+  },
+  {
+    "term_eng": "Capitalisation",
+    "term_rus": "Капитализация",
+    "category": "Corporate Law",
+    "definition": "The total market value of a company's outstanding shares.",
+    "example": "The company's market capitalisation exceeded $1 billion after the IPO."
+  },
+  {
+    "term_eng": "Clawback",
+    "term_rus": "Возврат выплаченных средств",
+    "category": "Corporate Law",
+    "definition": "A provision requiring return of previously paid compensation.",
+    "example": "The clawback provision required executives to return bonuses after a restatement."
+  },
+  {
+    "term_eng": "Deadlock",
+    "term_rus": "Тупик в управлении",
+    "category": "Corporate Law",
+    "definition": "A situation where shareholders or directors cannot agree on a decision.",
+    "example": "The deadlock provision allowed either party to trigger a buy-sell mechanism."
+  },
+  {
+    "term_eng": "Deferred shares",
+    "term_rus": "Отложенные акции",
+    "category": "Corporate Law",
+    "definition": "Shares ranking behind ordinary shares for dividends and capital.",
+    "example": "Deferred shares receive no dividend until a performance threshold is met."
+  },
+  {
+    "term_eng": "Equity kicker",
+    "term_rus": "Опцион на акции (для кредитора)",
+    "category": "Corporate Law",
+    "definition": "An equity stake given to a lender as additional compensation.",
+    "example": "The mezzanine lender received an equity kicker representing 5% of the company."
+  },
+  {
+    "term_eng": "Exit strategy",
+    "term_rus": "Стратегия выхода из инвестиций",
+    "category": "Corporate Law",
+    "definition": "A plan for investors to realise returns by selling their shareholding.",
+    "example": "The exit strategy envisaged an IPO within five years."
+  },
+  {
+    "term_eng": "Founders agreement",
+    "term_rus": "Учредительное соглашение",
+    "category": "Corporate Law",
+    "definition": "A contract between company founders governing their roles and equity.",
+    "example": "The founders agreement addressed vesting, IP assignment and non-compete obligations."
+  },
+  {
+    "term_eng": "Goodwill impairment",
+    "term_rus": "Обесценение гудвилла",
+    "category": "Corporate Law",
+    "definition": "A write-down of goodwill when its carrying value exceeds its recoverable amount.",
+    "example": "A goodwill impairment charge of $50m was recognised after the acquisition underperformed."
+  },
+  {
+    "term_eng": "Hostile bid",
+    "term_rus": "Враждебное предложение о поглощении",
+    "category": "Corporate Law",
+    "definition": "A takeover offer made directly to shareholders bypassing management.",
+    "example": "The board rejected the hostile bid and sought a white knight."
+  },
+  {
+    "term_eng": "Letter of comfort",
+    "term_rus": "Письмо-поддержки",
+    "category": "Corporate Law",
+    "definition": "A letter providing moral but not legal assurance of support.",
+    "example": "The parent issued a letter of comfort to the subsidiary's lender."
+  },
+  {
+    "term_eng": "Mandatory bid",
+    "term_rus": "Обязательное предложение о выкупе акций",
+    "category": "Corporate Law",
+    "definition": "A requirement to offer to buy all remaining shares after acquiring a controlling stake.",
+    "example": "Acquiring 30% triggered a mandatory bid for the remaining shares."
+  },
+  {
+    "term_eng": "Minority buy-out",
+    "term_rus": "Выкуп миноритарных акций",
+    "category": "Corporate Law",
+    "definition": "Acquisition of all remaining minority shares after a takeover.",
+    "example": "A minority buy-out was completed after the acquirer reached 90% ownership."
+  },
+  {
+    "term_eng": "Operating agreement",
+    "term_rus": "Операционное соглашение (для LLC)",
+    "category": "Corporate Law",
+    "definition": "An agreement governing the management of a limited liability company.",
+    "example": "The operating agreement specified the members' voting rights and profit shares."
+  },
+  {
+    "term_eng": "Proxy fight",
+    "term_rus": "Борьба за голоса акционеров",
+    "category": "Corporate Law",
+    "definition": "An attempt by a shareholder group to take control by winning votes at a general meeting.",
+    "example": "An activist investor launched a proxy fight to replace the board."
+  },
+  {
+    "term_eng": "Registration statement",
+    "term_rus": "Регистрационное заявление",
+    "category": "Corporate Law",
+    "definition": "A document filed with regulators before a public securities offering.",
+    "example": "The company filed its registration statement with the SEC before the IPO."
+  },
+  {
+    "term_eng": "Reverse merger",
+    "term_rus": "Обратное слияние",
+    "category": "Corporate Law",
+    "definition": "A transaction where a private company merges into a listed shell to go public.",
+    "example": "The startup achieved a listing through a reverse merger."
+  },
+  {
+    "term_eng": "Short selling",
+    "term_rus": "Короткая продажа",
+    "category": "Corporate Law",
+    "definition": "Selling borrowed securities hoping to buy them back at a lower price.",
+    "example": "Short selling of the company's shares drove the price down."
+  },
+  {
+    "term_eng": "Stalking horse bid",
+    "term_rus": "Отправная заявка на торгах",
+    "category": "Corporate Law",
+    "definition": "An initial bid in a bankruptcy sale setting a floor price.",
+    "example": "The stalking horse bid of $20m set the minimum acceptable price."
+  },
+  {
+    "term_eng": "Admission",
+    "term_rus": "Признание факта",
+    "category": "Civil Procedure",
+    "definition": "A party's acceptance of the truth of a fact alleged by the other party.",
+    "example": "The admission of liability simplified the trial to quantum only."
+  },
+  {
+    "term_eng": "Costs follow the event",
+    "term_rus": "Расходы несёт проигравшая сторона",
+    "category": "Civil Procedure",
+    "definition": "The principle that the losing party pays the winner's legal costs.",
+    "example": "Under costs follow the event, the defendant was ordered to pay the claimant's costs."
+  },
+  {
+    "term_eng": "Discontinuance",
+    "term_rus": "Отказ от иска",
+    "category": "Civil Procedure",
+    "definition": "Voluntary withdrawal of a claim by the claimant.",
+    "example": "The claimant filed a notice of discontinuance after settlement was reached."
+  },
+  {
+    "term_eng": "Expert report",
+    "term_rus": "Экспертное заключение",
+    "category": "Civil Procedure",
+    "definition": "A written opinion by a specialist submitted as evidence.",
+    "example": "The expert report valued the business at £4.5 million."
+  },
+  {
+    "term_eng": "Final judgment",
+    "term_rus": "Окончательное решение суда",
+    "category": "Civil Procedure",
+    "definition": "A court decision disposing of all claims, leaving nothing further to decide.",
+    "example": "A final judgment was entered after the appeal was dismissed."
+  },
+  {
+    "term_eng": "Forum selection clause",
+    "term_rus": "Оговорка о выборе суда",
+    "category": "Civil Procedure",
+    "definition": "A contractual provision designating the court for dispute resolution.",
+    "example": "The forum selection clause required all disputes to be brought in London."
+  },
+  {
+    "term_eng": "Good arguable case",
+    "term_rus": "Достаточно обоснованное дело",
+    "category": "Civil Procedure",
+    "definition": "A threshold test showing a claim has reasonable prospects of success.",
+    "example": "The claimant had to show a good arguable case to obtain a worldwide freezing order."
+  },
+  {
+    "term_eng": "Interim payment",
+    "term_rus": "Промежуточная выплата",
+    "category": "Civil Procedure",
+    "definition": "A payment on account of damages ordered before final judgment.",
+    "example": "An interim payment of £50,000 was ordered to cover urgent expenses."
+  },
+  {
+    "term_eng": "Joinder of causes of action",
+    "term_rus": "Объединение оснований иска",
+    "category": "Civil Procedure",
+    "definition": "Combining multiple claims in a single set of proceedings.",
+    "example": "Joinder of causes of action avoided the need for two separate actions."
+  },
+  {
+    "term_eng": "Legal aid",
+    "term_rus": "Юридическая помощь за счёт государства",
+    "category": "Civil Procedure",
+    "definition": "Government funding for legal representation of those unable to afford it.",
+    "example": "The claimant received legal aid for the housing disrepair claim."
+  },
+  {
+    "term_eng": "Liberty to apply",
+    "term_rus": "Право обратиться в суд (за разъяснением)",
+    "category": "Civil Procedure",
+    "definition": "Permission for parties to return to court if problems arise in implementing an order.",
+    "example": "The court granted liberty to apply to address any difficulties with the order."
+  },
+  {
+    "term_eng": "Listing",
+    "term_rus": "Назначение к слушанию",
+    "category": "Civil Procedure",
+    "definition": "Scheduling a case for hearing by the court.",
+    "example": "The action was listed for a five-day trial in October."
+  },
+  {
+    "term_eng": "Master",
+    "term_rus": "Мастер (судья по процессуальным вопросам)",
+    "category": "Civil Procedure",
+    "definition": "A judicial officer dealing with procedural matters in civil cases.",
+    "example": "The master made directions for service of expert evidence."
+  },
+  {
+    "term_eng": "Particulars of loss",
+    "term_rus": "Детализация убытков",
+    "category": "Civil Procedure",
+    "definition": "A schedule setting out the heads and amounts of claimed losses.",
+    "example": "Particulars of loss were filed detailing each category of financial damage."
+  },
+  {
+    "term_eng": "Production of documents",
+    "term_rus": "Представление документов",
+    "category": "Civil Procedure",
+    "definition": "The obligation to make documents available for inspection by the other party.",
+    "example": "Production of documents was ordered within 21 days."
+  },
+  {
+    "term_eng": "Rejoinder",
+    "term_rus": "Дуплика (ответ на реплику)",
+    "category": "Civil Procedure",
+    "definition": "A defendant's answer to the claimant's reply.",
+    "example": "The defendant filed a rejoinder addressing the new matters in the reply."
+  },
+  {
+    "term_eng": "Replication",
+    "term_rus": "Реплика (ответ на возражения)",
+    "category": "Civil Procedure",
+    "definition": "A claimant's response to the defendant's answer.",
+    "example": "The replication introduced new matters not raised in the original claim."
+  },
+  {
+    "term_eng": "Sequestration",
+    "term_rus": "Секвестр имущества",
+    "category": "Civil Procedure",
+    "definition": "Seizure of a contemnor's assets to enforce compliance with a court order.",
+    "example": "A writ of sequestration was issued against the defendant's property."
+  },
+  {
+    "term_eng": "Striking out defence",
+    "term_rus": "Отклонение возражений ответчика",
+    "category": "Civil Procedure",
+    "definition": "Removal of a defence from proceedings for abuse of process or lack of merit.",
+    "example": "The defence was struck out as it disclosed no reasonable prospect of success."
+  },
+  {
+    "term_eng": "Substituted service",
+    "term_rus": "Заменённый способ вручения",
+    "category": "Civil Procedure",
+    "definition": "An alternative method of serving process when ordinary service is impracticable.",
+    "example": "Substituted service by email was permitted after the defendant evaded process servers."
+  },
+  {
+    "term_eng": "Undertaking in damages",
+    "term_rus": "Обязательство о возмещении убытков",
+    "category": "Civil Procedure",
+    "definition": "A promise by the applicant to compensate the respondent if an injunction proves unjustified.",
+    "example": "The court required an undertaking in damages before granting the injunction."
+  },
+  {
+    "term_eng": "Arbitration rules",
+    "term_rus": "Арбитражный регламент",
+    "category": "International Law",
+    "definition": "Procedural rules governing international arbitration proceedings.",
+    "example": "The parties agreed to ICC arbitration rules."
+  },
+  {
+    "term_eng": "Breach of treaty",
+    "term_rus": "Нарушение договора",
+    "category": "International Law",
+    "definition": "Failure by a state to comply with its treaty obligations.",
+    "example": "The tribunal found a breach of treaty arising from the discriminatory measure."
+  },
+  {
+    "term_eng": "Diplomatic relations",
+    "term_rus": "Дипломатические отношения",
+    "category": "International Law",
+    "definition": "Official ties between two states maintained through missions and ambassadors.",
+    "example": "Diplomatic relations were severed following the expulsion of ambassadors."
+  },
+  {
+    "term_eng": "Environmental law (international)",
+    "term_rus": "Международное экологическое право",
+    "category": "International Law",
+    "definition": "International rules protecting the environment.",
+    "example": "International environmental law obliges states to prevent transboundary pollution."
+  },
+  {
+    "term_eng": "Fair and equitable treatment",
+    "term_rus": "Справедливое и равноправное отношение",
+    "category": "International Law",
+    "definition": "A treaty standard protecting investors from arbitrary or unfair treatment.",
+    "example": "The tribunal found a breach of the fair and equitable treatment standard."
+  },
+  {
+    "term_eng": "Freezing of assets",
+    "term_rus": "Заморозка активов",
+    "category": "International Law",
+    "definition": "An international measure preventing access to funds of targeted persons or states.",
+    "example": "Freezing of assets was imposed on the sanctioned government officials."
+  },
+  {
+    "term_eng": "Good offices (second)",
+    "term_rus": "Добрые услуги (посредничество)",
+    "category": "International Law",
+    "definition": "Diplomatic assistance to facilitate peaceful resolution of disputes.",
+    "example": "Switzerland offered its good offices to facilitate the hostage release."
+  },
+  {
+    "term_eng": "Immunity waiver",
+    "term_rus": "Отказ от иммунитета",
+    "category": "International Law",
+    "definition": "Voluntary relinquishment of immunity from jurisdiction.",
+    "example": "The state signed an immunity waiver in the investment agreement."
+  },
+  {
+    "term_eng": "Innocent passage (second)",
+    "term_rus": "Мирный проход (морское право)",
+    "category": "International Law",
+    "definition": "The right of ships to traverse territorial waters peacefully.",
+    "example": "The warship exercised innocent passage through the strait."
+  },
+  {
+    "term_eng": "International arbitration",
+    "term_rus": "Международный арбитраж",
+    "category": "International Law",
+    "definition": "Resolution of international disputes by a privately appointed tribunal.",
+    "example": "The parties agreed to international arbitration seated in Geneva."
+  },
+  {
+    "term_eng": "International sanctions",
+    "term_rus": "Международные санкции",
+    "category": "International Law",
+    "definition": "Restrictive measures imposed by states or organisations against a target country.",
+    "example": "International sanctions were tightened following the nuclear test."
+  },
+  {
+    "term_eng": "Jurisdictional immunity",
+    "term_rus": "Юрисдикционный иммунитет",
+    "category": "International Law",
+    "definition": "Immunity from the jurisdiction of foreign domestic courts.",
+    "example": "Jurisdictional immunity was not waived by the commercial contract."
+  },
+  {
+    "term_eng": "Most favoured nation",
+    "term_rus": "Режим наибольшего благоприятствования (RMN)",
+    "category": "International Law",
+    "definition": "A trade principle obliging equal treatment with the most favoured third state.",
+    "example": "Most favoured nation status was granted by the bilateral trade treaty."
+  },
+  {
+    "term_eng": "Peremptory norm",
+    "term_rus": "Императивная норма (jus cogens)",
+    "category": "International Law",
+    "definition": "An overriding principle of international law from which no derogation is allowed.",
+    "example": "The prohibition on slavery is a peremptory norm of international law."
+  },
+  {
+    "term_eng": "Protocol",
+    "term_rus": "Протокол (к договору)",
+    "category": "International Law",
+    "definition": "An additional instrument modifying or supplementing a treaty.",
+    "example": "The Kyoto Protocol supplemented the UNFCCC."
+  },
+  {
+    "term_eng": "Sea-lanes",
+    "term_rus": "Морские пути",
+    "category": "International Law",
+    "definition": "Established routes for vessel navigation.",
+    "example": "The convention guarantees freedom of navigation along international sea-lanes."
+  },
+  {
+    "term_eng": "Territorial integrity",
+    "term_rus": "Территориальная целостность",
+    "category": "International Law",
+    "definition": "The principle that a state's borders must not be violated.",
+    "example": "The UN Charter protects the territorial integrity of member states."
+  },
+  {
+    "term_eng": "Agricultural tenancy",
+    "term_rus": "Аренда сельскохозяйственных угодий",
+    "category": "Property Law",
+    "definition": "A lease of agricultural land governed by specialist legislation.",
+    "example": "The agricultural tenancy was renewed under the Agricultural Tenancies Act."
+  },
+  {
+    "term_eng": "Break clause",
+    "term_rus": "Клаузула о досрочном расторжении",
+    "category": "Property Law",
+    "definition": "A lease provision allowing early termination at a specified date.",
+    "example": "The tenant exercised the break clause to exit the lease in year five."
+  },
+  {
+    "term_eng": "Building lease",
+    "term_rus": "Аренда под строительство",
+    "category": "Property Law",
+    "definition": "A long lease under which the tenant agrees to build on the land.",
+    "example": "A 99-year building lease was granted for the development site."
+  },
+  {
+    "term_eng": "Caveat (property)",
+    "term_rus": "Каве (предупреждение в реестре)",
+    "category": "Property Law",
+    "definition": "A notice registered to warn of a third-party interest in land.",
+    "example": "The claimant lodged a caveat against the title to protect an equitable interest."
+  },
+  {
+    "term_eng": "Development agreement",
+    "term_rus": "Договор о застройке",
+    "category": "Property Law",
+    "definition": "A contract between a landowner and developer setting out development obligations.",
+    "example": "The development agreement required the developer to build 200 residential units."
+  },
+  {
+    "term_eng": "Distress",
+    "term_rus": "Изъятие имущества в счёт долга",
+    "category": "Property Law",
+    "definition": "The lawful seizure of goods to compel payment of rent.",
+    "example": "The landlord levied distress on the tenant's equipment for unpaid rent."
+  },
+  {
+    "term_eng": "Ground lease",
+    "term_rus": "Аренда земли (под застройку)",
+    "category": "Property Law",
+    "definition": "A long lease of land on which the lessee builds at their own expense.",
+    "example": "The developer entered a 125-year ground lease with the local authority."
+  },
+  {
+    "term_eng": "Landlord and tenant",
+    "term_rus": "Арендодатель и арендатор",
+    "category": "Property Law",
+    "definition": "The legal relationship between the owner of property and the occupier under a lease.",
+    "example": "Landlord and tenant law governs the obligations of both parties."
+  },
+  {
+    "term_eng": "Management company",
+    "term_rus": "Управляющая компания",
+    "category": "Property Law",
+    "definition": "A company responsible for managing and maintaining a building.",
+    "example": "The management company collected service charges and managed repairs."
+  },
+  {
+    "term_eng": "Net lease",
+    "term_rus": "Аренда нетто",
+    "category": "Property Law",
+    "definition": "A lease where the tenant pays rent plus operating expenses.",
+    "example": "Under the net lease, the tenant paid insurance, taxes and maintenance."
+  },
+  {
+    "term_eng": "Peppercorn rent",
+    "term_rus": "Номинальная арендная плата",
+    "category": "Property Law",
+    "definition": "A token rent of minimal value confirming a lease exists.",
+    "example": "The charity occupied the premises at a peppercorn rent."
+  },
+  {
+    "term_eng": "Property management",
+    "term_rus": "Управление недвижимостью",
+    "category": "Property Law",
+    "definition": "The operation, maintenance and leasing of real estate.",
+    "example": "The property management company handled all maintenance requests."
+  },
+  {
+    "term_eng": "Rent review",
+    "term_rus": "Пересмотр арендной платы",
+    "category": "Property Law",
+    "definition": "A provision in a lease allowing the rent to be revised periodically.",
+    "example": "The rent review was conducted by an independent surveyor."
+  },
+  {
+    "term_eng": "Residential tenancy",
+    "term_rus": "Аренда жилья",
+    "category": "Property Law",
+    "definition": "A lease of residential property to a private tenant.",
+    "example": "The residential tenancy was protected under housing legislation."
+  },
+  {
+    "term_eng": "Security of tenure",
+    "term_rus": "Гарантия срока аренды",
+    "category": "Property Law",
+    "definition": "Statutory rights protecting a tenant from eviction.",
+    "example": "Business tenants have security of tenure under the Landlord and Tenant Act."
+  },
+  {
+    "term_eng": "Title deed",
+    "term_rus": "Правоустанавливающий документ",
+    "category": "Property Law",
+    "definition": "A legal document evidencing ownership of property.",
+    "example": "The title deed was examined to establish the chain of ownership."
+  },
+  {
+    "term_eng": "Upward-only rent review",
+    "term_rus": "Пересмотр аренды только в сторону повышения",
+    "category": "Property Law",
+    "definition": "A rent review clause preventing rent from falling below the existing level.",
+    "example": "The upward-only rent review meant the tenant's rent never decreased."
+  },
+  {
+    "term_eng": "A fortiori",
+    "term_rus": "Тем более",
+    "category": "Latin Terms",
+    "definition": "With even stronger reason; used to express an argument by analogy.",
+    "example": "If the lesser obligation is binding, then a fortiori the greater one is too."
+  },
+  {
+    "term_eng": "Actio in rem",
+    "term_rus": "Вещный иск",
+    "category": "Latin Terms",
+    "definition": "An action enforcing a right over property rather than against a person.",
+    "example": "The actio in rem was brought to recover the stolen vessel."
+  },
+  {
+    "term_eng": "Ad valorem",
+    "term_rus": "Пропорционально стоимости",
+    "category": "Latin Terms",
+    "definition": "According to the value; a tax or duty proportionate to value.",
+    "example": "An ad valorem stamp duty was levied on the property transaction."
+  },
+  {
+    "term_eng": "Aliunde",
+    "term_rus": "Из другого источника",
+    "category": "Latin Terms",
+    "definition": "From another source; evidence adduced from outside the document.",
+    "example": "Aliunde evidence was admitted to explain the ambiguous clause."
+  },
+  {
+    "term_eng": "Animus",
+    "term_rus": "Намерение",
+    "category": "Latin Terms",
+    "definition": "Intent or mental attitude forming part of a legal concept.",
+    "example": "Animus possidendi is the intention to possess necessary for adverse possession."
+  },
+  {
+    "term_eng": "Cessante ratione legis",
+    "term_rus": "Если исчезает основание закона",
+    "category": "Latin Terms",
+    "definition": "When the reason for a law ceases, the law itself ceases.",
+    "example": "Cessante ratione legis, the court declined to apply the outdated rule."
+  },
+  {
+    "term_eng": "Coram judice",
+    "term_rus": "Перед судом",
+    "category": "Latin Terms",
+    "definition": "Before the judge; in the presence of the court.",
+    "example": "Evidence was given coram judice."
+  },
+  {
+    "term_eng": "Culpa in contrahendo",
+    "term_rus": "Вина при заключении договора",
+    "category": "Latin Terms",
+    "definition": "Liability for negligent conduct during contract negotiations.",
+    "example": "The claimant relied on culpa in contrahendo after the negotiations collapsed."
+  },
+  {
+    "term_eng": "Damnum sine injuria",
+    "term_rus": "Ущерб без правонарушения",
+    "category": "Latin Terms",
+    "definition": "Loss without a legal wrong; no legal remedy arises.",
+    "example": "Competition causing financial loss is damnum sine injuria."
+  },
+  {
+    "term_eng": "Doli incapax",
+    "term_rus": "Неспособность к умыслу",
+    "category": "Latin Terms",
+    "definition": "Incapable of crime; the presumption that a young child cannot form criminal intent.",
+    "example": "The defendant relied on doli incapax given the child's age."
+  },
+  {
+    "term_eng": "Dominium",
+    "term_rus": "Собственность (полное право)",
+    "category": "Latin Terms",
+    "definition": "Full ownership of property.",
+    "example": "Dominium over the land was transferred by the deed of sale."
+  },
+  {
+    "term_eng": "Enumeratio unius",
+    "term_rus": "Перечисление одного",
+    "category": "Latin Terms",
+    "definition": "The enumeration of one thing implies the exclusion of others.",
+    "example": "Enumeratio unius supported a narrow reading of the provision."
+  },
+  {
+    "term_eng": "Ex aequo et bono",
+    "term_rus": "По справедливости и добросовестности",
+    "category": "Latin Terms",
+    "definition": "A standard allowing decision according to equity rather than strict law.",
+    "example": "The parties agreed the arbitrator could decide ex aequo et bono."
+  },
+  {
+    "term_eng": "Fiat justitia",
+    "term_rus": "Да свершится правосудие",
+    "category": "Latin Terms",
+    "definition": "Let justice be done; a declaration of commitment to justice.",
+    "example": "The judge invoked fiat justitia in ordering full restitution."
+  },
+  {
+    "term_eng": "In absentia",
+    "term_rus": "Заочно",
+    "category": "Latin Terms",
+    "definition": "In the absence of the person concerned.",
+    "example": "The defendant was tried in absentia after evading service."
+  },
+  {
+    "term_eng": "In dubio pro reo",
+    "term_rus": "При сомнении — в пользу обвиняемого",
+    "category": "Latin Terms",
+    "definition": "In doubt, rule for the accused; the presumption of innocence.",
+    "example": "In dubio pro reo required acquittal where the evidence was equivocal."
+  },
+  {
+    "term_eng": "Injuria sine damno",
+    "term_rus": "Правонарушение без ущерба",
+    "category": "Latin Terms",
+    "definition": "A legal wrong without actual loss; actionable per se.",
+    "example": "Trespass is actionable as injuria sine damno."
+  },
+  {
+    "term_eng": "Laches",
+    "term_rus": "Просрочка (небрежность) в реализации прав",
+    "category": "Latin Terms",
+    "definition": "Unreasonable delay in asserting a right, potentially barring a claim in equity.",
+    "example": "The equitable claim was barred by laches after a ten-year delay."
+  },
+  {
+    "term_eng": "Lex fori",
+    "term_rus": "Закон суда",
+    "category": "Latin Terms",
+    "definition": "The law of the forum; the procedural law of the court hearing the case.",
+    "example": "Procedural matters were governed by the lex fori."
+  },
+  {
+    "term_eng": "Lex loci contractus",
+    "term_rus": "Закон места заключения договора",
+    "category": "Latin Terms",
+    "definition": "The law of the place where a contract was made.",
+    "example": "Lex loci contractus pointed to Swiss law."
+  },
+  {
+    "term_eng": "Malum in se",
+    "term_rus": "Зло само по себе",
+    "category": "Latin Terms",
+    "definition": "An act that is inherently wrong regardless of whether it is prohibited by law.",
+    "example": "Murder is malum in se."
+  },
+  {
+    "term_eng": "Malum prohibitum",
+    "term_rus": "Зло, запрещённое законом",
+    "category": "Latin Terms",
+    "definition": "An act that is wrong only because it is prohibited by law.",
+    "example": "Parking violations are malum prohibitum offences."
+  },
+  {
+    "term_eng": "Novus actus interveniens",
+    "term_rus": "Новое вмешивающееся действие",
+    "category": "Latin Terms",
+    "definition": "A new intervening act breaking the chain of causation.",
+    "example": "The victim's reckless act was a novus actus interveniens."
+  },
+  {
+    "term_eng": "Nudum pactum",
+    "term_rus": "Договор без встречного предоставления",
+    "category": "Latin Terms",
+    "definition": "A bare promise without consideration, which is unenforceable.",
+    "example": "The agreement was a nudum pactum and therefore unenforceable."
+  },
+  {
+    "term_eng": "Pactum de contrahendo",
+    "term_rus": "Предварительный договор",
+    "category": "Latin Terms",
+    "definition": "An agreement to enter into a further contract.",
+    "example": "The term sheet was a pactum de contrahendo."
+  },
+  {
+    "term_eng": "Particeps criminis",
+    "term_rus": "Соучастник преступления",
+    "category": "Latin Terms",
+    "definition": "A participant in a crime.",
+    "example": "The court considered whether the claimant was a particeps criminis."
+  },
+  {
+    "term_eng": "Possessio",
+    "term_rus": "Владение",
+    "category": "Latin Terms",
+    "definition": "Possession of property.",
+    "example": "Possessio was established by 12 years of uninterrupted occupation."
+  },
+  {
+    "term_eng": "Praesumptio juris",
+    "term_rus": "Правовая презумпция",
+    "category": "Latin Terms",
+    "definition": "A presumption of law that may be rebuttable or conclusive.",
+    "example": "Praesumptio juris et de jure is an irrebuttable presumption."
+  },
+  {
+    "term_eng": "Quia timet",
+    "term_rus": "Превентивный иск (поскольку опасается)",
+    "category": "Latin Terms",
+    "definition": "An injunction granted to prevent a feared future wrong.",
+    "example": "A quia timet injunction was sought to prevent threatened disclosure."
+  },
+  {
+    "term_eng": "Sic utere tuo",
+    "term_rus": "Пользуйся своим так, чтобы не вредить другому",
+    "category": "Latin Terms",
+    "definition": "Use your own property so as not to harm others.",
+    "example": "Sic utere tuo underpins the law of nuisance."
+  },
+  {
+    "term_eng": "Solus",
+    "term_rus": "Исключительно (одиночный)",
+    "category": "Latin Terms",
+    "definition": "Alone; used in the context of exclusive dealing obligations.",
+    "example": "The petrol station was bound by a solus agreement to stock only one brand."
+  },
+  {
+    "term_eng": "Suppressio veri",
+    "term_rus": "Замалчивание правды",
+    "category": "Latin Terms",
+    "definition": "Suppression of the truth; a form of misrepresentation by omission.",
+    "example": "Suppressio veri made the representation fraudulent."
+  },
+  {
+    "term_eng": "Suggestio falsi",
+    "term_rus": "Ложное внушение",
+    "category": "Latin Terms",
+    "definition": "The suggestion of something false; misrepresentation by implication.",
+    "example": "Suggestio falsi rendered the contract voidable."
+  },
+  {
+    "term_eng": "Unus testis",
+    "term_rus": "Один свидетель",
+    "category": "Latin Terms",
+    "definition": "One witness; the rule that a single witness is insufficient in certain cases.",
+    "example": "Unus testis nullus testis: one witness is no witness."
+  },
+  {
+    "term_eng": "Collateral contract",
+    "term_rus": "Побочный договор",
+    "category": "Contract Law",
+    "definition": "A separate contract that induces a party to enter the main contract.",
+    "example": "The collateral contract to repair the roof was enforceable alongside the sale."
+  },
+  {
+    "term_eng": "Delegated authority",
+    "term_rus": "Делегированные полномочия",
+    "category": "Contract Law",
+    "definition": "Authority granted by one party to another to act on its behalf.",
+    "example": "The manager exercised delegated authority to sign contracts up to £50,000."
+  },
+  {
+    "term_eng": "Dilapidations",
+    "term_rus": "Обязательство привести помещение в надлежащее состояние",
+    "category": "Contract Law",
+    "definition": "A tenant's liability at lease end for failure to maintain the property.",
+    "example": "The landlord served a dilapidations schedule claiming £80,000."
+  },
+  {
+    "term_eng": "Earnest",
+    "term_rus": "Аванс (задаток)",
+    "category": "Contract Law",
+    "definition": "A partial payment made to secure a contract.",
+    "example": "An earnest of £500 was paid to reserve the goods."
+  },
+  {
+    "term_eng": "Executory consideration",
+    "term_rus": "Будущее встречное предоставление",
+    "category": "Contract Law",
+    "definition": "A promise to perform an act in the future as consideration.",
+    "example": "The executory consideration was the promise to deliver goods next month."
+  },
+  {
+    "term_eng": "Force account",
+    "term_rus": "Работы по фактическим затратам",
+    "category": "Contract Law",
+    "definition": "Work performed and paid for at actual cost plus overhead.",
+    "example": "Unforeseen ground conditions led to the work being done on a force account basis."
+  },
+  {
+    "term_eng": "Frustrating event",
+    "term_rus": "Событие, влекущее тщетность договора",
+    "category": "Contract Law",
+    "definition": "An event making contractual performance radically different from what was agreed.",
+    "example": "The outbreak of war was held to be a frustrating event."
+  },
+  {
+    "term_eng": "Incidental damages",
+    "term_rus": "Попутные убытки",
+    "category": "Contract Law",
+    "definition": "Costs incurred in dealing with the consequences of a breach.",
+    "example": "Incidental damages included storage fees while finding a replacement supplier."
+  },
+  {
+    "term_eng": "Indivisible contract",
+    "term_rus": "Неделимый договор",
+    "category": "Contract Law",
+    "definition": "A contract treated as a whole so partial performance does not entitle payment.",
+    "example": "The lump sum was payable only on complete performance of the indivisible contract."
+  },
+  {
+    "term_eng": "Innominate contract",
+    "term_rus": "Непоименованный договор",
+    "category": "Contract Law",
+    "definition": "A contract not fitting a standard legal category.",
+    "example": "The arrangement was an innominate contract combining elements of hire and services."
+  },
+  {
+    "term_eng": "Intermediate term",
+    "term_rus": "Промежуточное условие",
+    "category": "Contract Law",
+    "definition": "A term neither a condition nor a warranty; remedy depends on consequences of breach.",
+    "example": "The obligation to maintain the vessel was an intermediate term."
+  },
+  {
+    "term_eng": "Joint and several liability",
+    "term_rus": "Солидарная ответственность",
+    "category": "Contract Law",
+    "definition": "Liability where each party is independently liable for the full obligation.",
+    "example": "The guarantors accepted joint and several liability for the loan."
+  },
+  {
+    "term_eng": "Latent defect",
+    "term_rus": "Скрытый дефект",
+    "category": "Contract Law",
+    "definition": "A hidden defect not discoverable by reasonable inspection.",
+    "example": "The seller was liable for the latent defect in the machinery."
+  },
+  {
+    "term_eng": "Long-stop date",
+    "term_rus": "Крайний срок (лонг-стоп)",
+    "category": "Contract Law",
+    "definition": "A final deadline by which conditions must be satisfied or the contract terminates.",
+    "example": "If the merger was not completed by the long-stop date, either party could walk away."
+  },
+  {
+    "term_eng": "Nominal consideration",
+    "term_rus": "Символическое встречное предоставление",
+    "category": "Contract Law",
+    "definition": "A token amount fulfilling the legal requirement for consideration.",
+    "example": "The option was granted for nominal consideration of £1."
+  },
+  {
+    "term_eng": "Part performance",
+    "term_rus": "Частичное исполнение",
+    "category": "Contract Law",
+    "definition": "Acts done in reliance on a contract, sometimes enforcing oral agreements.",
+    "example": "Part performance of the oral contract entitled the claimant to relief."
+  },
+  {
+    "term_eng": "Penalty rate",
+    "term_rus": "Штрафная процентная ставка",
+    "category": "Contract Law",
+    "definition": "An interest rate applied as a sanction for late payment.",
+    "example": "A penalty rate of 12% applied to overdue invoices."
+  },
+  {
+    "term_eng": "Post-termination obligations",
+    "term_rus": "Обязательства после расторжения",
+    "category": "Contract Law",
+    "definition": "Duties that continue after a contract ends, such as confidentiality.",
+    "example": "Post-termination obligations included a 12-month non-solicitation restriction."
+  },
+  {
+    "term_eng": "Price escalation clause",
+    "term_rus": "Оговорка об индексации цены",
+    "category": "Contract Law",
+    "definition": "A provision allowing the contract price to increase based on an index.",
+    "example": "The price escalation clause linked the fee to the consumer price index."
+  },
+  {
+    "term_eng": "Promisee",
+    "term_rus": "Лицо, которому дано обещание",
+    "category": "Contract Law",
+    "definition": "The party to whom a contractual promise is made.",
+    "example": "The promisee could enforce the obligation against the promisor."
+  },
+  {
+    "term_eng": "Autrefois acquit",
+    "term_rus": "Оправдание по тому же делу ранее",
+    "category": "Criminal Law",
+    "definition": "A plea that the defendant was previously acquitted of the same offence.",
+    "example": "The defence of autrefois acquit prevented retrial."
+  },
+  {
+    "term_eng": "Autrefois convict",
+    "term_rus": "Осуждение по тому же делу ранее",
+    "category": "Criminal Law",
+    "definition": "A plea that the defendant was previously convicted of the same offence.",
+    "example": "Autrefois convict barred a second prosecution for the same facts."
+  },
+  {
+    "term_eng": "Caution (formal warning)",
+    "term_rus": "Официальное предупреждение",
+    "category": "Criminal Law",
+    "definition": "A formal admonition by police given instead of prosecution.",
+    "example": "The first-time offender was given a formal caution."
+  },
+  {
+    "term_eng": "Co-defendant",
+    "term_rus": "Соответчик (соподсудимый)",
+    "category": "Criminal Law",
+    "definition": "A person charged alongside another in the same proceedings.",
+    "example": "The co-defendant gave evidence against the principal accused."
+  },
+  {
+    "term_eng": "Corpus juris",
+    "term_rus": "Свод права",
+    "category": "Criminal Law",
+    "definition": "A body of law applicable to a particular area.",
+    "example": "The corpus juris of international criminal law has expanded rapidly."
+  },
+  {
+    "term_eng": "Crime of passion",
+    "term_rus": "Преступление в состоянии аффекта",
+    "category": "Criminal Law",
+    "definition": "An offence committed spontaneously under extreme emotional distress.",
+    "example": "The defence argued the killing was a crime of passion."
+  },
+  {
+    "term_eng": "Criminal law",
+    "term_rus": "Уголовное право",
+    "category": "Criminal Law",
+    "definition": "The body of law defining offences and prescribing punishments.",
+    "example": "Criminal law distinguishes between acts and omissions."
+  },
+  {
+    "term_eng": "Cumulative sentence",
+    "term_rus": "Совокупный приговор",
+    "category": "Criminal Law",
+    "definition": "A total sentence combining terms for multiple offences.",
+    "example": "The cumulative sentence amounted to twelve years."
+  },
+  {
+    "term_eng": "Expert testimony",
+    "term_rus": "Экспертные показания",
+    "category": "Criminal Law",
+    "definition": "Opinion evidence from a qualified specialist.",
+    "example": "Expert testimony on the cause of death was contested."
+  },
+  {
+    "term_eng": "False imprisonment",
+    "term_rus": "Незаконное лишение свободы",
+    "category": "Criminal Law",
+    "definition": "Unlawful restraint of a person's freedom of movement.",
+    "example": "The security guard was charged with false imprisonment."
+  },
+  {
+    "term_eng": "Gross misconduct",
+    "term_rus": "Грубое нарушение",
+    "category": "Criminal Law",
+    "definition": "Serious misbehaviour potentially justifying dismissal or criminal charge.",
+    "example": "Gross misconduct led to both termination and a criminal investigation."
+  },
+  {
+    "term_eng": "House arrest",
+    "term_rus": "Домашний арест",
+    "category": "Criminal Law",
+    "definition": "Confinement to one's home as an alternative to imprisonment.",
+    "example": "The accused was placed under house arrest pending trial."
+  },
+  {
+    "term_eng": "Immunity from prosecution",
+    "term_rus": "Иммунитет от преследования",
+    "category": "Criminal Law",
+    "definition": "Protection from criminal prosecution in exchange for cooperation.",
+    "example": "Immunity from prosecution was granted in exchange for testimony."
+  },
+  {
+    "term_eng": "Indictable offence",
+    "term_rus": "Уголовное преступление, подлежащее слушанию судом присяжных",
+    "category": "Criminal Law",
+    "definition": "A serious offence triable before a jury.",
+    "example": "Murder is an indictable offence triable only on indictment."
+  },
+  {
+    "term_eng": "Mandatory sentence",
+    "term_rus": "Обязательный минимальный срок",
+    "category": "Criminal Law",
+    "definition": "A sentence required by law for a specific offence.",
+    "example": "A mandatory sentence of life imprisonment applies to murder."
+  },
+  {
+    "term_eng": "No case to answer",
+    "term_rus": "Нет оснований для рассмотрения дела",
+    "category": "Criminal Law",
+    "definition": "A submission at half-time that the prosecution evidence is insufficient.",
+    "example": "The judge accepted the no case to answer submission and dismissed the charge."
+  },
+  {
+    "term_eng": "Presumption of innocence",
+    "term_rus": "Презумпция невиновности",
+    "category": "Criminal Law",
+    "definition": "The right to be considered not guilty until proven guilty.",
+    "example": "The presumption of innocence must be maintained throughout the trial."
+  },
+  {
+    "term_eng": "Summary offence",
+    "term_rus": "Правонарушение, рассматриваемое магистратом",
+    "category": "Criminal Law",
+    "definition": "A minor offence tried without a jury.",
+    "example": "Speeding is a summary offence tried in the magistrates' court."
+  },
+  {
+    "term_eng": "Vulnerable witness",
+    "term_rus": "Уязвимый свидетель",
+    "category": "Criminal Law",
+    "definition": "A witness who may need special measures due to age, disability or fear.",
+    "example": "The vulnerable witness gave evidence from behind a screen."
+  },
+  {
+    "term_eng": "Wilful blindness",
+    "term_rus": "Умышленное неведение",
+    "category": "Criminal Law",
+    "definition": "Deliberate avoidance of knowledge that would establish criminal liability.",
+    "example": "Wilful blindness to the fraud was treated as equivalent to knowledge."
+  },
+  {
+    "term_eng": "Block trade",
+    "term_rus": "Блочная сделка с акциями",
+    "category": "Corporate Law",
+    "definition": "A large sale of securities arranged outside the open market.",
+    "example": "The private equity house sold its stake via a block trade."
+  },
+  {
+    "term_eng": "Book building",
+    "term_rus": "Формирование книги заявок",
+    "category": "Corporate Law",
+    "definition": "The process of assessing investor demand before setting an IPO price.",
+    "example": "Book building indicated strong demand and the price was set at the top of the range."
+  },
+  {
+    "term_eng": "Buyout",
+    "term_rus": "Выкуп компании",
+    "category": "Corporate Law",
+    "definition": "Acquisition of a controlling interest in a company.",
+    "example": "The buyout was funded by a combination of equity and debt."
+  },
+  {
+    "term_eng": "Circular resolution",
+    "term_rus": "Заочное решение (циркуляр)",
+    "category": "Corporate Law",
+    "definition": "A board or shareholder resolution passed without a meeting.",
+    "example": "A circular resolution was signed by all directors to approve the transaction."
+  },
+  {
+    "term_eng": "Company register",
+    "term_rus": "Реестр компании",
+    "category": "Corporate Law",
+    "definition": "The official list of members, directors and charges maintained by the company.",
+    "example": "The company register was updated to reflect the new shareholder."
+  },
+  {
+    "term_eng": "Compulsory winding up",
+    "term_rus": "Принудительная ликвидация",
+    "category": "Corporate Law",
+    "definition": "Court-ordered dissolution of a company.",
+    "example": "Creditors petitioned for compulsory winding up after the company failed to pay."
+  },
+  {
+    "term_eng": "Control premium",
+    "term_rus": "Контрольная премия",
+    "category": "Corporate Law",
+    "definition": "The extra price paid to acquire a controlling stake.",
+    "example": "The acquirer paid a 30% control premium over the market price."
+  },
+  {
+    "term_eng": "Crown jewel defence",
+    "term_rus": "Защита 'коронными драгоценностями'",
+    "category": "Corporate Law",
+    "definition": "A tactic selling key assets to make a takeover target less attractive.",
+    "example": "The board authorised a crown jewel defence by agreeing to sell the core division."
+  },
+  {
+    "term_eng": "Cum dividend",
+    "term_rus": "С дивидендом",
+    "category": "Corporate Law",
+    "definition": "With dividend; shares sold entitling the buyer to the next dividend.",
+    "example": "Shares bought cum dividend before the record date carried the next payment."
+  },
+  {
+    "term_eng": "Ex dividend",
+    "term_rus": "Без дивиденда",
+    "category": "Corporate Law",
+    "definition": "Without dividend; shares sold after the record date do not carry the next dividend.",
+    "example": "The shares were trading ex dividend following the record date."
+  },
+  {
+    "term_eng": "Fiduciary",
+    "term_rus": "Фидуциарное лицо",
+    "category": "Corporate Law",
+    "definition": "A person who holds a position of trust and must act in another's best interest.",
+    "example": "The trustee was a fiduciary and owed strict loyalty obligations."
+  },
+  {
+    "term_eng": "General meeting",
+    "term_rus": "Общее собрание",
+    "category": "Corporate Law",
+    "definition": "A meeting of a company's shareholders.",
+    "example": "The general meeting approved the capital reduction by special resolution."
+  },
+  {
+    "term_eng": "Incorporation",
+    "term_rus": "Инкорпорация (регистрация компании)",
+    "category": "Corporate Law",
+    "definition": "The legal process of forming a corporation.",
+    "example": "Incorporation was completed within 24 hours of filing the documents."
+  },
+  {
+    "term_eng": "Lock-up agreement",
+    "term_rus": "Соглашение о запрете продажи акций",
+    "category": "Corporate Law",
+    "definition": "An agreement preventing sale of shares for a specified period after an IPO.",
+    "example": "Founders were subject to a 180-day lock-up agreement."
+  },
+  {
+    "term_eng": "Members' voluntary liquidation",
+    "term_rus": "Добровольная ликвидация по решению участников",
+    "category": "Corporate Law",
+    "definition": "A solvent company's voluntary wind-up initiated by its members.",
+    "example": "A members' voluntary liquidation was commenced to distribute surplus assets."
+  },
+  {
+    "term_eng": "Minority protection",
+    "term_rus": "Защита миноритариев",
+    "category": "Corporate Law",
+    "definition": "Legal rules protecting shareholders from oppressive majority conduct.",
+    "example": "Minority protection provisions required supermajority approval for key transactions."
+  },
+  {
+    "term_eng": "Non-voting shares",
+    "term_rus": "Акции без права голоса",
+    "category": "Corporate Law",
+    "definition": "Shares that carry no voting rights at general meetings.",
+    "example": "Non-voting shares were issued to allow capital raising without diluting control."
+  },
+  {
+    "term_eng": "Par value",
+    "term_rus": "Номинальная стоимость акции",
+    "category": "Corporate Law",
+    "definition": "The face value of a share as stated in the articles.",
+    "example": "Shares were issued at a premium of £1.99 above the £0.01 par value."
+  },
+  {
+    "term_eng": "Preference dividend",
+    "term_rus": "Дивиденд по привилегированным акциям",
+    "category": "Corporate Law",
+    "definition": "A fixed or priority dividend paid to holders of preference shares.",
+    "example": "The preference dividend was paid before ordinary shareholders received anything."
+  },
+  {
+    "term_eng": "Rights offering",
+    "term_rus": "Предложение прав подписки",
+    "category": "Corporate Law",
+    "definition": "An offer allowing existing shareholders to buy new shares at a discount.",
+    "example": "The rights offering was underwritten by the company's investment bank."
+  },
+  {
+    "term_eng": "Allocation questionnaire",
+    "term_rus": "Анкета распределения дела",
+    "category": "Civil Procedure",
+    "definition": "A form filed by parties to help the court allocate a case to the right track.",
+    "example": "Both parties completed an allocation questionnaire within 14 days."
+  },
+  {
+    "term_eng": "Certificate of service",
+    "term_rus": "Свидетельство о вручении документов",
+    "category": "Civil Procedure",
+    "definition": "A document confirming that court documents were properly served.",
+    "example": "A certificate of service was filed confirming personal delivery."
+  },
+  {
+    "term_eng": "Claim form",
+    "term_rus": "Бланк искового заявления",
+    "category": "Civil Procedure",
+    "definition": "The court document formally initiating civil proceedings.",
+    "example": "The claim form was issued and served within four months."
+  },
+  {
+    "term_eng": "Concurrent liability",
+    "term_rus": "Параллельная ответственность",
+    "category": "Civil Procedure",
+    "definition": "Liability arising under both contract and tort for the same facts.",
+    "example": "The claimant pursued concurrent liability in contract and negligence."
+  },
+  {
+    "term_eng": "Costs on indemnity basis",
+    "term_rus": "Расходы на основе полного возмещения",
+    "category": "Civil Procedure",
+    "definition": "A more generous costs order where doubt is resolved in favour of the recipient.",
+    "example": "Costs on the indemnity basis were awarded due to the defendant's unreasonable conduct."
+  },
+  {
+    "term_eng": "Cross-examination (civil)",
+    "term_rus": "Перекрёстный допрос (гражданский)",
+    "category": "Civil Procedure",
+    "definition": "Testing a witness's evidence by questioning from the opposing party.",
+    "example": "Cross-examination revealed inconsistencies in the expert's report."
+  },
+  {
+    "term_eng": "Discharge of injunction",
+    "term_rus": "Отмена судебного запрета",
+    "category": "Civil Procedure",
+    "definition": "Termination of an injunction order.",
+    "example": "The injunction was discharged after the defendant gave undertakings."
+  },
+  {
+    "term_eng": "Equitable relief",
+    "term_rus": "Судебная защита в форме equity",
+    "category": "Civil Procedure",
+    "definition": "Remedies available in equity, such as injunctions and specific performance.",
+    "example": "The claimant sought equitable relief in the form of an account of profits."
+  },
+  {
+    "term_eng": "Final order",
+    "term_rus": "Окончательное определение суда",
+    "category": "Civil Procedure",
+    "definition": "A court order fully resolving the matter before it.",
+    "example": "The final order recorded the agreed settlement and dismissed all claims."
+  },
+  {
+    "term_eng": "Fixed costs",
+    "term_rus": "Фиксированные судебные расходы",
+    "category": "Civil Procedure",
+    "definition": "Prescribed costs recoverable under certain procedures.",
+    "example": "Fixed costs applied to the road traffic claim under the portal procedure."
+  },
+  {
+    "term_eng": "Hearing",
+    "term_rus": "Судебное заседание",
+    "category": "Civil Procedure",
+    "definition": "A session before a court at which arguments and evidence are presented.",
+    "example": "The hearing was listed for two hours before a master."
+  },
+  {
+    "term_eng": "Notice of appeal",
+    "term_rus": "Уведомление об апелляции",
+    "category": "Civil Procedure",
+    "definition": "The document formally lodging an appeal.",
+    "example": "A notice of appeal was filed within 21 days of the judgment."
+  },
+  {
+    "term_eng": "Notice to admit facts",
+    "term_rus": "Требование о признании фактов",
+    "category": "Civil Procedure",
+    "definition": "A formal request for the other party to admit specified facts.",
+    "example": "A notice to admit facts was served to narrow the issues for trial."
+  },
+  {
+    "term_eng": "Permission to appeal",
+    "term_rus": "Разрешение на апелляцию",
+    "category": "Civil Procedure",
+    "definition": "Leave required before certain appeals can be pursued.",
+    "example": "Permission to appeal was refused by the trial judge."
+  },
+  {
+    "term_eng": "Pleading in the alternative",
+    "term_rus": "Альтернативное требование",
+    "category": "Civil Procedure",
+    "definition": "Advancing inconsistent claims in the alternative.",
+    "example": "The claimant pleaded in the alternative: deceit and negligent misstatement."
+  },
+  {
+    "term_eng": "Procedural fairness",
+    "term_rus": "Процессуальная справедливость",
+    "category": "Civil Procedure",
+    "definition": "The requirement that legal proceedings be conducted fairly.",
+    "example": "Procedural fairness required the defendant to be given adequate time to respond."
+  },
+  {
+    "term_eng": "Quantum of damages",
+    "term_rus": "Размер убытков",
+    "category": "Civil Procedure",
+    "definition": "The amount of money awarded as compensation.",
+    "example": "The quantum of damages was assessed at £250,000."
+  },
+  {
+    "term_eng": "Statement of case",
+    "term_rus": "Изложение позиции стороны",
+    "category": "Civil Procedure",
+    "definition": "The formal written statements setting out each party's case.",
+    "example": "The statement of case must be verified by a statement of truth."
+  },
+  {
+    "term_eng": "Stay of execution",
+    "term_rus": "Приостановление исполнения решения",
+    "category": "Civil Procedure",
+    "definition": "A temporary halt to the enforcement of a judgment.",
+    "example": "A stay of execution was granted pending the appeal."
+  },
+  {
+    "term_eng": "Summary assessment of costs",
+    "term_rus": "Упрощённое определение судебных расходов",
+    "category": "Civil Procedure",
+    "definition": "Immediate assessment of costs by the judge at the end of a hearing.",
+    "example": "Summary assessment of costs resulted in an award of £8,000."
+  },
+  {
+    "term_eng": "Variation of order",
+    "term_rus": "Изменение судебного определения",
+    "category": "Civil Procedure",
+    "definition": "Modification of an existing court order.",
+    "example": "A variation of order was sought to extend the disclosure deadline."
+  },
+  {
+    "term_eng": "Belligerent",
+    "term_rus": "Воюющая сторона",
+    "category": "International Law",
+    "definition": "A state or party engaged in armed conflict.",
+    "example": "Belligerents must comply with international humanitarian law."
+  },
+  {
+    "term_eng": "Consular protection",
+    "term_rus": "Консульская защита",
+    "category": "International Law",
+    "definition": "Assistance provided by consulates to nationals abroad.",
+    "example": "Consular protection was requested for the detained citizen."
+  },
+  {
+    "term_eng": "Diplomatic channel",
+    "term_rus": "Дипломатический канал",
+    "category": "International Law",
+    "definition": "The formal route for communications between governments.",
+    "example": "The protest was lodged through diplomatic channels."
+  },
+  {
+    "term_eng": "General principles of law",
+    "term_rus": "Общие принципы права",
+    "category": "International Law",
+    "definition": "Principles recognised by civilised nations forming a source of international law.",
+    "example": "Good faith is a general principle of law applied by international tribunals."
+  },
+  {
+    "term_eng": "International legal personality",
+    "term_rus": "Международная правосубъектность",
+    "category": "International Law",
+    "definition": "Capacity to hold rights and duties under international law.",
+    "example": "The UN has international legal personality."
+  },
+  {
+    "term_eng": "National security",
+    "term_rus": "Национальная безопасность",
+    "category": "International Law",
+    "definition": "A state's interest in defending its territory and institutions.",
+    "example": "National security exceptions allow states to derogate from trade obligations."
+  },
+  {
+    "term_eng": "Nuclear non-proliferation",
+    "term_rus": "Ядерное нераспространение",
+    "category": "International Law",
+    "definition": "International efforts to prevent the spread of nuclear weapons.",
+    "example": "The NPT is the cornerstone of the nuclear non-proliferation regime."
+  },
+  {
+    "term_eng": "Occupation",
+    "term_rus": "Оккупация территории",
+    "category": "International Law",
+    "definition": "The exercise of effective control over territory by a foreign state.",
+    "example": "International humanitarian law governs the administration of occupied territory."
+  },
+  {
+    "term_eng": "Opinio juris sive necessitatis",
+    "term_rus": "Убеждение в правовой обязательности",
+    "category": "International Law",
+    "definition": "The belief that a practice is legally obligatory.",
+    "example": "Opinio juris sive necessitatis was evidenced by consistent state declarations."
+  },
+  {
+    "term_eng": "Peacekeeping",
+    "term_rus": "Миротворческая деятельность",
+    "category": "International Law",
+    "definition": "UN-authorised military and civilian operations to maintain peace.",
+    "example": "Peacekeeping forces were deployed under Security Council mandate."
+  },
+  {
+    "term_eng": "Peremptory norm (second)",
+    "term_rus": "Норма jus cogens (неотступная)",
+    "category": "International Law",
+    "definition": "A fundamental principle of international law allowing no derogation.",
+    "example": "The prohibition on torture is a peremptory norm."
+  },
+  {
+    "term_eng": "Reprisals",
+    "term_rus": "Репрессалии",
+    "category": "International Law",
+    "definition": "Retaliatory acts otherwise illegal but justified by a prior breach.",
+    "example": "Armed reprisals are prohibited under modern international law."
+  },
+  {
+    "term_eng": "Self-help",
+    "term_rus": "Самопомощь",
+    "category": "International Law",
+    "definition": "Unilateral measures taken by a state to remedy a wrong without third-party involvement.",
+    "example": "Self-help in the form of retorsion was the only available remedy."
+  },
+  {
+    "term_eng": "Soft power",
+    "term_rus": "Мягкая сила",
+    "category": "International Law",
+    "definition": "Influence achieved through diplomacy and attraction rather than coercion.",
+    "example": "Cultural diplomacy is a form of soft power."
+  },
+  {
+    "term_eng": "Sovereign equality",
+    "term_rus": "Суверенное равенство государств",
+    "category": "International Law",
+    "definition": "The principle that all states are equal under international law.",
+    "example": "Sovereign equality is enshrined in Article 2 of the UN Charter."
+  },
+  {
+    "term_eng": "State practice",
+    "term_rus": "Государственная практика",
+    "category": "International Law",
+    "definition": "Consistent behaviour of states forming the basis of customary law.",
+    "example": "State practice and opinio juris together establish customary norms."
+  },
+  {
+    "term_eng": "Uti possidetis",
+    "term_rus": "Нерушимость границ",
+    "category": "International Law",
+    "definition": "The principle that boundaries existing at independence should be maintained.",
+    "example": "Uti possidetis juris was applied to fix the new state's borders."
+  },
+  {
+    "term_eng": "Consensus ad idem",
+    "term_rus": "Согласие по одному и тому же",
+    "category": "Latin Terms",
+    "definition": "A meeting of minds; mutual agreement on the same terms.",
+    "example": "There was no consensus ad idem as the parties intended different meanings."
+  },
+  {
+    "term_eng": "Ex abundanti cautela",
+    "term_rus": "Из чрезмерной осторожности",
+    "category": "Latin Terms",
+    "definition": "Out of an abundance of caution.",
+    "example": "The notice was served ex abundanti cautela."
+  },
+  {
+    "term_eng": "Generalia specialibus non derogant",
+    "term_rus": "Общее не отменяет специальное",
+    "category": "Latin Terms",
+    "definition": "General provisions do not derogate from special ones.",
+    "example": "The specific clause prevailed under generalia specialibus non derogant."
+  },
+  {
+    "term_eng": "In bonis",
+    "term_rus": "В составе имущества",
+    "category": "Latin Terms",
+    "definition": "In the goods or estate of a person.",
+    "example": "The assets remained in bonis pending administration."
+  },
+  {
+    "term_eng": "In futuro",
+    "term_rus": "В будущем",
+    "category": "Latin Terms",
+    "definition": "In the future; referring to a future right or obligation.",
+    "example": "The right in futuro was contingent on surviving to a specified date."
+  },
+  {
+    "term_eng": "In terrorem",
+    "term_rus": "В целях устрашения",
+    "category": "Latin Terms",
+    "definition": "By way of threat; used of clauses designed to deter breach.",
+    "example": "The clause operated in terrorem rather than as genuine liquidated damages."
+  },
+  {
+    "term_eng": "Jus tertii",
+    "term_rus": "Право третьего лица",
+    "category": "Latin Terms",
+    "definition": "The right of a third party; a defence asserting a third party's superior title.",
+    "example": "The defendant could not rely on jus tertii against the possessor."
+  },
+  {
+    "term_eng": "Lex loci delicti",
+    "term_rus": "Закон места совершения деликта",
+    "category": "Latin Terms",
+    "definition": "The law of the place where a tort was committed.",
+    "example": "Lex loci delicti determined the applicable law for the personal injury claim."
+  },
+  {
+    "term_eng": "Mala fides",
+    "term_rus": "Недобросовестность",
+    "category": "Latin Terms",
+    "definition": "Bad faith; dishonest intention or knowledge.",
+    "example": "Mala fides on the part of the buyer defeated the claim of good faith purchase."
+  },
+  {
+    "term_eng": "Mora",
+    "term_rus": "Просрочка",
+    "category": "Latin Terms",
+    "definition": "Delay; in civil law, default by a debtor in performing an obligation.",
+    "example": "The debtor was in mora and interest began to run."
+  },
+  {
+    "term_eng": "Nemo tenetur seipsum accusare",
+    "term_rus": "Никто не обязан обвинять себя",
+    "category": "Latin Terms",
+    "definition": "No one is obliged to incriminate themselves.",
+    "example": "Nemo tenetur seipsum accusare underpins the right to silence."
+  },
+  {
+    "term_eng": "Non bis in idem",
+    "term_rus": "Нельзя судить дважды за одно преступление",
+    "category": "Latin Terms",
+    "definition": "Not twice for the same; the prohibition on double jeopardy.",
+    "example": "Non bis in idem prevented a second prosecution for the same offence."
+  },
+  {
+    "term_eng": "Omnia praesumuntur",
+    "term_rus": "Всё предполагается действительным",
+    "category": "Latin Terms",
+    "definition": "Everything is presumed to have been done correctly until the contrary is shown.",
+    "example": "Omnia praesumuntur rite esse acta applied to the board resolution."
+  },
+  {
+    "term_eng": "Parens patriae",
+    "term_rus": "Отец отечества (государство как опекун)",
+    "category": "Latin Terms",
+    "definition": "The state's right to intervene to protect those who cannot protect themselves.",
+    "example": "The court acted under parens patriae jurisdiction for the incompetent adult."
+  },
+  {
+    "term_eng": "Pater familias",
+    "term_rus": "Отец семейства (стандарт осторожного человека)",
+    "category": "Latin Terms",
+    "definition": "The reasonable person standard derived from Roman law.",
+    "example": "The standard of care was that of a reasonable pater familias."
+  },
+  {
+    "term_eng": "Praeter legem",
+    "term_rus": "Помимо закона",
+    "category": "Latin Terms",
+    "definition": "Beyond the law; filling gaps not covered by statute.",
+    "example": "The court decided praeter legem, drawing on equitable principles."
+  },
+  {
+    "term_eng": "Qui facit per alium facit per se",
+    "term_rus": "Кто действует через другого, действует сам",
+    "category": "Latin Terms",
+    "definition": "One who acts through another acts for themselves.",
+    "example": "Under qui facit per alium facit per se, the principal was liable for the agent's acts."
+  },
+  {
+    "term_eng": "Semble",
+    "term_rus": "По всей видимости",
+    "category": "Latin Terms",
+    "definition": "It seems; used in law reports to indicate an uncertain proposition.",
+    "example": "Semble, the court would have reached the same conclusion on the alternative argument."
+  },
+  {
+    "term_eng": "Sic",
+    "term_rus": "Именно так (с ошибкой оригинала)",
+    "category": "Latin Terms",
+    "definition": "Thus; used in quotations to indicate an error in the original.",
+    "example": "The contract read 'teh [sic] company'."
+  },
+  {
+    "term_eng": "Terminus ad quem",
+    "term_rus": "Крайний срок",
+    "category": "Latin Terms",
+    "definition": "The final limiting date or point.",
+    "example": "The terminus ad quem for filing was 30 April."
+  },
+  {
+    "term_eng": "Terminus a quo",
+    "term_rus": "Начальная дата",
+    "category": "Latin Terms",
+    "definition": "The starting point of a period.",
+    "example": "The terminus a quo for the limitation period was the date of breach."
+  },
+  {
+    "term_eng": "Vigilantibus non dormientibus jura subveniunt",
+    "term_rus": "Закон помогает бдительным, а не спящим",
+    "category": "Latin Terms",
+    "definition": "The law assists the vigilant, not those who sleep on their rights.",
+    "example": "Vigilantibus non dormientibus jura subveniunt: the delay in bringing the claim was fatal."
+  },
+  {
+    "term_eng": "Boundary dispute",
+    "term_rus": "Пограничный спор",
+    "category": "Property Law",
+    "definition": "A disagreement between neighbouring landowners about the boundary line.",
+    "example": "The boundary dispute was resolved by a surveyor mapping the original deeds."
+  },
+  {
+    "term_eng": "Caretaker",
+    "term_rus": "Управляющий (смотритель)",
+    "category": "Property Law",
+    "definition": "A person who manages and maintains a property.",
+    "example": "The caretaker was responsible for the security of the building."
+  },
+  {
+    "term_eng": "Covenant of title",
+    "term_rus": "Гарантия права собственности",
+    "category": "Property Law",
+    "definition": "A seller's promise that they have the right to transfer the property.",
+    "example": "The covenant of title was breached when a prior lien was discovered."
+  },
+  {
+    "term_eng": "Defeasible title",
+    "term_rus": "Оспоримое право собственности",
+    "category": "Property Law",
+    "definition": "Title that may be defeated upon occurrence of a specified event.",
+    "example": "The estate was defeasible title that would revert if the condition was broken."
+  },
+  {
+    "term_eng": "Dominant tenement",
+    "term_rus": "Господствующий участок",
+    "category": "Property Law",
+    "definition": "The land that benefits from an easement over neighbouring land.",
+    "example": "The dominant tenement enjoyed a right of way over the servient land."
+  },
+  {
+    "term_eng": "Flying freehold",
+    "term_rus": "Часть здания в фрихолде другого лица",
+    "category": "Property Law",
+    "definition": "A freehold that extends over or under another freehold.",
+    "example": "The flying freehold complicated the mortgage application."
+  },
+  {
+    "term_eng": "Grazing rights",
+    "term_rus": "Право выпаса скота",
+    "category": "Property Law",
+    "definition": "Rights to use another's land for grazing animals.",
+    "example": "Grazing rights were granted to the farmer over the adjacent field."
+  },
+  {
+    "term_eng": "Headlease",
+    "term_rus": "Основной договор аренды",
+    "category": "Property Law",
+    "definition": "The principal lease from which sub-leases are derived.",
+    "example": "The headlease between the freeholder and head tenant ran for 125 years."
+  },
+  {
+    "term_eng": "Landlord's consent",
+    "term_rus": "Согласие арендодателя",
+    "category": "Property Law",
+    "definition": "Permission required from the landlord for certain tenant actions.",
+    "example": "Landlord's consent was required before the tenant could make structural alterations."
+  },
+  {
+    "term_eng": "Merger of title",
+    "term_rus": "Слияние правовых титулов",
+    "category": "Property Law",
+    "definition": "The absorption of a lesser estate into a greater one when held by the same person.",
+    "example": "Merger of title extinguished the lease when the tenant acquired the freehold."
+  },
+  {
+    "term_eng": "Mortgage discharge",
+    "term_rus": "Погашение ипотеки",
+    "category": "Property Law",
+    "definition": "Release of a mortgage on repayment of the secured loan.",
+    "example": "The mortgage discharge was registered at the Land Registry on final repayment."
+  },
+  {
+    "term_eng": "Option to purchase",
+    "term_rus": "Право на покупку (опцион)",
+    "category": "Property Law",
+    "definition": "A contractual right to buy property at a fixed price within a set period.",
+    "example": "The tenant exercised the option to purchase before the deadline."
+  },
+  {
+    "term_eng": "Planning obligation",
+    "term_rus": "Градостроительное обязательство",
+    "category": "Property Law",
+    "definition": "A legally binding commitment given by a developer to secure planning permission.",
+    "example": "The planning obligation required provision of affordable housing."
+  },
+  {
+    "term_eng": "Servient tenement",
+    "term_rus": "Служащий участок",
+    "category": "Property Law",
+    "definition": "Land subject to an easement for the benefit of a dominant tenement.",
+    "example": "The servient tenement bore the burden of the right of way."
+  },
+  {
+    "term_eng": "Statutory tenancy",
+    "term_rus": "Аренда, основанная на законе",
+    "category": "Property Law",
+    "definition": "A tenancy arising by operation of statute after a contractual tenancy expires.",
+    "example": "On expiry of the lease the business tenant held over under a statutory tenancy."
   }
 ]
