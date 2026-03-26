@@ -116,7 +116,7 @@ class FlashcardsWidget(QWidget):
         self.term_label.setObjectName("termLabel")
         self.term_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.term_label.setWordWrap(True)
-        term_font = QFont("Playfair Display", 22)
+        term_font = QFont("Georgia", 22)
         term_font.setBold(True)
         self.term_label.setFont(term_font)
         card_layout.addWidget(self.term_label)
