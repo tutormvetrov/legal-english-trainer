@@ -1,19 +1,34 @@
 import sys
 import os
 
-# Ensure data directory path is resolved relative to the executable or source
+# Resolve paths for both normal run and PyInstaller bundle
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "..", "data")
+
+if getattr(sys, "frozen", False):
+    # Running inside a PyInstaller bundle
+    _ROOT = sys._MEIPASS
+else:
+    # Running from source: src/ → parent is project root
+    _ROOT = os.path.join(BASE_DIR, "..")
+
+DATA_DIR = os.path.join(_ROOT, "data")
 DB_PATH = os.path.join(DATA_DIR, "legal_english.db")
-TERMS_JSON = os.path.join(DATA_DIR, "terms.json")
+TERMS_JSON = os.path.join(_ROOT, "data", "terms.json")
 
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QPalette, QColor
 from PyQt6.QtCore import Qt
 
-from .database.db_manager import DBManager
-from .algorithms.spaced_repetition import SpacedRepetitionScheduler
-from .gui.main_window import MainWindow
+# Support both `python -m src.main` and direct `python src/main.py` / PyInstaller
+try:
+    from .database.db_manager import DBManager
+    from .algorithms.spaced_repetition import SpacedRepetitionScheduler
+    from .gui.main_window import MainWindow
+except ImportError:
+    sys.path.insert(0, BASE_DIR)
+    from database.db_manager import DBManager
+    from algorithms.spaced_repetition import SpacedRepetitionScheduler
+    from gui.main_window import MainWindow
 
 
 DARK_STYLESHEET = """

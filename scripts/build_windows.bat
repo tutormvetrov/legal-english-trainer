@@ -9,12 +9,12 @@ if exist assets\legal.ico (
     pyinstaller --onefile --windowed --icon=assets\legal.ico --name "LegalEnglishTrainer" ^
         --add-data "data\terms.json;data" ^
         --add-data "src\database\schema.sql;src\database" ^
-        src\main.py
+        run.py
 ) else (
     pyinstaller --onefile --windowed --name "LegalEnglishTrainer" ^
         --add-data "data\terms.json;data" ^
         --add-data "src\database\schema.sql;src\database" ^
-        src\main.py
+        run.py
 )
 
 echo.
