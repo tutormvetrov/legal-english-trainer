@@ -3253,5 +3253,859 @@
     "category": "Civil Procedure",
     "definition": "Liability of an employer for a tort committed by an employee in the course of employment.",
     "example": "The employer was held vicariously liable for the employee's negligence."
+  },
+  {
+    "term_eng": "Easement",
+    "term_rus": "Сервитут",
+    "category": "Property Law",
+    "definition": "A right to use another person's land for a specific purpose.",
+    "example": "The neighbours held an easement of way over the adjoining property."
+  },
+  {
+    "term_eng": "Fee simple",
+    "term_rus": "Полное право собственности",
+    "category": "Property Law",
+    "definition": "The most complete form of ownership of real property.",
+    "example": "She held the land in fee simple and could sell it freely."
+  },
+  {
+    "term_eng": "Lien",
+    "term_rus": "Обременение (право удержания)",
+    "category": "Property Law",
+    "definition": "A legal claim against property as security for a debt.",
+    "example": "The contractor placed a mechanic's lien on the building for unpaid work."
+  },
+  {
+    "term_eng": "Mortgage",
+    "term_rus": "Ипотека",
+    "category": "Property Law",
+    "definition": "A loan secured by real property, which can be sold if repayments are not made.",
+    "example": "The bank held a first-ranking mortgage over the commercial property."
+  },
+  {
+    "term_eng": "Foreclosure",
+    "term_rus": "Обращение взыскания на заложенное имущество",
+    "category": "Property Law",
+    "definition": "The legal process by which a lender takes ownership of mortgaged property on default.",
+    "example": "Foreclosure proceedings were initiated after three months of missed payments."
+  },
+  {
+    "term_eng": "Title",
+    "term_rus": "Правоустанавливающий документ / Право собственности",
+    "category": "Property Law",
+    "definition": "Legal ownership of property, or the document evidencing ownership.",
+    "example": "The buyer conducted a title search before completing the purchase."
+  },
+  {
+    "term_eng": "Deed",
+    "term_rus": "Документ (акт) о передаче права собственности",
+    "category": "Property Law",
+    "definition": "A signed legal document transferring ownership of real property.",
+    "example": "The deed was registered at the land registry on completion."
+  },
+  {
+    "term_eng": "Conveyance",
+    "term_rus": "Передача права собственности",
+    "category": "Property Law",
+    "definition": "The legal process of transferring property from seller to buyer.",
+    "example": "Conveyance was completed by exchange of contracts and registration."
+  },
+  {
+    "term_eng": "Leasehold",
+    "term_rus": "Право аренды (лизхолд)",
+    "category": "Property Law",
+    "definition": "A property interest allowing use of land for a fixed term.",
+    "example": "The flat was held on a 99-year leasehold."
+  },
+  {
+    "term_eng": "Freehold",
+    "term_rus": "Полное право собственности на землю",
+    "category": "Property Law",
+    "definition": "Permanent and absolute ownership of land.",
+    "example": "The freehold owner collected ground rent from the leaseholders."
+  },
+  {
+    "term_eng": "Lease",
+    "term_rus": "Договор аренды",
+    "category": "Property Law",
+    "definition": "A contract granting use of property for a specified period in exchange for rent.",
+    "example": "The 10-year lease included a break clause at year five."
+  },
+  {
+    "term_eng": "Landlord",
+    "term_rus": "Арендодатель",
+    "category": "Property Law",
+    "definition": "The owner of property who grants a lease to a tenant.",
+    "example": "The landlord was required to maintain the structure under the lease."
+  },
+  {
+    "term_eng": "Tenant",
+    "term_rus": "Арендатор",
+    "category": "Property Law",
+    "definition": "A person who holds property under a lease from a landlord.",
+    "example": "The tenant failed to pay three months' rent."
+  },
+  {
+    "term_eng": "Covenant to repair",
+    "term_rus": "Обязательство по ремонту",
+    "category": "Property Law",
+    "definition": "A lease obligation to maintain the property in good condition.",
+    "example": "The tenant breached the covenant to repair by leaving the roof in disrepair."
+  },
+  {
+    "term_eng": "Subletting",
+    "term_rus": "Субаренда",
+    "category": "Property Law",
+    "definition": "Leasing of property by a tenant to another person.",
+    "example": "Subletting was prohibited without the landlord's prior written consent."
+  },
+  {
+    "term_eng": "Assignment of lease",
+    "term_rus": "Переуступка права аренды",
+    "category": "Property Law",
+    "definition": "Transfer of a tenant's leasehold interest to a new tenant.",
+    "example": "The assignment of lease required landlord consent under the lease terms."
+  },
+  {
+    "term_eng": "Adverse possession",
+    "term_rus": "Приобретательная давность",
+    "category": "Property Law",
+    "definition": "Acquisition of title by openly possessing land without the owner's permission for the statutory period.",
+    "example": "The squatter claimed adverse possession after 12 years of occupation."
+  },
+  {
+    "term_eng": "Right of way",
+    "term_rus": "Право прохода/проезда",
+    "category": "Property Law",
+    "definition": "The legal right to pass over another person's land.",
+    "example": "A public right of way crossed the farmer's field."
+  },
+  {
+    "term_eng": "Covenant running with the land",
+    "term_rus": "Сервитутное обязательство",
+    "category": "Property Law",
+    "definition": "A promise that binds successors in title to the burdened land.",
+    "example": "The restrictive covenant ran with the land and bound future owners."
+  },
+  {
+    "term_eng": "Restrictive covenant",
+    "term_rus": "Ограничительный ковенант",
+    "category": "Property Law",
+    "definition": "A clause restricting the use of land for the benefit of neighbouring land.",
+    "example": "The restrictive covenant prevented construction of a commercial building."
+  },
+  {
+    "term_eng": "Encumbrance",
+    "term_rus": "Обременение имущества",
+    "category": "Property Law",
+    "definition": "A claim or liability attached to property, such as a mortgage or lien.",
+    "example": "The title search revealed an undisclosed encumbrance on the property."
+  },
+  {
+    "term_eng": "Conveyancing",
+    "term_rus": "Оформление сделок с недвижимостью",
+    "category": "Property Law",
+    "definition": "The legal work involved in transferring property ownership.",
+    "example": "The solicitor handled all conveyancing for the property purchase."
+  },
+  {
+    "term_eng": "Registry of title",
+    "term_rus": "Реестр прав на недвижимость",
+    "category": "Property Law",
+    "definition": "An official record of property ownership and interests.",
+    "example": "The charge was registered at the Land Registry."
+  },
+  {
+    "term_eng": "Vacant possession",
+    "term_rus": "Свободная передача имущества",
+    "category": "Property Law",
+    "definition": "Transfer of property free from occupiers and their belongings.",
+    "example": "Completion was conditional on the seller providing vacant possession."
+  },
+  {
+    "term_eng": "Adverse title",
+    "term_rus": "Конкурирующее право собственности",
+    "category": "Property Law",
+    "definition": "A claim to property that conflicts with the current registered owner's title.",
+    "example": "The adverse title claim was resolved by the court in favour of the registered owner."
+  },
+  {
+    "term_eng": "Ground rent",
+    "term_rus": "Земельная рента",
+    "category": "Property Law",
+    "definition": "A periodic payment made by a leaseholder to the freeholder.",
+    "example": "Ground rent of £200 per year was payable under the terms of the long lease."
+  },
+  {
+    "term_eng": "Service charge",
+    "term_rus": "Плата за обслуживание",
+    "category": "Property Law",
+    "definition": "Charges payable by tenants for the cost of maintaining common parts.",
+    "example": "The service charge covered cleaning, insurance and repairs to the building."
+  },
+  {
+    "term_eng": "Compulsory purchase",
+    "term_rus": "Принудительный выкуп (экспроприация)",
+    "category": "Property Law",
+    "definition": "Acquisition of private land by a public authority without the owner's consent.",
+    "example": "Compulsory purchase orders were issued for land needed for the new railway line."
+  },
+  {
+    "term_eng": "Eminent domain",
+    "term_rus": "Право государства на изъятие имущества",
+    "category": "Property Law",
+    "definition": "The power of the state to take private property for public use with compensation.",
+    "example": "The highway was built using land acquired through eminent domain."
+  },
+  {
+    "term_eng": "Planning permission",
+    "term_rus": "Разрешение на строительство",
+    "category": "Property Law",
+    "definition": "Official approval required before building or changing the use of land.",
+    "example": "Planning permission was refused for the proposed housing development."
+  },
+  {
+    "term_eng": "Zoning",
+    "term_rus": "Зонирование",
+    "category": "Property Law",
+    "definition": "Laws dividing land into zones for different types of use.",
+    "example": "The land was rezoned from residential to commercial use."
+  },
+  {
+    "term_eng": "Riparian rights",
+    "term_rus": "Права прибрежных собственников",
+    "category": "Property Law",
+    "definition": "Rights of land owners adjacent to rivers or streams.",
+    "example": "Riparian rights entitled the owner to use water from the adjacent stream."
+  },
+  {
+    "term_eng": "Chattel",
+    "term_rus": "Движимое имущество",
+    "category": "Property Law",
+    "definition": "Personal movable property, as distinct from real property.",
+    "example": "The chattel mortgage covered the machinery and equipment."
+  },
+  {
+    "term_eng": "Real property",
+    "term_rus": "Недвижимое имущество",
+    "category": "Property Law",
+    "definition": "Land and anything permanently attached to it.",
+    "example": "Real property includes buildings and fixtures."
+  },
+  {
+    "term_eng": "Personal property",
+    "term_rus": "Личное имущество",
+    "category": "Property Law",
+    "definition": "Movable assets that are not real property.",
+    "example": "Personal property such as vehicles and jewellery is excluded from the real estate plan."
+  },
+  {
+    "term_eng": "Fixture",
+    "term_rus": "Улучшение (неотделимое имущество)",
+    "category": "Property Law",
+    "definition": "An item attached to land or a building that becomes part of the real property.",
+    "example": "Built-in shelving was treated as a fixture and passed with the sale."
+  },
+  {
+    "term_eng": "Tenancy in common",
+    "term_rus": "Долевая собственность",
+    "category": "Property Law",
+    "definition": "Co-ownership of property where each owner holds a distinct share that can be transferred.",
+    "example": "The siblings held the property as tenants in common in equal shares."
+  },
+  {
+    "term_eng": "Joint tenancy",
+    "term_rus": "Совместная собственность с правом наследования",
+    "category": "Property Law",
+    "definition": "Co-ownership where survivors inherit the share of a deceased co-owner.",
+    "example": "The couple held the family home as joint tenants."
+  },
+  {
+    "term_eng": "Perpetuity",
+    "term_rus": "Бессрочность",
+    "category": "Property Law",
+    "definition": "A condition lasting or intended to last forever.",
+    "example": "The rule against perpetuities limits restrictions on property to a fixed period."
+  },
+  {
+    "term_eng": "Usufruct",
+    "term_rus": "Узуфрукт",
+    "category": "Property Law",
+    "definition": "The right to use and enjoy another's property without impairing its substance.",
+    "example": "She was granted a usufruct over the estate for her lifetime."
+  },
+  {
+    "term_eng": "Ab initio",
+    "term_rus": "С самого начала",
+    "category": "Latin Terms",
+    "definition": "From the beginning.",
+    "example": "The contract was void ab initio due to the fraudulent misrepresentation."
+  },
+  {
+    "term_eng": "Ad hoc",
+    "term_rus": "Для данного случая",
+    "category": "Latin Terms",
+    "definition": "Formed or done for a particular purpose only.",
+    "example": "An ad hoc committee was formed to investigate the allegations."
+  },
+  {
+    "term_eng": "Ad litem",
+    "term_rus": "Для данного дела",
+    "category": "Latin Terms",
+    "definition": "For the purpose of the lawsuit; a guardian ad litem represents an incapacitated party.",
+    "example": "The court appointed a guardian ad litem for the minor plaintiff."
+  },
+  {
+    "term_eng": "Amicus curiae",
+    "term_rus": "Друг суда",
+    "category": "Latin Terms",
+    "definition": "A person or organisation that is not a party but assists the court on a point of law.",
+    "example": "A human rights organisation filed an amicus curiae brief."
+  },
+  {
+    "term_eng": "Bona fide",
+    "term_rus": "Добросовестный",
+    "category": "Latin Terms",
+    "definition": "In good faith; genuine, without fraud or deception.",
+    "example": "The purchaser was a bona fide buyer with no knowledge of the defect in title."
+  },
+  {
+    "term_eng": "Causa mortis",
+    "term_rus": "В предвидении смерти",
+    "category": "Latin Terms",
+    "definition": "In contemplation of death; a gift causa mortis is made in anticipation of dying.",
+    "example": "The gift causa mortis was revocable if the donor recovered."
+  },
+  {
+    "term_eng": "Caveat emptor",
+    "term_rus": "Покупатель берёт на себя риск",
+    "category": "Latin Terms",
+    "definition": "Let the buyer beware; the buyer is responsible for checking quality before purchase.",
+    "example": "Under caveat emptor, the buyer had no redress for the hidden defects."
+  },
+  {
+    "term_eng": "Corpus delicti",
+    "term_rus": "Состав преступления",
+    "category": "Latin Terms",
+    "definition": "The body of the crime; the facts proving that a crime has been committed.",
+    "example": "No conviction can follow without establishing the corpus delicti."
+  },
+  {
+    "term_eng": "Culpa lata",
+    "term_rus": "Грубая небрежность",
+    "category": "Latin Terms",
+    "definition": "Gross negligence.",
+    "example": "Culpa lata was found when the engineer ignored obvious safety warnings."
+  },
+  {
+    "term_eng": "De facto",
+    "term_rus": "Фактически",
+    "category": "Latin Terms",
+    "definition": "In fact; existing in practice though not formally established.",
+    "example": "She was the de facto head of the organisation despite having no official title."
+  },
+  {
+    "term_eng": "De jure",
+    "term_rus": "По праву (юридически)",
+    "category": "Latin Terms",
+    "definition": "By right; concerning what the law provides.",
+    "example": "The de jure government was recognised internationally."
+  },
+  {
+    "term_eng": "De minimis",
+    "term_rus": "Незначительный (де минимис)",
+    "category": "Latin Terms",
+    "definition": "Too trivial to merit legal consideration.",
+    "example": "The court dismissed the claim as de minimis."
+  },
+  {
+    "term_eng": "Dictum",
+    "term_rus": "Попутное замечание суда",
+    "category": "Latin Terms",
+    "definition": "A statement in a judgment that is not essential to the decision.",
+    "example": "The judge's comment was obiter dictum and not binding."
+  },
+  {
+    "term_eng": "Duces tecum",
+    "term_rus": "С документами (дюсес текум)",
+    "category": "Latin Terms",
+    "definition": "Bring with you; a subpoena requiring a witness to produce documents.",
+    "example": "A subpoena duces tecum was issued for the company's financial records."
+  },
+  {
+    "term_eng": "Ejusdem generis",
+    "term_rus": "Того же рода",
+    "category": "Latin Terms",
+    "definition": "A rule of interpretation limiting general words to the same class as specific preceding terms.",
+    "example": "Ejusdem generis limited 'other vehicles' to road transport."
+  },
+  {
+    "term_eng": "Ex ante",
+    "term_rus": "Заранее (до наступления события)",
+    "category": "Latin Terms",
+    "definition": "Before the event; based on predictions rather than actual outcomes.",
+    "example": "The ex ante assessment of risk informed the contract terms."
+  },
+  {
+    "term_eng": "Ex post",
+    "term_rus": "После наступления события",
+    "category": "Latin Terms",
+    "definition": "After the fact; based on actual outcomes.",
+    "example": "The ex post analysis confirmed the loss was foreseeable."
+  },
+  {
+    "term_eng": "Expressio unius",
+    "term_rus": "Включение одного исключает другое",
+    "category": "Latin Terms",
+    "definition": "The expression of one thing implies the exclusion of others.",
+    "example": "Expressio unius showed the list was exhaustive."
+  },
+  {
+    "term_eng": "Functus officio",
+    "term_rus": "Исчерпавший полномочия",
+    "category": "Latin Terms",
+    "definition": "Having performed the duties of the office; no longer having power to act.",
+    "example": "The arbitrator was functus officio once the final award was issued."
+  },
+  {
+    "term_eng": "Guardian ad litem",
+    "term_rus": "Опекун для целей процесса",
+    "category": "Latin Terms",
+    "definition": "A person appointed to represent an incapacitated party in litigation.",
+    "example": "The court appointed a guardian ad litem for the child in the custody dispute."
+  },
+  {
+    "term_eng": "Id est (i.e.)",
+    "term_rus": "То есть",
+    "category": "Latin Terms",
+    "definition": "That is; used to introduce a clarifying explanation.",
+    "example": "The term 'premises' means the property, i.e., the building and grounds."
+  },
+  {
+    "term_eng": "In camera",
+    "term_rus": "В закрытом заседании",
+    "category": "Latin Terms",
+    "definition": "In private; a hearing held in the judge's chamber or excluding the public.",
+    "example": "Sensitive evidence was heard in camera to protect the witness."
+  },
+  {
+    "term_eng": "In limine",
+    "term_rus": "На пороге (предварительно)",
+    "category": "Latin Terms",
+    "definition": "At the threshold; a motion in limine seeks to exclude evidence before trial.",
+    "example": "A motion in limine excluded the prejudicial evidence."
+  },
+  {
+    "term_eng": "In pari delicto",
+    "term_rus": "В равной степени виновен",
+    "category": "Latin Terms",
+    "definition": "In equal fault; a doctrine denying relief to parties equally responsible for wrongdoing.",
+    "example": "The court applied in pari delicto and refused the claimant's restitution claim."
+  },
+  {
+    "term_eng": "In personam",
+    "term_rus": "Против лица",
+    "category": "Latin Terms",
+    "definition": "An action directed at a specific person.",
+    "example": "The court had in personam jurisdiction over the defendant."
+  },
+  {
+    "term_eng": "In rem",
+    "term_rus": "Против вещи (права на имущество)",
+    "category": "Latin Terms",
+    "definition": "An action directed at property rather than a person.",
+    "example": "An in rem action was brought to establish title to the vessel."
+  },
+  {
+    "term_eng": "In situ",
+    "term_rus": "На месте",
+    "category": "Latin Terms",
+    "definition": "In its original place.",
+    "example": "The goods were inspected in situ at the warehouse."
+  },
+  {
+    "term_eng": "Inter alia",
+    "term_rus": "В том числе; среди прочего",
+    "category": "Latin Terms",
+    "definition": "Among other things.",
+    "example": "The report covered, inter alia, financial risk and corporate governance."
+  },
+  {
+    "term_eng": "Inter vivos",
+    "term_rus": "При жизни",
+    "category": "Latin Terms",
+    "definition": "Between the living; a gift or transfer made during one's lifetime.",
+    "example": "The property was transferred by an inter vivos gift to avoid probate."
+  },
+  {
+    "term_eng": "Ipso facto",
+    "term_rus": "В силу самого факта",
+    "category": "Latin Terms",
+    "definition": "By the fact itself; by the mere fact.",
+    "example": "A material breach ipso facto entitled the innocent party to terminate."
+  },
+  {
+    "term_eng": "Ius soli",
+    "term_rus": "Право почвы",
+    "category": "Latin Terms",
+    "definition": "The right of citizenship based on place of birth.",
+    "example": "Under ius soli, any person born on the territory is a citizen."
+  },
+  {
+    "term_eng": "Ius sanguinis",
+    "term_rus": "Право крови",
+    "category": "Latin Terms",
+    "definition": "The right of citizenship based on descent.",
+    "example": "Ius sanguinis allows children of citizens to acquire nationality."
+  },
+  {
+    "term_eng": "Locus delicti",
+    "term_rus": "Место совершения правонарушения",
+    "category": "Latin Terms",
+    "definition": "The place where the offence or tort was committed.",
+    "example": "The locus delicti rule pointed to the law of the state where the injury occurred."
+  },
+  {
+    "term_eng": "Mutatis mutandis",
+    "term_rus": "С соответствующими изменениями",
+    "category": "Latin Terms",
+    "definition": "With the necessary changes made; by analogy.",
+    "example": "The provisions apply mutatis mutandis to the subsidiaries."
+  },
+  {
+    "term_eng": "Nemo dat quod non habet",
+    "term_rus": "Нельзя передать больше прав, чем имеешь",
+    "category": "Latin Terms",
+    "definition": "One cannot give what one does not have.",
+    "example": "Under nemo dat, the thief could not pass good title to the buyer."
+  },
+  {
+    "term_eng": "Non est factum",
+    "term_rus": "Это не мой документ",
+    "category": "Latin Terms",
+    "definition": "It is not my deed; a defence that a person did not understand the document signed.",
+    "example": "Non est factum was raised by the elderly claimant who was misled about what she signed."
+  },
+  {
+    "term_eng": "Noscitur a sociis",
+    "term_rus": "Слово познаётся по соседям",
+    "category": "Latin Terms",
+    "definition": "A word is known by its associates; ambiguous terms are interpreted by surrounding words.",
+    "example": "Noscitur a sociis showed 'charge' meant a financial obligation in context."
+  },
+  {
+    "term_eng": "Obiter dictum",
+    "term_rus": "Попутное суждение",
+    "category": "Latin Terms",
+    "definition": "A judicial comment not essential to the decision and therefore not binding.",
+    "example": "The judge's remark about the policy was obiter dictum."
+  },
+  {
+    "term_eng": "Per curiam",
+    "term_rus": "По мнению суда",
+    "category": "Latin Terms",
+    "definition": "By the court; a ruling issued in the name of the entire court.",
+    "example": "The per curiam opinion was unsigned and represented the court's collective view."
+  },
+  {
+    "term_eng": "Per se",
+    "term_rus": "Само по себе",
+    "category": "Latin Terms",
+    "definition": "By itself; inherently.",
+    "example": "Price-fixing is a per se violation of competition law."
+  },
+  {
+    "term_eng": "Post hoc",
+    "term_rus": "После этого (ошибка причинности)",
+    "category": "Latin Terms",
+    "definition": "After this; the fallacy of assuming that because one event followed another it was caused by it.",
+    "example": "The court rejected the post hoc reasoning that the loss was caused by the defendant's act."
+  },
+  {
+    "term_eng": "Pro bono",
+    "term_rus": "Безвозмездно (про боно)",
+    "category": "Latin Terms",
+    "definition": "For the public good; legal work done without charge.",
+    "example": "The law firm took the refugee case pro bono."
+  },
+  {
+    "term_eng": "Pro forma",
+    "term_rus": "Для вида / типовой",
+    "category": "Latin Terms",
+    "definition": "As a formality; provided as a standard example.",
+    "example": "The pro forma invoice was used to estimate customs duties."
+  },
+  {
+    "term_eng": "Pro rata",
+    "term_rus": "Пропорционально",
+    "category": "Latin Terms",
+    "definition": "In proportion.",
+    "example": "Dividends are paid pro rata to each shareholder's holdings."
+  },
+  {
+    "term_eng": "Pro tempore",
+    "term_rus": "Временно",
+    "category": "Latin Terms",
+    "definition": "For the time being; temporarily.",
+    "example": "The deputy served pro tempore during the president's absence."
+  },
+  {
+    "term_eng": "Quantum",
+    "term_rus": "Размер (убытков)",
+    "category": "Latin Terms",
+    "definition": "The amount of damages to be awarded.",
+    "example": "The hearing addressed quantum after liability was established."
+  },
+  {
+    "term_eng": "Quasi",
+    "term_rus": "Квази- (как бы)",
+    "category": "Latin Terms",
+    "definition": "Resembling or having the characteristics of something else.",
+    "example": "The agreement created quasi-contractual obligations between the parties."
+  },
+  {
+    "term_eng": "Ratio decidendi",
+    "term_rus": "Мотивировочная часть (ratio decidendi)",
+    "category": "Latin Terms",
+    "definition": "The reason for the decision; the binding legal principle in a judgment.",
+    "example": "The ratio decidendi established the rule for future cases."
+  },
+  {
+    "term_eng": "Res ipsa loquitur",
+    "term_rus": "Вещь говорит сама за себя",
+    "category": "Latin Terms",
+    "definition": "The thing speaks for itself; negligence is inferred from the circumstances.",
+    "example": "Res ipsa loquitur applied when the surgeon left instruments inside the patient."
+  },
+  {
+    "term_eng": "Scienter",
+    "term_rus": "С умыслом (знание о неправомерности)",
+    "category": "Latin Terms",
+    "definition": "Knowledge of the wrongness of an act; guilty knowledge.",
+    "example": "Scienter was established by showing the defendant knew the statement was false."
+  },
+  {
+    "term_eng": "Sine qua non",
+    "term_rus": "Непременное условие",
+    "category": "Latin Terms",
+    "definition": "An indispensable condition.",
+    "example": "Proof of causation is a sine qua non of any negligence claim."
+  },
+  {
+    "term_eng": "Stare decisis",
+    "term_rus": "Прецедентное право (стоять на решённом)",
+    "category": "Latin Terms",
+    "definition": "To stand by things decided; the doctrine requiring courts to follow precedent.",
+    "example": "Stare decisis requires lower courts to follow binding precedents."
+  },
+  {
+    "term_eng": "Sub judice",
+    "term_rus": "На рассмотрении суда",
+    "category": "Latin Terms",
+    "definition": "Under judicial consideration; a matter currently before a court.",
+    "example": "The matter was sub judice and could not be discussed publicly."
+  },
+  {
+    "term_eng": "Sui generis",
+    "term_rus": "Уникальный (своего рода)",
+    "category": "Latin Terms",
+    "definition": "Of its own kind; unique.",
+    "example": "The arrangement was sui generis and could not be classified as a standard contract."
+  },
+  {
+    "term_eng": "Uberrimae fidei",
+    "term_rus": "Полная добросовестность",
+    "category": "Latin Terms",
+    "definition": "Of the utmost good faith; requiring full disclosure of all material facts.",
+    "example": "Insurance contracts require uberrimae fidei from the insured."
+  },
+  {
+    "term_eng": "Vel non",
+    "term_rus": "Или нет",
+    "category": "Latin Terms",
+    "definition": "Or not; used to indicate that a question is disputed.",
+    "example": "The issue of liability vel non was referred to the court."
+  },
+  {
+    "term_eng": "Vexatious",
+    "term_rus": "Сутяжнический",
+    "category": "Latin Terms",
+    "definition": "Denoting legal action taken to harass rather than to seek a legitimate remedy.",
+    "example": "The court dismissed the claim as vexatious and awarded costs against the claimant."
+  },
+  {
+    "term_eng": "Void ab initio",
+    "term_rus": "Ничтожный с момента возникновения",
+    "category": "Latin Terms",
+    "definition": "Invalid from the beginning.",
+    "example": "A contract obtained by duress is void ab initio."
+  },
+  {
+    "term_eng": "Volenti non fit injuria",
+    "term_rus": "Добровольно принятый риск исключает ответственность",
+    "category": "Latin Terms",
+    "definition": "To one who consents, no injury is done.",
+    "example": "The skydiver's signed waiver triggered the volenti non fit injuria defence."
+  },
+  {
+    "term_eng": "Versus (v.)",
+    "term_rus": "Против (в названии дела)",
+    "category": "Latin Terms",
+    "definition": "Against; used in legal case names to separate party names.",
+    "example": "The landmark case Smith v. Jones established the negligence standard."
+  },
+  {
+    "term_eng": "Viva voce",
+    "term_rus": "Устно (вива воче)",
+    "category": "Latin Terms",
+    "definition": "By word of mouth; oral testimony given in person.",
+    "example": "The witness gave viva voce evidence at the hearing."
+  },
+  {
+    "term_eng": "Writ of mandamus",
+    "term_rus": "Судебный приказ о выполнении обязанности",
+    "category": "Latin Terms",
+    "definition": "A court order compelling a public official to perform a duty.",
+    "example": "The court issued a writ of mandamus requiring the agency to act."
+  },
+  {
+    "term_eng": "Et al.",
+    "term_rus": "И другие",
+    "category": "Latin Terms",
+    "definition": "And others; used to shorten a list of names.",
+    "example": "The case was brought by Smith et al. against the city council."
+  },
+  {
+    "term_eng": "Et seq.",
+    "term_rus": "И следующие (далее)",
+    "category": "Latin Terms",
+    "definition": "And the following; used to refer to a passage and those that follow.",
+    "example": "The relevant provisions are found at Article 5 et seq."
+  },
+  {
+    "term_eng": "Ex officio",
+    "term_rus": "По должности",
+    "category": "Latin Terms",
+    "definition": "By virtue of one's office.",
+    "example": "The minister was an ex officio member of the board."
+  },
+  {
+    "term_eng": "Nunc pro tunc",
+    "term_rus": "Сейчас за тогда (с обратной силой)",
+    "category": "Latin Terms",
+    "definition": "Now for then; a correction applied retroactively.",
+    "example": "The court issued a nunc pro tunc order correcting the clerical error."
+  },
+  {
+    "term_eng": "Obiter",
+    "term_rus": "Попутно",
+    "category": "Latin Terms",
+    "definition": "In passing; a judicial comment made without binding effect.",
+    "example": "The judge observed obiter that the law might need reform."
+  },
+  {
+    "term_eng": "Pari passu",
+    "term_rus": "На равных условиях",
+    "category": "Latin Terms",
+    "definition": "On equal footing; ranking equally.",
+    "example": "The creditors were to be paid pari passu without preference."
+  },
+  {
+    "term_eng": "Pendente lite",
+    "term_rus": "В ходе судебного разбирательства",
+    "category": "Latin Terms",
+    "definition": "While the litigation is pending.",
+    "example": "Interim maintenance was ordered pendente lite."
+  },
+  {
+    "term_eng": "Post mortem",
+    "term_rus": "После смерти; вскрытие",
+    "category": "Latin Terms",
+    "definition": "After death; an examination of a body to determine the cause of death.",
+    "example": "The post mortem revealed the cause of death was poisoning."
+  },
+  {
+    "term_eng": "Praecipe",
+    "term_rus": "Требование об оформлении документа",
+    "category": "Latin Terms",
+    "definition": "A written request to a court official to issue a document.",
+    "example": "A praecipe was filed to obtain a summons from the court clerk."
+  },
+  {
+    "term_eng": "Reductio ad absurdum",
+    "term_rus": "Доведение до абсурда",
+    "category": "Latin Terms",
+    "definition": "Disproving an argument by showing it leads to an absurd conclusion.",
+    "example": "The judge used reductio ad absurdum to reject the defendant's interpretation."
+  },
+  {
+    "term_eng": "Respondeat superior",
+    "term_rus": "Ответственность работодателя за действия работника",
+    "category": "Latin Terms",
+    "definition": "Let the superior answer; an employer is liable for employees' acts in the course of employment.",
+    "example": "Under respondeat superior, the hospital was liable for the surgeon's negligence."
+  },
+  {
+    "term_eng": "Status quo",
+    "term_rus": "Существующее положение дел",
+    "category": "Latin Terms",
+    "definition": "The existing state of affairs.",
+    "example": "The court preserved the status quo by granting the injunction."
+  },
+  {
+    "term_eng": "Sub rosa",
+    "term_rus": "Конфиденциально",
+    "category": "Latin Terms",
+    "definition": "Under the rose; in confidence.",
+    "example": "The negotiations were conducted sub rosa."
+  },
+  {
+    "term_eng": "Suo motu",
+    "term_rus": "По собственной инициативе суда",
+    "category": "Latin Terms",
+    "definition": "On its own motion; action taken by a court on its own initiative.",
+    "example": "The court suo motu raised the jurisdictional issue."
+  },
+  {
+    "term_eng": "Ubi jus ibi remedium",
+    "term_rus": "Где право — там и средство защиты",
+    "category": "Latin Terms",
+    "definition": "Where there is a right, there is a remedy.",
+    "example": "Ubi jus ibi remedium underpins the principle that every right has legal redress."
+  },
+  {
+    "term_eng": "Ut res magis valeat quam pereat",
+    "term_rus": "Договор толкуется так, чтобы иметь силу",
+    "category": "Latin Terms",
+    "definition": "That the thing may have effect rather than fail; a principle favouring valid interpretations.",
+    "example": "Ut res magis valeat quam pereat guided the court to prefer the interpretation that preserved the clause."
+  },
+  {
+    "term_eng": "Ex tunc",
+    "term_rus": "С того момента (ретроактивно)",
+    "category": "Latin Terms",
+    "definition": "From then; with retroactive effect.",
+    "example": "The rescission operated ex tunc, restoring the parties to their original positions."
+  },
+  {
+    "term_eng": "Ex nunc",
+    "term_rus": "С этого момента (проспективно)",
+    "category": "Latin Terms",
+    "definition": "From now; with prospective effect only.",
+    "example": "The amendment to the contract was effective ex nunc."
+  },
+  {
+    "term_eng": "Nemo judex in causa sua",
+    "term_rus": "Никто не судья в собственном деле",
+    "category": "Latin Terms",
+    "definition": "No one should be a judge in their own case.",
+    "example": "Nemo judex in causa sua required the conflicted director to recuse himself."
+  },
+  {
+    "term_eng": "Audi alteram partem",
+    "term_rus": "Выслушай и другую сторону",
+    "category": "Latin Terms",
+    "definition": "Hear the other side; a principle of natural justice requiring a fair hearing.",
+    "example": "The dismissal was unfair because audi alteram partem had not been observed."
   }
 ]
