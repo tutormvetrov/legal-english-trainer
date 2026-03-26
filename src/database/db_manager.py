@@ -203,6 +203,22 @@ class DBManager:
             )
         return cur.fetchone()
 
+    def get_term_with_definition(self, category: str | None = None) -> sqlite3.Row | None:
+        """Случайный термин с непустым определением (используется в режиме Детектив)."""
+        if category and category != "Все категории":
+            cur = self.conn.execute(
+                "SELECT * FROM terms WHERE category = ? "
+                "AND definition IS NOT NULL AND TRIM(definition) != '' "
+                "ORDER BY RANDOM() LIMIT 1",
+                (category,)
+            )
+        else:
+            cur = self.conn.execute(
+                "SELECT * FROM terms WHERE definition IS NOT NULL "
+                "AND TRIM(definition) != '' ORDER BY RANDOM() LIMIT 1"
+            )
+        return cur.fetchone()
+
     def search_terms(self, query: str, limit: int = 100) -> list[sqlite3.Row]:
         """Поиск по term_eng и term_rus (регистронезависимо)."""
         pattern = f"%{query}%"

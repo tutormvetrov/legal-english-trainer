@@ -76,6 +76,22 @@ class SettingsDialog(QDialog):
         remind_layout.addLayout(time_row)
         layout.addWidget(remind)
 
+        # ── Режим атаки ───────────────────────────────────────────────
+        attack = QGroupBox("Режим атаки")
+        attack_layout = QVBoxLayout(attack)
+        self.attack_check = QCheckBox("Включить «Термин атакует»")
+        attack_layout.addWidget(self.attack_check)
+
+        interval_row = QHBoxLayout()
+        interval_row.addWidget(QLabel("Интервал:"))
+        self.attack_interval_spin = QSpinBox()
+        self.attack_interval_spin.setRange(5, 120)
+        self.attack_interval_spin.setSuffix(" мин")
+        interval_row.addWidget(self.attack_interval_spin)
+        interval_row.addStretch()
+        attack_layout.addLayout(interval_row)
+        layout.addWidget(attack)
+
         # ── Кнопки ────────────────────────────────────────────────────
         btns = QDialogButtonBox(
             QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
@@ -93,6 +109,8 @@ class SettingsDialog(QDialog):
         self.reminder_check.setChecked(s["reminder_enabled"])
         self.hour_spin.setValue(s["reminder_hour"])
         self.minute_spin.setValue(s["reminder_minute"])
+        self.attack_check.setChecked(s.get("attack_enabled", False))
+        self.attack_interval_spin.setValue(s.get("attack_interval_min", 30))
 
     def _save_and_accept(self):
         s = get_settings()
@@ -104,6 +122,8 @@ class SettingsDialog(QDialog):
         s["reminder_enabled"] = self.reminder_check.isChecked()
         s["reminder_hour"] = self.hour_spin.value()
         s["reminder_minute"] = self.minute_spin.value()
+        s["attack_enabled"] = self.attack_check.isChecked()
+        s["attack_interval_min"] = self.attack_interval_spin.value()
         save_settings(s)
 
         # Apply font size immediately via stylesheet rebuild

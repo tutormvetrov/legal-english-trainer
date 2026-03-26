@@ -1,6 +1,7 @@
 import sys
 import os
 import pathlib
+import random
 
 # Resolve paths for both normal run and PyInstaller bundle
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -37,6 +38,8 @@ try:
     from .utils.update_checker import UpdateChecker
     from ._stylesheet import build_dark_stylesheet
     from .version import __version__, GITHUB_REPO
+    from .models.term import Term
+    from .gui.attack_popup import AttackPopup
 except ImportError:
     sys.path.insert(0, BASE_DIR)
     from database.db_manager import DBManager
@@ -51,6 +54,8 @@ except ImportError:
     from utils.update_checker import UpdateChecker
     from _stylesheet import build_dark_stylesheet
     from version import __version__, GITHUB_REPO
+    from models.term import Term
+    from gui.attack_popup import AttackPopup
 
 
 def _load_fonts():
@@ -107,6 +112,31 @@ def main():
     window = MainWindow(db, scheduler, streak=streak, username=username,
                         db_path=DB_PATH)
     window.show()
+
+    # ── Таймер «Термин атакует» ───────────────────────────────────
+    _attack_state = {"last_popup": None}
+
+    def _check_attack():
+        from datetime import datetime
+        s = get_settings()
+        if not s.get("attack_enabled", False):
+            return
+        interval_min = s.get("attack_interval_min", 30)
+        now = datetime.now()
+        last = _attack_state["last_popup"]
+        if last and (now - last).total_seconds() / 60 < interval_min:
+            return
+        due_ids = scheduler.get_due_terms(category=None, limit=50)
+        row = db.get_term(random.choice(due_ids)) if due_ids else db.get_random_term(None)
+        if row is None:
+            return
+        _attack_state["last_popup"] = now
+        AttackPopup(Term.from_row(row), scheduler, parent=None).exec()
+
+    attack_timer = QTimer(app)
+    attack_timer.setInterval(60_000)
+    attack_timer.timeout.connect(_check_attack)
+    attack_timer.start()
 
     # ── Проверка обновлений (фоновый поток) ───────────────────────────
     def _on_update_available(current: str, latest: str):

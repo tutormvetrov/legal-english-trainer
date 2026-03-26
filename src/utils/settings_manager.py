@@ -14,6 +14,8 @@ _DEFAULTS = {
     "reminder_enabled": False,
     "reminder_hour": 9,
     "reminder_minute": 0,
+    "attack_enabled": False,
+    "attack_interval_min": 30,
 }
 
 _cache: dict | None = None

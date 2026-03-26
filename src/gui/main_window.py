@@ -8,6 +8,7 @@ from .stats_widget import StatsWidget
 from .favorites_widget import FavoritesWidget
 from .boss_widget import BossWidget
 from .context_widget import ContextWidget
+from .detective_widget import DetectiveWidget
 
 
 class MainWindow(QMainWindow):
@@ -36,6 +37,7 @@ class MainWindow(QMainWindow):
         self.flashcards = FlashcardsWidget(self.db, self.scheduler)
         self.match      = MatchWidget(self.db, self.scheduler)
         self.typing     = TypingWidget(self.db, self.scheduler)
+        self.detective  = DetectiveWidget(self.db, self.scheduler)
         self.favorites  = FavoritesWidget(self.db)
         self.boss       = BossWidget(self.db)
         self.context    = ContextWidget(self.db)
@@ -44,6 +46,7 @@ class MainWindow(QMainWindow):
         tabs.addTab(self.flashcards, "🃏 Карточки")
         tabs.addTab(self.match,      "🔗 Сопоставление")
         tabs.addTab(self.typing,     "✍️ Диктант")
+        tabs.addTab(self.detective,  "🔍 Детектив")
         tabs.addTab(self.context,    "📖 Контекст")
         tabs.addTab(self.favorites,  "⭐ Избранное")
         tabs.addTab(self.boss,       "👊 Boss Mode")
@@ -80,7 +83,7 @@ class MainWindow(QMainWindow):
         status.addPermanentWidget(settings_btn)
 
     def _on_tab_changed(self, index: int):
-        # Favorites is index 4, Stats is 6
+        # Uses identity checks — safe even if tab indices shift
         tab_widget = self.centralWidget()
         current = tab_widget.widget(index)
         if current is self.favorites:
