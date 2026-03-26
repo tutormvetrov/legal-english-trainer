@@ -2588,5 +2588,670 @@
     "category": "International Law",
     "definition": "Inspection of foreign ships in national ports to verify compliance with international rules.",
     "example": "The vessel was detained following a port state control inspection."
+  },
+  {
+    "term_eng": "Plaintiff",
+    "term_rus": "Истец",
+    "category": "Civil Procedure",
+    "definition": "The party who initiates a civil lawsuit.",
+    "example": "The plaintiff filed a claim for breach of contract."
+  },
+  {
+    "term_eng": "Defendant",
+    "term_rus": "Ответчик",
+    "category": "Civil Procedure",
+    "definition": "The party against whom a civil lawsuit is brought.",
+    "example": "The defendant denied all allegations in the complaint."
+  },
+  {
+    "term_eng": "Claimant",
+    "term_rus": "Заявитель (истец)",
+    "category": "Civil Procedure",
+    "definition": "The party making a claim in civil proceedings.",
+    "example": "The claimant sought damages of £200,000."
+  },
+  {
+    "term_eng": "Complaint",
+    "term_rus": "Исковое заявление",
+    "category": "Civil Procedure",
+    "definition": "The initial pleading setting out the plaintiff's claims.",
+    "example": "The complaint alleged negligence and breach of warranty."
+  },
+  {
+    "term_eng": "Answer",
+    "term_rus": "Возражение на иск",
+    "category": "Civil Procedure",
+    "definition": "The defendant's formal written response to a complaint.",
+    "example": "In the answer, the defendant raised an affirmative defence of contributory negligence."
+  },
+  {
+    "term_eng": "Counterclaim",
+    "term_rus": "Встречный иск",
+    "category": "Civil Procedure",
+    "definition": "A claim made by the defendant against the plaintiff.",
+    "example": "The defendant filed a counterclaim for damage to its property."
+  },
+  {
+    "term_eng": "Cross-claim",
+    "term_rus": "Перекрёстный иск",
+    "category": "Civil Procedure",
+    "definition": "A claim by one co-party against another in the same action.",
+    "example": "The co-defendants filed cross-claims against each other."
+  },
+  {
+    "term_eng": "Third-party claim",
+    "term_rus": "Требование к третьему лицу",
+    "category": "Civil Procedure",
+    "definition": "A claim brought by the defendant against a party not originally in the lawsuit.",
+    "example": "The defendant filed a third-party claim against its insurer."
+  },
+  {
+    "term_eng": "Pleadings",
+    "term_rus": "Состязательные бумаги",
+    "category": "Civil Procedure",
+    "definition": "Formal documents setting out the parties' claims and defences.",
+    "example": "The judge reviewed the pleadings before the case management conference."
+  },
+  {
+    "term_eng": "Motion",
+    "term_rus": "Ходатайство",
+    "category": "Civil Procedure",
+    "definition": "A formal request asking a court to take a specific action.",
+    "example": "The claimant filed a motion for summary judgment."
+  },
+  {
+    "term_eng": "Summary judgment",
+    "term_rus": "Упрощённое судебное решение",
+    "category": "Civil Procedure",
+    "definition": "A judgment without a full trial when there is no genuine issue of material fact.",
+    "example": "The court granted summary judgment as the defence had no real prospect of success."
+  },
+  {
+    "term_eng": "Discovery",
+    "term_rus": "Раскрытие доказательств (дискавери)",
+    "category": "Civil Procedure",
+    "definition": "Pre-trial process requiring parties to disclose relevant documents and information.",
+    "example": "Discovery revealed thousands of emails relevant to the fraud claim."
+  },
+  {
+    "term_eng": "Subpoena",
+    "term_rus": "Судебная повестка (субпоэна)",
+    "category": "Civil Procedure",
+    "definition": "A court order requiring a person to appear or produce documents.",
+    "example": "A subpoena was issued for the financial records of the company."
+  },
+  {
+    "term_eng": "Deposition",
+    "term_rus": "Показания (досудебные)",
+    "category": "Civil Procedure",
+    "definition": "Pre-trial sworn testimony of a witness recorded for use at trial.",
+    "example": "The expert's deposition lasted two days."
+  },
+  {
+    "term_eng": "Interrogatories",
+    "term_rus": "Письменные вопросы сторонам",
+    "category": "Civil Procedure",
+    "definition": "Written questions that a party must answer under oath.",
+    "example": "The claimant served interrogatories requesting details of all relevant transactions."
+  },
+  {
+    "term_eng": "Limitation period",
+    "term_rus": "Срок исковой давности",
+    "category": "Civil Procedure",
+    "definition": "The time limit set by law within which proceedings must be commenced.",
+    "example": "The limitation period for contract claims is six years."
+  },
+  {
+    "term_eng": "Venue",
+    "term_rus": "Место рассмотрения дела",
+    "category": "Civil Procedure",
+    "definition": "The geographic location where a case is to be tried.",
+    "example": "The defendant sought a change of venue to a more convenient court."
+  },
+  {
+    "term_eng": "Standing",
+    "term_rus": "Правовой интерес (стэндинг)",
+    "category": "Civil Procedure",
+    "definition": "The right of a party to bring a claim before a court.",
+    "example": "The claimant lacked standing to challenge the regulation."
+  },
+  {
+    "term_eng": "Locus standi",
+    "term_rus": "Право на обращение в суд",
+    "category": "Civil Procedure",
+    "definition": "The Latin term for a party's capacity to bring an action.",
+    "example": "The court found that the applicant had sufficient locus standi."
+  },
+  {
+    "term_eng": "Cause of action",
+    "term_rus": "Основание иска",
+    "category": "Civil Procedure",
+    "definition": "The legal theory that gives a party the right to bring a lawsuit.",
+    "example": "The complaint alleged multiple causes of action including fraud and negligence."
+  },
+  {
+    "term_eng": "Burden of proof",
+    "term_rus": "Бремя доказывания",
+    "category": "Civil Procedure",
+    "definition": "The obligation to prove the allegations made in court.",
+    "example": "In civil cases the burden of proof rests with the claimant."
+  },
+  {
+    "term_eng": "Balance of probabilities",
+    "term_rus": "Баланс вероятностей",
+    "category": "Civil Procedure",
+    "definition": "The civil standard of proof: more likely than not.",
+    "example": "The claimant proved the breach on the balance of probabilities."
+  },
+  {
+    "term_eng": "Prima facie",
+    "term_rus": "На первый взгляд",
+    "category": "Civil Procedure",
+    "definition": "Evidence sufficient to establish a fact unless rebutted.",
+    "example": "The claimant established a prima facie case of negligence."
+  },
+  {
+    "term_eng": "Res judicata",
+    "term_rus": "Разрешённое дело (принцип)",
+    "category": "Civil Procedure",
+    "definition": "A matter that has been finally decided by a court and cannot be relitigated.",
+    "example": "The second claim was barred by res judicata."
+  },
+  {
+    "term_eng": "Collateral estoppel",
+    "term_rus": "Эстоппель по смежному вопросу",
+    "category": "Civil Procedure",
+    "definition": "Prevention of re-litigation of an issue already decided in prior proceedings.",
+    "example": "Collateral estoppel prevented the defendant relitigating the fraud finding."
+  },
+  {
+    "term_eng": "Class action",
+    "term_rus": "Групповой иск",
+    "category": "Civil Procedure",
+    "definition": "A lawsuit brought by or against a group of people with common interests.",
+    "example": "Consumers filed a class action against the manufacturer over the defective product."
+  },
+  {
+    "term_eng": "Interim injunction",
+    "term_rus": "Временный судебный запрет",
+    "category": "Civil Procedure",
+    "definition": "A temporary court order preserving the status quo until trial.",
+    "example": "The claimant obtained an interim injunction within 48 hours."
+  },
+  {
+    "term_eng": "Freezing order",
+    "term_rus": "Обеспечительный арест активов",
+    "category": "Civil Procedure",
+    "definition": "A court order freezing a party's assets to prevent dissipation before judgment.",
+    "example": "A worldwide freezing order was obtained against the defendant's assets."
+  },
+  {
+    "term_eng": "Search order",
+    "term_rus": "Ордер на обыск (гражданский)",
+    "category": "Civil Procedure",
+    "definition": "An order allowing the claimant to enter premises and search for evidence.",
+    "example": "A search order was granted to seize documents before they could be destroyed."
+  },
+  {
+    "term_eng": "Default judgment",
+    "term_rus": "Заочное решение",
+    "category": "Civil Procedure",
+    "definition": "A judgment entered when the defendant fails to respond or appear.",
+    "example": "Default judgment was entered after the defendant failed to file an answer."
+  },
+  {
+    "term_eng": "Setting aside judgment",
+    "term_rus": "Отмена решения суда",
+    "category": "Civil Procedure",
+    "definition": "Cancellation of a judgment, often of a default judgment, by court order.",
+    "example": "The defendant applied to set aside the default judgment."
+  },
+  {
+    "term_eng": "Appeal",
+    "term_rus": "Апелляция",
+    "category": "Civil Procedure",
+    "definition": "A request for a higher court to review a lower court's decision.",
+    "example": "The defendant lodged an appeal against the damages award."
+  },
+  {
+    "term_eng": "Stay of proceedings",
+    "term_rus": "Приостановление производства",
+    "category": "Civil Procedure",
+    "definition": "A court order suspending the progress of a case.",
+    "example": "A stay of proceedings was granted pending the arbitration outcome."
+  },
+  {
+    "term_eng": "Strike out",
+    "term_rus": "Прекращение производства по иску",
+    "category": "Civil Procedure",
+    "definition": "Removal of a claim or defence from proceedings because it has no merit.",
+    "example": "The defence was struck out as disclosing no reasonable grounds."
+  },
+  {
+    "term_eng": "Costs order",
+    "term_rus": "Постановление о возмещении судебных расходов",
+    "category": "Civil Procedure",
+    "definition": "A court order requiring one party to pay the other's legal costs.",
+    "example": "The losing party was subject to a costs order covering the claimant's fees."
+  },
+  {
+    "term_eng": "Without prejudice",
+    "term_rus": "Без ущерба для прав сторон",
+    "category": "Civil Procedure",
+    "definition": "A label protecting settlement communications from use as evidence.",
+    "example": "Negotiations were conducted on a without prejudice basis."
+  },
+  {
+    "term_eng": "Privilege",
+    "term_rus": "Привилегия (защита от раскрытия)",
+    "category": "Civil Procedure",
+    "definition": "A right to refuse disclosure of confidential communications.",
+    "example": "Legal advice privilege protected the memorandum from disclosure."
+  },
+  {
+    "term_eng": "Legal professional privilege",
+    "term_rus": "Привилегия адвоката",
+    "category": "Civil Procedure",
+    "definition": "Protection of confidential communications between lawyer and client.",
+    "example": "Legal professional privilege attached to all correspondence with the solicitor."
+  },
+  {
+    "term_eng": "Expert witness",
+    "term_rus": "Эксперт",
+    "category": "Civil Procedure",
+    "definition": "A specialist appointed to give evidence on technical matters.",
+    "example": "The expert witness submitted a report on the valuation methodology."
+  },
+  {
+    "term_eng": "Witness statement",
+    "term_rus": "Показания свидетеля (письменные)",
+    "category": "Civil Procedure",
+    "definition": "A written account of a witness's evidence filed before trial.",
+    "example": "The witness statement was served six weeks before the hearing."
+  },
+  {
+    "term_eng": "Examination-in-chief",
+    "term_rus": "Допрос своего свидетеля",
+    "category": "Civil Procedure",
+    "definition": "Questioning of a witness by the party who called them.",
+    "example": "During examination-in-chief, the claimant's counsel led the witness through the key events."
+  },
+  {
+    "term_eng": "Cross-examination",
+    "term_rus": "Перекрёстный допрос",
+    "category": "Civil Procedure",
+    "definition": "Questioning of a witness by the opposing party.",
+    "example": "Under cross-examination, the witness admitted he had not seen the document."
+  },
+  {
+    "term_eng": "Re-examination",
+    "term_rus": "Повторный допрос своего свидетеля",
+    "category": "Civil Procedure",
+    "definition": "Further questioning by the party who called the witness after cross-examination.",
+    "example": "Re-examination clarified the ambiguous answer given in cross-examination."
+  },
+  {
+    "term_eng": "Hearsay",
+    "term_rus": "Показания с чужих слов",
+    "category": "Civil Procedure",
+    "definition": "An out-of-court statement offered to prove the truth of its content.",
+    "example": "The court admitted the hearsay evidence under the statutory exception."
+  },
+  {
+    "term_eng": "Admissibility",
+    "term_rus": "Допустимость доказательств",
+    "category": "Civil Procedure",
+    "definition": "Whether evidence can be considered by the court.",
+    "example": "The admissibility of the covert recording was challenged."
+  },
+  {
+    "term_eng": "Settlement",
+    "term_rus": "Мировое соглашение",
+    "category": "Civil Procedure",
+    "definition": "An agreement ending a dispute without a court judgment.",
+    "example": "The parties reached a settlement on the eve of trial."
+  },
+  {
+    "term_eng": "Alternative dispute resolution",
+    "term_rus": "Альтернативное разрешение споров",
+    "category": "Civil Procedure",
+    "definition": "Methods of resolving disputes outside traditional court proceedings.",
+    "example": "Alternative dispute resolution was encouraged to reduce the burden on the courts."
+  },
+  {
+    "term_eng": "Case management",
+    "term_rus": "Управление делом судом",
+    "category": "Civil Procedure",
+    "definition": "Judicial control of procedural steps and timetable in litigation.",
+    "example": "At the case management conference, directions were given for exchange of evidence."
+  },
+  {
+    "term_eng": "Directions",
+    "term_rus": "Процессуальные предписания суда",
+    "category": "Civil Procedure",
+    "definition": "Court orders setting out the procedural steps parties must take.",
+    "example": "The judge gave directions for service of witness statements and expert reports."
+  },
+  {
+    "term_eng": "Pre-trial review",
+    "term_rus": "Предварительное судебное заседание",
+    "category": "Civil Procedure",
+    "definition": "A court hearing shortly before trial to ensure everything is ready.",
+    "example": "At the pre-trial review, the judge resolved outstanding disclosure issues."
+  },
+  {
+    "term_eng": "Trial",
+    "term_rus": "Судебное разбирательство",
+    "category": "Civil Procedure",
+    "definition": "The formal hearing at which evidence is presented and a judgment given.",
+    "example": "The trial lasted three weeks and involved 15 witnesses."
+  },
+  {
+    "term_eng": "Opening statement",
+    "term_rus": "Вступительная речь",
+    "category": "Civil Procedure",
+    "definition": "An initial address by counsel outlining the case before evidence is heard.",
+    "example": "Claimant's counsel delivered a two-hour opening statement."
+  },
+  {
+    "term_eng": "Closing argument",
+    "term_rus": "Заключительные прения",
+    "category": "Civil Procedure",
+    "definition": "Counsel's final address to the court summarising the evidence and law.",
+    "example": "The closing argument addressed each element of the negligence claim."
+  },
+  {
+    "term_eng": "Judgment",
+    "term_rus": "Решение суда",
+    "category": "Civil Procedure",
+    "definition": "The court's official decision resolving the dispute.",
+    "example": "Judgment was entered in favour of the claimant for £150,000."
+  },
+  {
+    "term_eng": "Enforcement of judgment",
+    "term_rus": "Исполнение судебного решения",
+    "category": "Civil Procedure",
+    "definition": "Mechanisms for compelling compliance with a court judgment.",
+    "example": "The claimant applied for a writ of execution to enforce the judgment."
+  },
+  {
+    "term_eng": "Garnishment",
+    "term_rus": "Арест задолженности третьего лица",
+    "category": "Civil Procedure",
+    "definition": "A procedure seizing a debtor's assets held by a third party.",
+    "example": "Garnishment proceedings were issued against the debtor's bank account."
+  },
+  {
+    "term_eng": "Writ of execution",
+    "term_rus": "Исполнительный лист",
+    "category": "Civil Procedure",
+    "definition": "A court order directing enforcement of a judgment against a debtor's assets.",
+    "example": "The claimant obtained a writ of execution to recover the debt."
+  },
+  {
+    "term_eng": "Interlocutory order",
+    "term_rus": "Промежуточное определение суда",
+    "category": "Civil Procedure",
+    "definition": "A court order made during the proceedings before final judgment.",
+    "example": "The interlocutory order required production of documents within 14 days."
+  },
+  {
+    "term_eng": "Ex parte",
+    "term_rus": "Без участия второй стороны",
+    "category": "Civil Procedure",
+    "definition": "A proceeding brought by or for one party only without notice to the other.",
+    "example": "The freezing order was obtained ex parte in an emergency hearing."
+  },
+  {
+    "term_eng": "Inter partes",
+    "term_rus": "С участием обеих сторон",
+    "category": "Civil Procedure",
+    "definition": "Proceedings in which all parties are present and given the opportunity to be heard.",
+    "example": "The inter partes hearing allowed the defendant to contest the injunction."
+  },
+  {
+    "term_eng": "Service of process",
+    "term_rus": "Вручение процессуальных документов",
+    "category": "Civil Procedure",
+    "definition": "Formal delivery of legal documents to a party in a lawsuit.",
+    "example": "Service of process was effected by personal delivery."
+  },
+  {
+    "term_eng": "Amendment of pleadings",
+    "term_rus": "Изменение состязательных бумаг",
+    "category": "Civil Procedure",
+    "definition": "Modification of a party's formal court submissions.",
+    "example": "The claimant sought permission to amend the pleadings to add a new head of claim."
+  },
+  {
+    "term_eng": "Joinder",
+    "term_rus": "Привлечение участника в дело",
+    "category": "Civil Procedure",
+    "definition": "Adding parties or claims to existing proceedings.",
+    "example": "The court ordered joinder of the parent company as a necessary party."
+  },
+  {
+    "term_eng": "Consolidation",
+    "term_rus": "Объединение дел",
+    "category": "Civil Procedure",
+    "definition": "Combining multiple related lawsuits into one proceeding.",
+    "example": "The court ordered consolidation of the three related cases."
+  },
+  {
+    "term_eng": "Bifurcation",
+    "term_rus": "Раздельное рассмотрение вопросов",
+    "category": "Civil Procedure",
+    "definition": "Splitting a case to hear liability and damages separately.",
+    "example": "The court ordered bifurcation, deferring the quantum hearing."
+  },
+  {
+    "term_eng": "Preliminary issue",
+    "term_rus": "Предварительный вопрос",
+    "category": "Civil Procedure",
+    "definition": "A discrete legal question heard and decided before the main trial.",
+    "example": "Limitation was tried as a preliminary issue."
+  },
+  {
+    "term_eng": "Consent order",
+    "term_rus": "Согласованное определение суда",
+    "category": "Civil Procedure",
+    "definition": "A court order agreed by the parties and approved by the court.",
+    "example": "A consent order recording the settlement was entered by the court."
+  },
+  {
+    "term_eng": "Tomlin order",
+    "term_rus": "Приостанавливающее определение (Томлин)",
+    "category": "Civil Procedure",
+    "definition": "A consent order staying proceedings while recording a settlement schedule.",
+    "example": "The parties agreed a Tomlin order recording the terms of settlement."
+  },
+  {
+    "term_eng": "Security for costs",
+    "term_rus": "Обеспечение судебных расходов",
+    "category": "Civil Procedure",
+    "definition": "An order requiring the claimant to provide security against an adverse costs order.",
+    "example": "The defendant applied for security for costs given the claimant's poor financial position."
+  },
+  {
+    "term_eng": "Unless order",
+    "term_rus": "Условное определение суда",
+    "category": "Civil Procedure",
+    "definition": "A conditional order striking out a claim if a party fails to comply by a deadline.",
+    "example": "An unless order was made requiring disclosure within seven days or the claim would be struck out."
+  },
+  {
+    "term_eng": "Offer to settle",
+    "term_rus": "Предложение об урегулировании",
+    "category": "Civil Procedure",
+    "definition": "A formal proposal to resolve the dispute on specified terms.",
+    "example": "Failure to beat the offer to settle resulted in an indemnity costs order."
+  },
+  {
+    "term_eng": "Part 36 offer",
+    "term_rus": "Предложение об урегулировании (Part 36)",
+    "category": "Civil Procedure",
+    "definition": "A formal settlement offer under the Civil Procedure Rules carrying costs consequences.",
+    "example": "The defendant made a Part 36 offer that the claimant failed to beat at trial."
+  },
+  {
+    "term_eng": "Overriding objective",
+    "term_rus": "Главная цель судопроизводства",
+    "category": "Civil Procedure",
+    "definition": "The principle of dealing with cases justly and proportionately.",
+    "example": "The overriding objective requires courts to save expense and ensure equality."
+  },
+  {
+    "term_eng": "Case stated",
+    "term_rus": "Апелляция по правовым вопросам",
+    "category": "Civil Procedure",
+    "definition": "A procedure requesting a higher court's ruling on a point of law.",
+    "example": "The tribunal stated a case for the opinion of the High Court."
+  },
+  {
+    "term_eng": "Judicial review",
+    "term_rus": "Судебный контроль",
+    "category": "Civil Procedure",
+    "definition": "A court's review of the legality of decisions by public bodies.",
+    "example": "The claimant applied for judicial review of the planning authority's decision."
+  },
+  {
+    "term_eng": "Certiorari",
+    "term_rus": "Приказ об истребовании дела",
+    "category": "Civil Procedure",
+    "definition": "A writ by which a higher court reviews a lower court's decision.",
+    "example": "The Supreme Court granted certiorari to hear the case."
+  },
+  {
+    "term_eng": "Mandamus",
+    "term_rus": "Мандамус (приказ об исполнении обязанности)",
+    "category": "Civil Procedure",
+    "definition": "A court order compelling a public body to perform a statutory duty.",
+    "example": "Mandamus was issued to compel the authority to process the application."
+  },
+  {
+    "term_eng": "Prohibition",
+    "term_rus": "Запрещение (судебный приказ)",
+    "category": "Civil Procedure",
+    "definition": "A writ preventing an inferior court from exceeding its jurisdiction.",
+    "example": "Prohibition was granted to prevent the tribunal from hearing the matter."
+  },
+  {
+    "term_eng": "Forum non conveniens",
+    "term_rus": "Неудобный суд (forum non conveniens)",
+    "category": "Civil Procedure",
+    "definition": "A doctrine allowing a court to decline jurisdiction in favour of a more appropriate forum.",
+    "example": "The court stayed the action on forum non conveniens grounds in favour of the US courts."
+  },
+  {
+    "term_eng": "Lis pendens",
+    "term_rus": "Параллельное производство (лис пенденс)",
+    "category": "Civil Procedure",
+    "definition": "A pending lawsuit over the same matter in another court.",
+    "example": "The existence of lis pendens in France was raised as grounds for a stay."
+  },
+  {
+    "term_eng": "Writ",
+    "term_rus": "Судебный приказ",
+    "category": "Civil Procedure",
+    "definition": "A formal court order commanding or forbidding an act.",
+    "example": "A writ of summons was issued to commence proceedings."
+  },
+  {
+    "term_eng": "Anton Piller order",
+    "term_rus": "Ордер на обыск без предупреждения",
+    "category": "Civil Procedure",
+    "definition": "A search order allowing a claimant to enter and search premises without notice.",
+    "example": "An Anton Piller order preserved vital evidence before it could be destroyed."
+  },
+  {
+    "term_eng": "Mareva injunction",
+    "term_rus": "Запрет на распоряжение активами (Марева)",
+    "category": "Civil Procedure",
+    "definition": "An injunction freezing a defendant's assets pending judgment.",
+    "example": "The Mareva injunction prevented the defendant from moving funds offshore."
+  },
+  {
+    "term_eng": "Norwich Pharmacal order",
+    "term_rus": "Приказ об установлении личности нарушителя",
+    "category": "Civil Procedure",
+    "definition": "An order requiring a third party to disclose identity of a wrongdoer.",
+    "example": "A Norwich Pharmacal order was made against the bank to identify the fraudster."
+  },
+  {
+    "term_eng": "Protective costs order",
+    "term_rus": "Охранный приказ о судебных расходах",
+    "category": "Civil Procedure",
+    "definition": "An order capping a party's exposure to adverse costs in public interest cases.",
+    "example": "A protective costs order was made to encourage the public interest litigation."
+  },
+  {
+    "term_eng": "Litigation funding",
+    "term_rus": "Финансирование судебных споров",
+    "category": "Civil Procedure",
+    "definition": "Third-party funding of litigation in exchange for a share of the proceeds.",
+    "example": "The claimant secured litigation funding to pursue the multimillion-pound claim."
+  },
+  {
+    "term_eng": "Punitive damages",
+    "term_rus": "Штрафные убытки",
+    "category": "Civil Procedure",
+    "definition": "Damages awarded to punish egregious conduct beyond compensatory losses.",
+    "example": "The jury awarded $1 million in punitive damages for wilful misconduct."
+  },
+  {
+    "term_eng": "Nominal damages",
+    "term_rus": "Номинальные убытки",
+    "category": "Civil Procedure",
+    "definition": "A small token award recognising that a right was violated but no real loss suffered.",
+    "example": "The court awarded nominal damages of £1 as the claimant proved no actual loss."
+  },
+  {
+    "term_eng": "General damages",
+    "term_rus": "Общие убытки",
+    "category": "Civil Procedure",
+    "definition": "Compensation for non-quantifiable losses such as pain and suffering.",
+    "example": "General damages were assessed at £50,000 for the psychological harm suffered."
+  },
+  {
+    "term_eng": "Special damages",
+    "term_rus": "Специальные убытки",
+    "category": "Civil Procedure",
+    "definition": "Compensation for quantifiable losses that must be specifically pleaded.",
+    "example": "Special damages included loss of earnings and medical expenses."
+  },
+  {
+    "term_eng": "Mitigation",
+    "term_rus": "Снижение убытков",
+    "category": "Civil Procedure",
+    "definition": "The duty of the injured party to take reasonable steps to reduce its losses.",
+    "example": "The claimant failed in its duty of mitigation by not seeking alternative employment."
+  },
+  {
+    "term_eng": "Remoteness",
+    "term_rus": "Отдалённость убытков",
+    "category": "Civil Procedure",
+    "definition": "The principle limiting recovery to losses that were reasonably foreseeable.",
+    "example": "The consequential losses were too remote to be recoverable."
+  },
+  {
+    "term_eng": "Causation",
+    "term_rus": "Причинно-следственная связь",
+    "category": "Civil Procedure",
+    "definition": "The requirement that the defendant's act caused the claimant's loss.",
+    "example": "The claimant must establish causation between the breach and the damage."
+  },
+  {
+    "term_eng": "Contributory negligence",
+    "term_rus": "Виновность пострадавшего",
+    "category": "Civil Procedure",
+    "definition": "Reduction of damages where the claimant's own negligence contributed to the loss.",
+    "example": "Damages were reduced by 25% for contributory negligence."
+  },
+  {
+    "term_eng": "Vicarious liability",
+    "term_rus": "Косвенная ответственность",
+    "category": "Civil Procedure",
+    "definition": "Liability of an employer for a tort committed by an employee in the course of employment.",
+    "example": "The employer was held vicariously liable for the employee's negligence."
   }
 ]
