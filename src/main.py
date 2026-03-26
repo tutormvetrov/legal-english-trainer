@@ -33,7 +33,9 @@ try:
     from .utils.license_manager import is_activated, get_username, is_stefan
     from .utils.streak_manager import record_activity
     from .utils.settings_manager import get_settings
+    from .utils.update_checker import UpdateChecker
     from ._stylesheet import build_dark_stylesheet
+    from .version import __version__, GITHUB_REPO
 except ImportError:
     sys.path.insert(0, BASE_DIR)
     from database.db_manager import DBManager
@@ -44,7 +46,9 @@ except ImportError:
     from utils.license_manager import is_activated, get_username, is_stefan
     from utils.streak_manager import record_activity
     from utils.settings_manager import get_settings
+    from utils.update_checker import UpdateChecker
     from _stylesheet import build_dark_stylesheet
+    from version import __version__, GITHUB_REPO
 
 
 def _import_terms_if_needed(db: DBManager):
@@ -88,6 +92,26 @@ def main():
     window = MainWindow(db, scheduler, streak=streak, username=username,
                         db_path=DB_PATH)
     window.show()
+
+    # ── Проверка обновлений (фоновый поток) ───────────────────────────
+    def _on_update_available(current: str, latest: str):
+        from PyQt6.QtWidgets import QMessageBox
+        import webbrowser
+        msg = QMessageBox(window)
+        msg.setWindowTitle("Доступно обновление")
+        msg.setIcon(QMessageBox.Icon.Information)
+        msg.setText(f"Вышла новая версия <b>{latest}</b>.<br>У вас установлена {current}.")
+        msg.setInformativeText("Хотите открыть страницу загрузки?")
+        msg.setStandardButtons(
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+        msg.setDefaultButton(QMessageBox.StandardButton.Yes)
+        if msg.exec() == QMessageBox.StandardButton.Yes:
+            webbrowser.open(f"https://github.com/{GITHUB_REPO}/releases/latest")
+
+    _updater = UpdateChecker(__version__, GITHUB_REPO, parent=app)
+    _updater.update_available.connect(_on_update_available)
+    _updater.start()
 
     # ── Системный трей ────────────────────────────────────────────────
     tray = None
