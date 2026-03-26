@@ -8,7 +8,7 @@ def build_dark_stylesheet(font_size: int = 13) -> str:
 QWidget {{
     background-color: #1a1c2e;
     color: #eeffff;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
     font-size: {font_size}px;
 }}
 

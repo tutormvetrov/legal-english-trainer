@@ -53,6 +53,17 @@ except ImportError:
     from version import __version__, GITHUB_REPO
 
 
+def _load_fonts():
+    """Register custom TTF fonts from assets/fonts/ into Qt's font database."""
+    from PyQt6.QtGui import QFontDatabase
+    fonts_dir = os.path.join(_ROOT, "assets", "fonts")
+    if not os.path.isdir(fonts_dir):
+        return
+    for fname in os.listdir(fonts_dir):
+        if fname.lower().endswith(".ttf"):
+            QFontDatabase.addApplicationFont(os.path.join(fonts_dir, fname))
+
+
 def _import_terms_if_needed(db: DBManager):
     """Auto-import terms.json if the terms table is empty."""
     if not db.is_terms_empty():
@@ -68,6 +79,7 @@ def _import_terms_if_needed(db: DBManager):
 def main():
     app = QApplication(sys.argv)
     app.setApplicationName("Legal English Trainer")
+    _load_fonts()   # must be called after QApplication, before setStyleSheet
     font_size = get_settings().get("font_size", 13)
     app.setStyleSheet(build_dark_stylesheet(font_size))
 
