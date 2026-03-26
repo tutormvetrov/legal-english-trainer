@@ -116,6 +116,15 @@ class StatsWidget(QWidget):
         restore_btn.clicked.connect(self._restore_db)
         btn_row.addWidget(restore_btn)
 
+        reset_btn = QPushButton("🔄 Сбросить")
+        reset_btn.setMinimumHeight(36)
+        reset_btn.setStyleSheet(
+            "QPushButton { color: #f38ba8; }"
+            "QPushButton:hover { color: #ff6b6b; }"
+        )
+        reset_btn.clicked.connect(self._open_reset_dialog)
+        btn_row.addWidget(reset_btn)
+
         btn_row.addStretch()
         root.addLayout(btn_row)
 
@@ -194,6 +203,12 @@ class StatsWidget(QWidget):
                 ef_item.setForeground(__import__('PyQt6.QtGui', fromlist=['QColor']).QColor("#ffa726"))
             self.weak_table.setItem(r, 3, ef_item)
             self.weak_table.setItem(r, 4, self._centered(str(max(0, row[5]))))
+
+    def _open_reset_dialog(self):
+        from .reset_dialog import ResetDialog
+        dlg = ResetDialog(self.db, self)
+        if dlg.exec() == ResetDialog.DialogCode.Accepted:
+            self.refresh()
 
     def _import_terms(self):
         dlg = ImportDialog(self.db, self)

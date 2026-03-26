@@ -30,7 +30,8 @@ try:
     from .gui.main_window import MainWindow
     from .gui.activation_dialog import ActivationDialog
     from .gui.easter_egg_dialog import EasterEggDialog
-    from .utils.license_manager import is_activated, get_username, is_stefan
+    from .utils.license_manager import (is_activated, get_username, is_stefan,
+                                          get_easter_shown, set_easter_shown)
     from .utils.streak_manager import record_activity
     from .utils.settings_manager import get_settings
     from .utils.update_checker import UpdateChecker
@@ -43,7 +44,8 @@ except ImportError:
     from gui.main_window import MainWindow
     from gui.activation_dialog import ActivationDialog
     from gui.easter_egg_dialog import EasterEggDialog
-    from utils.license_manager import is_activated, get_username, is_stefan
+    from utils.license_manager import (is_activated, get_username, is_stefan,
+                                       get_easter_shown, set_easter_shown)
     from utils.streak_manager import record_activity
     from utils.settings_manager import get_settings
     from utils.update_checker import UpdateChecker
@@ -80,8 +82,9 @@ def main():
         username = get_username()
 
     # ── Пасхалка для Стефана ─────────────────────────────────────────
-    if first_launch and is_stefan(username):
+    if is_stefan(username) and not get_easter_shown():
         EasterEggDialog(username).exec()
+        set_easter_shown()
 
     streak = record_activity()
 

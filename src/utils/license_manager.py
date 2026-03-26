@@ -93,6 +93,20 @@ def get_username() -> str:
     return _read_data().get("username", "")
 
 
+def get_key() -> str:
+    return _read_data().get("key", "")
+
+
+def get_easter_shown() -> bool:
+    return bool(_read_data().get("easter_shown", False))
+
+
+def set_easter_shown() -> None:
+    data = _read_data()
+    data["easter_shown"] = True
+    _LICENSE_FILE.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+
+
 def is_stefan(username: str) -> bool:
     return username.strip().lower() in (
         "стефан", "stefan", "stephan",

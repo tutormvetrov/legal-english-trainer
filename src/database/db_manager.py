@@ -213,5 +213,10 @@ class DBManager:
         )
         return cur.fetchall()
 
+    def reset_progress(self) -> None:
+        """Удаляет всю историю повторений. Термины и избранное сохраняются."""
+        self.conn.execute("DELETE FROM progress")
+        self.conn.commit()
+
     def close(self):
         self.conn.close()
