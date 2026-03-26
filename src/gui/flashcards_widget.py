@@ -9,8 +9,9 @@ from PyQt6.QtGui import QFont
 from ..models.term import Term
 from ..utils.sound_manager import get_sound_manager
 from ..utils import tts_manager
+from ..utils.settings_manager import get_settings
 
-QUIZ_EVERY = 10   # запускать мини-тест каждые N оценённых карточек
+QUIZ_EVERY = 10   # значение по умолчанию, переопределяется настройками
 
 
 class FlashcardsWidget(QWidget):
@@ -270,7 +271,8 @@ class FlashcardsWidget(QWidget):
         self._sounds.play("correct" if quality >= 4 else "wrong")
 
         # Trigger quiz every QUIZ_EVERY rated cards
-        if self._rated_count > 0 and self._rated_count % QUIZ_EVERY == 0:
+        quiz_every = get_settings().get("quiz_every", QUIZ_EVERY)
+        if self._rated_count > 0 and self._rated_count % quiz_every == 0:
             self._next_term()
             self._launch_quiz()
         else:

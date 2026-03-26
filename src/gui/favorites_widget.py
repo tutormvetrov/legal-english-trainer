@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
-    QTableWidget, QTableWidgetItem, QHeaderView, QFrame
+    QTableWidget, QTableWidgetItem, QHeaderView, QFrame, QLineEdit
 )
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
@@ -18,8 +18,20 @@ class FavoritesWidget(QWidget):
         self._build_ui()
 
     def refresh(self):
+        self.search_input.clear()
         rows = self.db.get_starred_terms()
         self._terms = [Term.from_row(r) for r in rows]
+        self._populate_table()
+        self._clear_detail()
+
+    def _on_search(self, text: str):
+        if text.strip():
+            rows = self.db.search_terms(text.strip())
+            self._terms = [Term.from_row(r) for r in rows]
+            self.count_label.setText(f"Найдено: {len(self._terms)} терминов")
+        else:
+            rows = self.db.get_starred_terms()
+            self._terms = [Term.from_row(r) for r in rows]
         self._populate_table()
         self._clear_detail()
 
@@ -36,6 +48,14 @@ class FavoritesWidget(QWidget):
         title.setFont(f)
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         root.addWidget(title)
+
+        # ── Search bar ────────────────────────────────────────────────
+        search_row = QHBoxLayout()
+        self.search_input = QLineEdit()
+        self.search_input.setPlaceholderText("Поиск по всем терминам…")
+        self.search_input.textChanged.connect(self._on_search)
+        search_row.addWidget(self.search_input)
+        root.addLayout(search_row)
 
         self.count_label = QLabel("")
         self.count_label.setAlignment(Qt.AlignmentFlag.AlignCenter)

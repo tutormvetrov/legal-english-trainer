@@ -1,4 +1,5 @@
 import os
+import shutil
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
     QTableWidget, QTableWidgetItem, QHeaderView, QFileDialog, QMessageBox
@@ -10,9 +11,10 @@ from .import_dialog import ImportDialog
 
 
 class StatsWidget(QWidget):
-    def __init__(self, db_manager):
+    def __init__(self, db_manager, db_path: str = ""):
         super().__init__()
         self.db = db_manager
+        self._db_path = db_path
         self._build_ui()
         self.refresh()
 
@@ -103,6 +105,16 @@ class StatsWidget(QWidget):
         import_btn.setMinimumHeight(36)
         import_btn.clicked.connect(self._import_terms)
         btn_row.addWidget(import_btn)
+
+        backup_btn = QPushButton("💾 Резервная копия")
+        backup_btn.setMinimumHeight(36)
+        backup_btn.clicked.connect(self._backup_db)
+        btn_row.addWidget(backup_btn)
+
+        restore_btn = QPushButton("📂 Восстановить")
+        restore_btn.setMinimumHeight(36)
+        restore_btn.clicked.connect(self._restore_db)
+        btn_row.addWidget(restore_btn)
 
         btn_row.addStretch()
         root.addLayout(btn_row)
@@ -198,5 +210,47 @@ class StatsWidget(QWidget):
         try:
             self.db.export_progress_csv(path)
             QMessageBox.information(self, "Экспорт", f"Файл сохранён:\n{path}")
+        except Exception as e:
+            QMessageBox.critical(self, "Ошибка", str(e))
+
+    def _backup_db(self):
+        if not self._db_path or not os.path.exists(self._db_path):
+            QMessageBox.warning(self, "Ошибка", "Не удалось найти файл базы данных.")
+            return
+        path, _ = QFileDialog.getSaveFileName(
+            self, "Сохранить резервную копию", "legal_english_backup.db",
+            "База данных (*.db)"
+        )
+        if not path:
+            return
+        try:
+            shutil.copy2(self._db_path, path)
+            QMessageBox.information(self, "Готово", f"Резервная копия сохранена:\n{path}")
+        except Exception as e:
+            QMessageBox.critical(self, "Ошибка", str(e))
+
+    def _restore_db(self):
+        if not self._db_path:
+            QMessageBox.warning(self, "Ошибка", "Не удалось найти файл базы данных.")
+            return
+        path, _ = QFileDialog.getOpenFileName(
+            self, "Выбрать резервную копию", "",
+            "База данных (*.db)"
+        )
+        if not path:
+            return
+        reply = QMessageBox.question(
+            self, "Подтверждение",
+            "Текущий прогресс будет заменён данными из резервной копии.\n"
+            "Приложение закроется для применения изменений. Продолжить?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+        try:
+            self.db.close()
+            shutil.copy2(path, self._db_path)
+            from PyQt6.QtWidgets import QApplication
+            QApplication.quit()
         except Exception as e:
             QMessageBox.critical(self, "Ошибка", str(e))

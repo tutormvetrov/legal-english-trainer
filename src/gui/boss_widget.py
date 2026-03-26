@@ -17,6 +17,7 @@ from PyQt6.QtGui import QFont
 
 from ..models.term import Term
 from ..utils.sound_manager import get_sound_manager
+from ..utils.settings_manager import get_settings
 
 _HS_FILE = pathlib.Path.home() / ".letapp" / "highscore.json"
 
@@ -137,7 +138,7 @@ class BossWidget(QWidget):
     # ── Game logic ────────────────────────────────────────────────────
     def _start(self):
         self._score = 0
-        self._time_ms = START_MS
+        self._time_ms = get_settings().get("boss_start_ms", START_MS)
         self._running = True
         self.result_lbl.setText("")
         self.start_btn.setText("Рестарт")

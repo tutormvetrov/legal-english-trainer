@@ -187,5 +187,31 @@ class DBManager:
         )
         return cur.fetchall()
 
+    def get_term_with_example(self, category: str | None = None) -> sqlite3.Row | None:
+        """Случайный термин с непустым примером предложения."""
+        if category and category != "Все категории":
+            cur = self.conn.execute(
+                "SELECT * FROM terms WHERE category = ? "
+                "AND example IS NOT NULL AND TRIM(example) != '' "
+                "ORDER BY RANDOM() LIMIT 1",
+                (category,)
+            )
+        else:
+            cur = self.conn.execute(
+                "SELECT * FROM terms WHERE example IS NOT NULL "
+                "AND TRIM(example) != '' ORDER BY RANDOM() LIMIT 1"
+            )
+        return cur.fetchone()
+
+    def search_terms(self, query: str, limit: int = 100) -> list[sqlite3.Row]:
+        """Поиск по term_eng и term_rus (регистронезависимо)."""
+        pattern = f"%{query}%"
+        cur = self.conn.execute(
+            "SELECT * FROM terms WHERE term_eng LIKE ? OR term_rus LIKE ? "
+            "ORDER BY term_eng LIMIT ?",
+            (pattern, pattern, limit)
+        )
+        return cur.fetchall()
+
     def close(self):
         self.conn.close()
