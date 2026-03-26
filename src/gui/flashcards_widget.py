@@ -307,10 +307,14 @@ class FlashcardsWidget(QWidget):
         QTimer.singleShot(0, self._load_next_and_fade_in)
 
     def _load_next_and_fade_in(self):
+        # Remove the effect BEFORE updating content — prevents QPainter
+        # double-begin that occurs when children repaint through an active effect.
+        self.card_frame.setGraphicsEffect(None)
         self._next_term()
-        effect = self.card_frame.graphicsEffect()
-        if effect is None:
-            return
+        # Re-attach a fresh effect at opacity=0 and animate to 1.
+        effect = QGraphicsOpacityEffect(self.card_frame)
+        effect.setOpacity(0.0)
+        self.card_frame.setGraphicsEffect(effect)
         anim = QPropertyAnimation(effect, b"opacity")
         anim.setDuration(180)
         anim.setStartValue(0.0)
