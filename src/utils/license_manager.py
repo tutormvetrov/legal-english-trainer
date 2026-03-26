@@ -109,9 +109,12 @@ def set_easter_shown() -> None:
 
 def is_stefan(username: str) -> bool:
     return username.strip().lower() in (
-        "стефан", "stefan", "stephan",
-        "стефан тёхта", "стефан техта",
-        "stephan tyokhta", "stefan tehta", "stefan tyohta",
+        # Russian
+        "стефан", "стефан тёхта", "стефан техта",
+        # English variants
+        "stefan", "stephan", "stephen",
+        "stefan tyokhta", "stefan tehta", "stefan tyohta",
+        "stephan tyokhta", "stephen tyokhta",
     )
 
 
