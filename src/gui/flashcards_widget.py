@@ -73,6 +73,11 @@ class FlashcardsWidget(QWidget):
         self.category_tag = QLabel("")
         self.category_tag.setObjectName("categoryTag")
         self.category_tag.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        # Left spacer balances the 44px star button on the right
+        _left_spacer = QWidget()
+        _left_spacer.setFixedSize(44, 44)
+        top_row.addWidget(_left_spacer)
         top_row.addStretch()
         top_row.addWidget(self.category_tag)
         top_row.addStretch()
