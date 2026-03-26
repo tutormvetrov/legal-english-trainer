@@ -57,6 +57,9 @@ jobs:
           --add-data "assets:assets"
           run.py
 
+      - name: Sign app (ad-hoc, removes hard Gatekeeper block)
+        run: codesign --deep --force --sign - dist/LegalEnglishTrainer.app
+
       - name: Create DMG
         run: >
           hdiutil create
@@ -89,6 +92,7 @@ jobs:
             ## Установка
             - **Windows**: скачай `LegalEnglishTrainer.exe`, запусти.
             - **macOS**: скачай `LegalEnglishTrainer.dmg`, открой, перетащи в Applications.
+              Если macOS заблокирует запуск — нажми на иконку приложения **правой кнопкой мыши** → **«Открыть»** → **«Открыть»** в диалоге.
           files: |
             LegalEnglishTrainer-Windows/LegalEnglishTrainer.exe
             LegalEnglishTrainer-macOS/LegalEnglishTrainer.dmg
