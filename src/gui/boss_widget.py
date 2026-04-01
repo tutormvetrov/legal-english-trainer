@@ -2,11 +2,10 @@
 Boss Mode — режим на скорость.
 Показывает английский термин, нужно нажать правильный русский перевод из 4 вариантов.
 Таймер сокращается с каждым верным ответом. Ошибка или истёкший таймер — конец игры.
-Рекорд сохраняется в ~/.letapp/highscore.json
+Рекорд сохраняется в директории активного app profile.
 """
 import json
 import random
-import pathlib
 
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
@@ -18,8 +17,9 @@ from PyQt6.QtGui import QFont
 from ..models.term import Term
 from ..utils.sound_manager import get_sound_manager
 from ..utils.settings_manager import get_settings
+from ..app_paths import get_user_file
 
-_HS_FILE = pathlib.Path.home() / ".letapp" / "highscore.json"
+_HS_FILE = get_user_file("highscore.json")
 
 START_MS = 5000      # начальное время на ответ, мс
 MIN_MS   = 1200      # минимальное время

@@ -7,15 +7,16 @@
 """
 import sys
 import os
-from pathlib import Path
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+from src.app_profile import get_current_profile
 from src.utils.license_manager import generate_key, validate_key
+from src.app_paths import ensure_app_dir
 
 
 def main():
-    print("=== Генератор ключей — Legal English Trainer ===\n")
+    print(f"=== Генератор ключей — {get_current_profile().app_name} ===\n")
 
     while True:
         raw = input("Сколько ключей сгенерировать? [1]: ").strip()
@@ -41,8 +42,7 @@ def main():
 
     save = input("\nСохранить в локальный файл вне репозитория? [д/н]: ").strip().lower()
     if save in ("д", "y", "yes", "да"):
-        out_dir = Path.home() / ".letapp"
-        out_dir.mkdir(parents=True, exist_ok=True)
+        out_dir = ensure_app_dir()
         path = out_dir / "generated_keys.txt"
         mode = "a" if path.exists() else "w"
         with open(path, mode, encoding="utf-8") as f:

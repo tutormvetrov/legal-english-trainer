@@ -11,35 +11,9 @@ from ..utils.sound_manager import get_sound_manager
 from ..utils import tts_manager
 from ..utils.settings_manager import get_settings
 from .._stylesheet import get_theme_palette
+from ..app_profile import get_current_profile
 
 QUIZ_EVERY = 10   # значение по умолчанию, переопределяется настройками
-
-# ── Category accent colours ────────────────────────────────────────────────
-# (text_colour, background, border/left-bar colour)
-_CAT_COLORS = {
-    "dark": {
-        "Contract Law":      ("#ffcb6b", "#241a08", "#c89020"),
-        "Criminal Law":      ("#f07178", "#240c12", "#b03040"),
-        "Property Law":      ("#c3e88d", "#101e0a", "#4a9030"),
-        "Corporate Law":     ("#c792ea", "#1c0e28", "#9050c0"),
-        "Civil Procedure":   ("#89ddff", "#081820", "#3090b8"),
-        "International Law": ("#82aaff", "#0c1428", "#4060c0"),
-        "Latin Terms":       ("#e8c060", "#201808", "#b08020"),
-    },
-    "light": {
-        "Contract Law":      ("#8b5b1d", "#f6e5c7", "#bf8c44"),
-        "Criminal Law":      ("#8d4349", "#f8dede", "#c16a6f"),
-        "Property Law":      ("#5c7142", "#e4edd7", "#91aa72"),
-        "Corporate Law":     ("#6e5189", "#eadff4", "#a586c6"),
-        "Civil Procedure":   ("#476f81", "#dfeef4", "#7ca6b6"),
-        "International Law": ("#4d6789", "#e0e9f7", "#7b97bf"),
-        "Latin Terms":       ("#7c5c2f", "#f4e5c6", "#c69a57"),
-    },
-}
-_DEFAULT_CAT = {
-    "dark": ("#82aaff", "#0c1428", "#4060c0"),
-    "light": ("#6d593d", "#ede0cb", "#b8864c"),
-}
 
 class FlashcardsWidget(QWidget):
     def __init__(self, db_manager, scheduler):
@@ -220,11 +194,13 @@ class FlashcardsWidget(QWidget):
 
     def _cat_colors(self):
         theme = get_settings().get("theme", "dark")
-        palette = _CAT_COLORS.get(theme, _CAT_COLORS["dark"])
-        default = _DEFAULT_CAT.get(theme, _DEFAULT_CAT["dark"])
+        profile = get_current_profile()
+        palette = profile.category_styles.get(theme) or profile.category_styles.get("dark", {})
+        default = ("#82aaff", "#0c1428", "#4060c0") if theme == "dark" else ("#6d593d", "#ede0cb", "#b8864c")
         if self.current_term is None:
             return default
-        return palette.get(self.current_term.category, default)
+        colors = palette.get(self.current_term.category, default)
+        return tuple(colors)
 
     def _theme_palette(self):
         return get_theme_palette(get_settings().get("theme", "dark"))

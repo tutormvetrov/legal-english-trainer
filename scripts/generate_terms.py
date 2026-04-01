@@ -1,12 +1,12 @@
 """
 Генератор terms.json. Запускать из корня проекта:
   python scripts/generate_terms.py
-Каждый батч добавляет термины в data/terms.json.
+Каждый батч добавляет термины в packs/legal/terms.json.
 """
 import json
 import os
 
-OUTPUT = os.path.join(os.path.dirname(__file__), "..", "data", "terms.json")
+OUTPUT = os.path.join(os.path.dirname(__file__), "..", "packs", "legal", "terms.json")
 
 
 def load_existing() -> list:

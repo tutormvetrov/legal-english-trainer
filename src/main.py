@@ -1,24 +1,8 @@
 import sys
 import os
-import pathlib
 import random
 
-# Resolve paths for both normal run and PyInstaller bundle
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-if getattr(sys, "frozen", False):
-    # Running inside a PyInstaller bundle
-    _ROOT = sys._MEIPASS
-    # _MEIPASS is read-only on macOS — store user data in ~/.letapp/
-    _USER_DATA = pathlib.Path.home() / ".letapp"
-    _USER_DATA.mkdir(parents=True, exist_ok=True)
-    DB_PATH = str(_USER_DATA / "legal_english.db")
-else:
-    # Running from source: src/ → parent is project root
-    _ROOT = os.path.join(BASE_DIR, "..")
-    DB_PATH = os.path.join(_ROOT, "data", "legal_english.db")
-
-TERMS_JSON = os.path.join(_ROOT, "data", "terms.json")
 
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtGui import QPalette, QColor, QIcon, QPixmap
@@ -37,9 +21,11 @@ try:
     from .utils.settings_manager import get_settings
     from .utils.update_checker import UpdateChecker
     from ._stylesheet import build_stylesheet
-    from .version import __version__, GITHUB_REPO
+    from .version import __version__
     from .models.term import Term
     from .gui.attack_popup import AttackPopup
+    from .app_profile import get_current_profile, project_root
+    from .app_paths import get_runtime_db_path, get_terms_seed_path
 except ImportError:
     sys.path.insert(0, BASE_DIR)
     from database.db_manager import DBManager
@@ -53,9 +39,17 @@ except ImportError:
     from utils.settings_manager import get_settings
     from utils.update_checker import UpdateChecker
     from _stylesheet import build_stylesheet
-    from version import __version__, GITHUB_REPO
+    from version import __version__
     from models.term import Term
     from gui.attack_popup import AttackPopup
+    from app_profile import get_current_profile, project_root
+    from app_paths import get_runtime_db_path, get_terms_seed_path
+
+
+PROFILE = get_current_profile()
+_ROOT = str(project_root())
+DB_PATH = str(get_runtime_db_path(frozen=getattr(sys, "frozen", False)))
+TERMS_JSON = str(get_terms_seed_path())
 
 
 def _load_fonts():
@@ -70,7 +64,7 @@ def _load_fonts():
 
 
 def _import_terms_if_needed(db: DBManager):
-    """Auto-import terms.json if the terms table is empty."""
+    """Auto-import the active pack seed terms if the terms table is empty."""
     if not db.is_terms_empty():
         return
     import json
@@ -83,7 +77,7 @@ def _import_terms_if_needed(db: DBManager):
 
 def main():
     app = QApplication(sys.argv)
-    app.setApplicationName("Legal English Trainer")
+    app.setApplicationName(PROFILE.app_name)
     _load_fonts()   # must be called after QApplication, before setStyleSheet
     settings = get_settings()
     font_size = settings.get("font_size", 13)
@@ -154,9 +148,11 @@ def main():
         )
         msg.setDefaultButton(QMessageBox.StandardButton.Yes)
         if msg.exec() == QMessageBox.StandardButton.Yes:
-            webbrowser.open(f"https://github.com/{GITHUB_REPO}/releases/latest")
+            webbrowser.open(f"https://github.com/{PROFILE.github_repo}/releases/latest")
 
-    _updater = UpdateChecker(__version__, GITHUB_REPO, parent=app)
+    _updater = UpdateChecker(
+        __version__, PROFILE.github_repo, user_agent=PROFILE.update_user_agent, parent=app
+    )
     _updater.update_available.connect(_on_update_available)
     _updater.start()
 
@@ -166,7 +162,7 @@ def main():
         pix = QPixmap(16, 16)
         pix.fill(QColor("#7eb8f7"))
         tray = QSystemTrayIcon(QIcon(pix), app)
-        tray.setToolTip("Legal English Trainer")
+        tray.setToolTip(PROFILE.app_name)
 
         tray_menu = QMenu()
         open_act = tray_menu.addAction("Открыть")
@@ -196,8 +192,8 @@ def main():
                     and now.minute == s["reminder_minute"]):
                 _shown["date"] = today
                 tray.showMessage(
-                    "Legal English Trainer",
-                    "Не забудь повторить термины сегодня! 📚",
+                    PROFILE.app_name,
+                    PROFILE.reminder_message,
                     QSystemTrayIcon.MessageIcon.Information,
                     5000,
                 )

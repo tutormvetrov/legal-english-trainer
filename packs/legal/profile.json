@@ -1,0 +1,39 @@
+{
+  "pack_id": "legal",
+  "app_name": "Legal English Trainer",
+  "app_dir_name": ".letapp",
+  "db_filename": "legal_english.db",
+  "source_db_path": "data/legal_english.db",
+  "terms_path": "packs/legal/terms.json",
+  "backup_filename": "legal_english_backup.db",
+  "github_repo": "tutormvetrov/legal-english-trainer",
+  "update_user_agent": "LegalEnglishTrainer",
+  "hero_eyebrow": "LEGAL ENGLISH TRAINER",
+  "hero_guest_title": "Ваш ежедневный юридический английский",
+  "hero_subtitle": "Повторяйте термины в удобном режиме, отслеживайте прогресс и держите темп каждый день.",
+  "activation_product_name": "Legal English Trainer",
+  "activation_key_prompt": "Введите серийный ключ для активации",
+  "easter_caption": "Добро пожаловать в Legal English Trainer!",
+  "reminder_message": "Не забудь повторить термины сегодня! 📚",
+  "backup_invalid_message": "Выбранный файл не похож на резервную копию Legal English Trainer.",
+  "category_styles": {
+    "dark": {
+      "Contract Law": ["#ffcb6b", "#241a08", "#c89020"],
+      "Criminal Law": ["#f07178", "#240c12", "#b03040"],
+      "Property Law": ["#c3e88d", "#101e0a", "#4a9030"],
+      "Corporate Law": ["#c792ea", "#1c0e28", "#9050c0"],
+      "Civil Procedure": ["#89ddff", "#081820", "#3090b8"],
+      "International Law": ["#82aaff", "#0c1428", "#4060c0"],
+      "Latin Terms": ["#e8c060", "#201808", "#b08020"]
+    },
+    "light": {
+      "Contract Law": ["#8b5b1d", "#f6e5c7", "#bf8c44"],
+      "Criminal Law": ["#8d4349", "#f8dede", "#c16a6f"],
+      "Property Law": ["#5c7142", "#e4edd7", "#91aa72"],
+      "Corporate Law": ["#6e5189", "#eadff4", "#a586c6"],
+      "Civil Procedure": ["#476f81", "#dfeef4", "#7ca6b6"],
+      "International Law": ["#4d6789", "#e0e9f7", "#7b97bf"],
+      "Latin Terms": ["#7c5c2f", "#f4e5c6", "#c69a57"]
+    }
+  }
+}

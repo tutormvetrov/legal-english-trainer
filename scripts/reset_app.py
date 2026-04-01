@@ -6,11 +6,12 @@
 """
 import sys
 import pathlib
-import shutil
 
 sys.stdout.reconfigure(encoding="utf-8")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
-LETAPP = pathlib.Path.home() / ".letapp"
+from src.app_paths import get_app_dir
+LETAPP = get_app_dir()
 
 FILES = {
     ".session.bin":  "текущая machine-bound активация",
@@ -20,10 +21,10 @@ FILES = {
 }
 
 def main():
-    print("=== Сброс состояния Legal English Trainer ===\n")
+    print("=== Сброс состояния приложения ===\n")
 
     if not LETAPP.exists():
-        print("Папка ~/.letapp не найдена — приложение ещё не запускалось.")
+        print(f"Папка {LETAPP} не найдена — приложение ещё не запускалось.")
         return
 
     for filename, description in FILES.items():

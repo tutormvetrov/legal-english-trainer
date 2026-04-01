@@ -24,7 +24,7 @@ jobs:
         run: >
           pyinstaller --onefile --windowed
           --name "LegalEnglishTrainer"
-          --add-data "data/terms.json;data"
+          --add-data "packs;packs"
           --add-data "src/database/schema.sql;src/database"
           --add-data "assets;assets"
           run.py
@@ -52,7 +52,7 @@ jobs:
         run: >
           pyinstaller --windowed
           --name "LegalEnglishTrainer"
-          --add-data "data/terms.json:data"
+          --add-data "packs:packs"
           --add-data "src/database/schema.sql:src/database"
           --add-data "assets:assets"
           run.py

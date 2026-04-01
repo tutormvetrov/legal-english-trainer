@@ -7,9 +7,11 @@ from PyQt6.QtCore import Qt
 try:
     from .._stylesheet import get_theme_palette
     from ..utils.settings_manager import get_settings
+    from ..app_profile import get_current_profile
 except ImportError:
     from _stylesheet import get_theme_palette
     from utils.settings_manager import get_settings
+    from app_profile import get_current_profile
 
 from .flashcards_widget import FlashcardsWidget
 from .match_widget import MatchWidget
@@ -36,9 +38,10 @@ class MainWindow(QMainWindow):
         self._refresh_goal()
 
     def _update_title(self):
+        profile = get_current_profile()
         name_part   = f" — {self.username}" if self.username else ""
         streak_part = f"  🔥 {self.streak} дней подряд" if self.streak >= 2 else ""
-        self.setWindowTitle(f"Legal English Trainer{name_part}{streak_part}")
+        self.setWindowTitle(f"{profile.app_name}{name_part}{streak_part}")
 
     def _build_ui(self):
         tabs = QTabWidget()
@@ -81,7 +84,9 @@ class MainWindow(QMainWindow):
         top_row = QHBoxLayout()
         top_row.setSpacing(12)
 
-        eyebrow = QLabel("LEGAL ENGLISH TRAINER")
+        profile = get_current_profile()
+
+        eyebrow = QLabel(profile.hero_eyebrow)
         eyebrow.setObjectName("heroEyebrow")
         top_row.addWidget(eyebrow)
         top_row.addStretch()
@@ -98,7 +103,7 @@ class MainWindow(QMainWindow):
         hero_layout.addWidget(self._hero_title)
 
         self._hero_subtitle = QLabel(
-            "Повторяйте термины в удобном режиме, отслеживайте прогресс и держите темп каждый день."
+            profile.hero_subtitle
         )
         self._hero_subtitle.setObjectName("heroSubtitle")
         self._hero_subtitle.setWordWrap(True)
@@ -147,7 +152,8 @@ class MainWindow(QMainWindow):
         self._refresh_goal()
 
     def _refresh_header(self):
-        title = f"Здравствуйте, {self.username}" if self.username else "Ваш ежедневный юридический английский"
+        profile = get_current_profile()
+        title = f"Здравствуйте, {self.username}" if self.username else profile.hero_guest_title
         if self.streak >= 2:
             meta = f"Серия: {self.streak} дней подряд"
         else:

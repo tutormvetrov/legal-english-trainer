@@ -7,6 +7,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
 from .import_dialog import ImportDialog
+from ..app_profile import get_current_profile
 
 
 class StatsWidget(QWidget):
@@ -244,7 +245,7 @@ class StatsWidget(QWidget):
             QMessageBox.warning(self, "Ошибка", "Не удалось найти файл базы данных.")
             return
         path, _ = QFileDialog.getSaveFileName(
-            self, "Сохранить резервную копию", "legal_english_backup.db",
+            self, "Сохранить резервную копию", get_current_profile().backup_filename,
             "База данных (*.db)"
         )
         if not path:

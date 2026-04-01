@@ -3,6 +3,11 @@ import os
 from pathlib import Path
 import tempfile
 
+try:
+    from ..app_profile import get_current_profile
+except ImportError:
+    from app_profile import get_current_profile
+
 
 class DBManager:
     def __init__(self, db_path: str):
@@ -190,7 +195,7 @@ class DBManager:
             )
             tables = {row[0] for row in cur.fetchall()}
             if {"terms", "progress"} - tables:
-                raise ValueError("Выбранный файл не похож на резервную копию Legal English Trainer.")
+                raise ValueError(get_current_profile().backup_invalid_message)
         finally:
             conn.close()
 

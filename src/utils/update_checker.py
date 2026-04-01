@@ -20,10 +20,11 @@ class UpdateChecker(QThread):
     """
     update_available = pyqtSignal(str, str)  # (current_version, latest_version)
 
-    def __init__(self, current_version: str, repo: str, parent=None):
+    def __init__(self, current_version: str, repo: str, user_agent: str = "AppUpdater", parent=None):
         super().__init__(parent)
         self._current = current_version
         self._repo = repo
+        self._user_agent = user_agent
 
     def run(self):
         try:
@@ -31,7 +32,7 @@ class UpdateChecker(QThread):
             req = urllib.request.Request(
                 url,
                 headers={"Accept": "application/vnd.github+json",
-                         "User-Agent": "LegalEnglishTrainer"},
+                         "User-Agent": self._user_agent},
             )
             with urllib.request.urlopen(req, timeout=5) as resp:
                 data = json.loads(resp.read())

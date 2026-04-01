@@ -1,12 +1,16 @@
 """
 Streak — счётчик дней подряд активности.
-Хранится в ~/.letapp/streak.json
+Хранится в директории активного app profile.
 """
 import json
-import pathlib
 from datetime import date
 
-_FILE = pathlib.Path.home() / ".letapp" / "streak.json"
+try:
+    from ..app_paths import get_user_file
+except ImportError:
+    from app_paths import get_user_file
+
+_FILE = get_user_file("streak.json")
 
 
 def record_activity() -> int:

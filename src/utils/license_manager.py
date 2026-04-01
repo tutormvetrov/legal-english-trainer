@@ -10,9 +10,13 @@ import base64
 import getpass
 import hashlib
 import json
-import pathlib
 import platform
 import uuid
+
+try:
+    from ..app_paths import get_app_dir
+except ImportError:
+    from app_paths import get_app_dir
 
 # Алфавит: исключены 0/O и 1/I, чтобы избежать путаницы при ручном вводе
 ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
@@ -21,7 +25,7 @@ _A = len(ALPHABET)
 # Встроенная «соль» — меняй при форке, чтобы чужие генераторы не подошли
 _SECRET = 0x4C4547414C454E47  # "LEGALENG" as int
 
-_APP_DIR = pathlib.Path.home() / ".letapp"
+_APP_DIR = get_app_dir()
 _LICENSE_FILE = _APP_DIR / ".session.bin"
 _LEGACY_LICENSE_FILE = _APP_DIR / "license.dat"
 _FORMAT_VERSION = 2

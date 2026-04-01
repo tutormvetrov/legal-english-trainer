@@ -7,12 +7,12 @@ pip install pyinstaller PyQt6 --quiet
 
 if [ -f "assets/legal.icns" ]; then
     pyinstaller --windowed --icon=assets/legal.icns --name "LegalEnglishTrainer" \
-        --add-data "data/terms.json:data" \
+        --add-data "packs:packs" \
         --add-data "src/database/schema.sql:src/database" \
         run.py
 else
     pyinstaller --windowed --name "LegalEnglishTrainer" \
-        --add-data "data/terms.json:data" \
+        --add-data "packs:packs" \
         --add-data "src/database/schema.sql:src/database" \
         run.py
 fi

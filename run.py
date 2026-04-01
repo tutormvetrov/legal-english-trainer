@@ -11,7 +11,10 @@ import datetime
 # Add project root to path so 'src' is importable as a package
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-_LOG_FILE = pathlib.Path.home() / ".letapp" / "crash.log"
+from src.app_paths import get_user_file
+from src.app_profile import get_current_profile
+
+_LOG_FILE = get_user_file("crash.log")
 
 
 def _write_crash_log(exc: BaseException) -> str:
@@ -37,8 +40,9 @@ def _show_crash_dialog(log_path: str, tb: str) -> None:
         from PyQt6.QtWidgets import QApplication, QMessageBox
         _app = QApplication.instance() or QApplication(sys.argv)
         short = tb.strip().splitlines()[-1] if tb.strip() else "Unknown error"
+        app_name = get_current_profile().app_name
         msg = QMessageBox()
-        msg.setWindowTitle("Legal English Trainer — Ошибка запуска")
+        msg.setWindowTitle(f"{app_name} — Ошибка запуска")
         msg.setIcon(QMessageBox.Icon.Critical)
         msg.setText(f"Приложение завершилось с ошибкой:\n\n{short}")
         msg.setInformativeText(f"Подробности сохранены в:\n{log_path}")

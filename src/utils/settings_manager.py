@@ -1,10 +1,14 @@
 """
-Настройки приложения. Хранятся в ~/.letapp/settings.json
+Настройки приложения. Хранятся в директории активного app profile.
 """
 import json
-import pathlib
 
-_FILE = pathlib.Path.home() / ".letapp" / "settings.json"
+try:
+    from ..app_paths import get_user_file
+except ImportError:
+    from app_paths import get_user_file
+
+_FILE = get_user_file("settings.json")
 
 _DEFAULTS = {
     "font_size": 13,

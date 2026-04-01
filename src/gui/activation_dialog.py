@@ -6,6 +6,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
 from ..utils.license_manager import ALPHABET, validate_key, save_activation
+from ..app_profile import get_current_profile
 
 
 class ActivationDialog(QDialog):
@@ -35,18 +36,19 @@ class ActivationDialog(QDialog):
 
     # ── Шаг 1: ключ ──────────────────────────────────────────────────
     def _build_key_page(self) -> QWidget:
+        profile = get_current_profile()
         page = QWidget()
         layout = QVBoxLayout(page)
         layout.setContentsMargins(36, 32, 36, 28)
         layout.setSpacing(18)
 
-        title = QLabel("Legal English Trainer")
+        title = QLabel(profile.activation_product_name)
         f = QFont(); f.setPointSize(16); f.setBold(True)
         title.setFont(f)
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(title)
 
-        subtitle = QLabel("Введите серийный ключ для активации")
+        subtitle = QLabel(profile.activation_key_prompt)
         subtitle.setAlignment(Qt.AlignmentFlag.AlignCenter)
         subtitle.setStyleSheet("color: #a8acc8;")
         layout.addWidget(subtitle)

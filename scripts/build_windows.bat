@@ -7,12 +7,12 @@ pip install pyinstaller PyQt6 --quiet
 rem Use --icon if assets/legal.ico exists
 if exist assets\legal.ico (
     pyinstaller --onefile --windowed --icon=assets\legal.ico --name "LegalEnglishTrainer" ^
-        --add-data "data\terms.json;data" ^
+        --add-data "packs;packs" ^
         --add-data "src\database\schema.sql;src\database" ^
         run.py
 ) else (
     pyinstaller --onefile --windowed --name "LegalEnglishTrainer" ^
-        --add-data "data\terms.json;data" ^
+        --add-data "packs;packs" ^
         --add-data "src\database\schema.sql;src\database" ^
         run.py
 )

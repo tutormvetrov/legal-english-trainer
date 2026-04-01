@@ -20,6 +20,11 @@ try:
 except Exception:
     _SOUND_OK = False
 
+try:
+    from ..app_profile import get_current_profile
+except ImportError:
+    from app_profile import get_current_profile
+
 _TMPDIR = None
 
 
@@ -203,7 +208,7 @@ class EasterEggDialog(QDialog):
             img_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             root.addWidget(img_label)
 
-        caption = QLabel("Добро пожаловать в Legal English Trainer!")
+        caption = QLabel(get_current_profile().easter_caption)
         caption.setAlignment(Qt.AlignmentFlag.AlignCenter)
         caption.setStyleSheet("color: #a8acc8; font-size: 12px;")
         root.addWidget(caption)
