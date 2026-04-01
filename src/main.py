@@ -36,7 +36,7 @@ try:
     from .utils.streak_manager import record_activity
     from .utils.settings_manager import get_settings
     from .utils.update_checker import UpdateChecker
-    from ._stylesheet import build_dark_stylesheet
+    from ._stylesheet import build_stylesheet
     from .version import __version__, GITHUB_REPO
     from .models.term import Term
     from .gui.attack_popup import AttackPopup
@@ -52,7 +52,7 @@ except ImportError:
     from utils.streak_manager import record_activity
     from utils.settings_manager import get_settings
     from utils.update_checker import UpdateChecker
-    from _stylesheet import build_dark_stylesheet
+    from _stylesheet import build_stylesheet
     from version import __version__, GITHUB_REPO
     from models.term import Term
     from gui.attack_popup import AttackPopup
@@ -85,8 +85,10 @@ def main():
     app = QApplication(sys.argv)
     app.setApplicationName("Legal English Trainer")
     _load_fonts()   # must be called after QApplication, before setStyleSheet
-    font_size = get_settings().get("font_size", 13)
-    app.setStyleSheet(build_dark_stylesheet(font_size))
+    settings = get_settings()
+    font_size = settings.get("font_size", 13)
+    theme = settings.get("theme", "dark")
+    app.setStyleSheet(build_stylesheet(font_size, theme))
 
     # ── Проверка активации ────────────────────────────────────────────
     first_launch = not is_activated()

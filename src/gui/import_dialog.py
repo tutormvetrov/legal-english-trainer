@@ -339,11 +339,12 @@ class ImportDialog(QDialog):
         if not self._rows:
             return
         try:
-            self.db.import_terms(self._rows)
+            inserted = self.db.import_terms(self._rows)
+            skipped = len(self._rows) - inserted
             QMessageBox.information(
                 self, "Готово",
-                f"Импортировано терминов: {len(self._rows)}\n"
-                "Дубли (совпадение по term_eng) были пропущены."
+                f"Добавлено терминов: {inserted}\n"
+                f"Пропущено дубликатов: {max(0, skipped)}"
             )
             self.accept()
         except Exception as exc:

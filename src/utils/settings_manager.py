@@ -8,6 +8,7 @@ _FILE = pathlib.Path.home() / ".letapp" / "settings.json"
 
 _DEFAULTS = {
     "font_size": 13,
+    "theme": "dark",
     "boss_start_ms": 5000,
     "quiz_every": 10,
     "daily_goal": 20,

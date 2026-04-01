@@ -1,5 +1,4 @@
 import os
-import shutil
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
     QTableWidget, QTableWidgetItem, QHeaderView, QFileDialog, QMessageBox
@@ -32,6 +31,14 @@ class StatsWidget(QWidget):
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         root.addWidget(title)
 
+        subtitle = QLabel(
+            "Следите за общим темпом, провалами по категориям и сохранностью базы перед крупными изменениями."
+        )
+        subtitle.setObjectName("mutedLabel")
+        subtitle.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        subtitle.setWordWrap(True)
+        root.addWidget(subtitle)
+
         # ── Summary cards ─────────────────────────────────────────────
         summary_row = QHBoxLayout()
         summary_row.setSpacing(16)
@@ -49,7 +56,8 @@ class StatsWidget(QWidget):
         root.addLayout(summary_row)
 
         # ── Category table ────────────────────────────────────────────
-        cat_label = QLabel("По категориям:")
+        cat_label = QLabel("Разбивка по категориям")
+        cat_label.setObjectName("sectionLabel")
         cat_label.setFont(QFont("", 12, QFont.Weight.Bold))
         root.addWidget(cat_label)
 
@@ -68,7 +76,8 @@ class StatsWidget(QWidget):
         root.addWidget(self.table, stretch=1)
 
         # ── Weak terms table ──────────────────────────────────────────
-        weak_label = QLabel("Сложные термины (чаще всего ошибаетесь):")
+        weak_label = QLabel("Зона повышенного внимания")
+        weak_label.setObjectName("sectionLabel")
         weak_label.setFont(QFont("", 12, QFont.Weight.Bold))
         root.addWidget(weak_label)
 
@@ -91,37 +100,39 @@ class StatsWidget(QWidget):
 
         # ── Buttons ───────────────────────────────────────────────────
         btn_row = QHBoxLayout()
-        refresh_btn = QPushButton("Обновить")
+        refresh_btn = QPushButton("Обновить данные")
         refresh_btn.setMinimumHeight(36)
+        refresh_btn.setObjectName("subtleBtn")
         refresh_btn.clicked.connect(self.refresh)
         btn_row.addWidget(refresh_btn)
 
         export_btn = QPushButton("Экспорт в CSV")
         export_btn.setMinimumHeight(36)
+        export_btn.setObjectName("subtleBtn")
         export_btn.clicked.connect(self._export_csv)
         btn_row.addWidget(export_btn)
 
         import_btn = QPushButton("Импорт терминов…")
         import_btn.setMinimumHeight(36)
+        import_btn.setObjectName("primaryBtn")
         import_btn.clicked.connect(self._import_terms)
         btn_row.addWidget(import_btn)
 
-        backup_btn = QPushButton("💾 Резервная копия")
+        backup_btn = QPushButton("Резервная копия")
         backup_btn.setMinimumHeight(36)
+        backup_btn.setObjectName("subtleBtn")
         backup_btn.clicked.connect(self._backup_db)
         btn_row.addWidget(backup_btn)
 
-        restore_btn = QPushButton("📂 Восстановить")
+        restore_btn = QPushButton("Восстановить")
         restore_btn.setMinimumHeight(36)
+        restore_btn.setObjectName("subtleBtn")
         restore_btn.clicked.connect(self._restore_db)
         btn_row.addWidget(restore_btn)
 
-        reset_btn = QPushButton("🔄 Сбросить")
+        reset_btn = QPushButton("Сбросить")
         reset_btn.setMinimumHeight(36)
-        reset_btn.setStyleSheet(
-            "QPushButton { color: #f38ba8; }"
-            "QPushButton:hover { color: #ff6b6b; }"
-        )
+        reset_btn.setObjectName("dangerBtn")
         reset_btn.clicked.connect(self._open_reset_dialog)
         btn_row.addWidget(reset_btn)
 
@@ -239,7 +250,7 @@ class StatsWidget(QWidget):
         if not path:
             return
         try:
-            shutil.copy2(self._db_path, path)
+            self.db.backup_to(path)
             QMessageBox.information(self, "Готово", f"Резервная копия сохранена:\n{path}")
         except Exception as e:
             QMessageBox.critical(self, "Ошибка", str(e))
@@ -263,8 +274,7 @@ class StatsWidget(QWidget):
         if reply != QMessageBox.StandardButton.Yes:
             return
         try:
-            self.db.close()
-            shutil.copy2(path, self._db_path)
+            self.db.replace_with_backup(path)
             from PyQt6.QtWidgets import QApplication
             QApplication.quit()
         except Exception as e:

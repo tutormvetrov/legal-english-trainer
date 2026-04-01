@@ -38,11 +38,10 @@ Desktop.ini
 # IDE
 .idea/
 .vscode/
+.claude/
 *.swp
 *.swo
 
 # Logs
 *.log
 keys.txt
-cd
-python

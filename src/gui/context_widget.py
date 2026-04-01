@@ -14,20 +14,23 @@ from PyQt6.QtGui import QFont
 
 try:
     from ..models.term import Term
+    from ..algorithms.spaced_repetition import SpacedRepetitionScheduler
     from ..utils.sound_manager import get_sound_manager
     from ..utils import tts_manager
     from ..utils.helpers import answers_match
 except ImportError:
     from models.term import Term
+    from algorithms.spaced_repetition import SpacedRepetitionScheduler
     from utils.sound_manager import get_sound_manager
     from utils import tts_manager
     from utils.helpers import answers_match
 
 
 class ContextWidget(QWidget):
-    def __init__(self, db_manager):
+    def __init__(self, db_manager, scheduler: SpacedRepetitionScheduler):
         super().__init__()
         self.db = db_manager
+        self.scheduler = scheduler
         self.current_term: Term | None = None
         self._sounds = get_sound_manager()
         self._score = 0
@@ -143,7 +146,10 @@ class ContextWidget(QWidget):
     def _next_term(self):
         self._answered = False
         cat = self._current_category()
-        row = self.db.get_term_with_example(cat)
+        due_ids = self.scheduler.get_due_terms(category=cat, limit=100)
+        row = self.db.get_term_with_example(cat, term_ids=due_ids)
+        if row is None:
+            row = self.db.get_term_with_example(cat)
         if row is None:
             self.context_lbl.setText("Нет терминов с примерами для этой категории.")
             self.answer_input.setEnabled(False)
@@ -189,10 +195,12 @@ class ContextWidget(QWidget):
         self.translation_lbl.show()
         if correct:
             self._score += 1
+            self.scheduler.review(self.current_term.id, 5)
             self.feedback_lbl.setText(f"✓ Верно! «{self.current_term.term_eng}»")
             self.feedback_lbl.setStyleSheet("color: #b8f0c0; font-weight: bold;")
             self._sounds.play("correct")
         else:
+            self.scheduler.review(self.current_term.id, 0)
             self.feedback_lbl.setText(
                 f"✗ Неверно. Правильный ответ: «{self.current_term.term_eng}»"
             )

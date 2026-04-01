@@ -13,6 +13,7 @@ class FavoritesWidget(QWidget):
     def __init__(self, db_manager):
         super().__init__()
         self.db = db_manager
+        self._all_terms: list[Term] = []
         self._terms: list[Term] = []
         self._selected: Term | None = None
         self._build_ui()
@@ -20,18 +21,22 @@ class FavoritesWidget(QWidget):
     def refresh(self):
         self.search_input.clear()
         rows = self.db.get_starred_terms()
-        self._terms = [Term.from_row(r) for r in rows]
+        self._all_terms = [Term.from_row(r) for r in rows]
+        self._terms = list(self._all_terms)
         self._populate_table()
         self._clear_detail()
 
     def _on_search(self, text: str):
         if text.strip():
-            rows = self.db.search_terms(text.strip())
-            self._terms = [Term.from_row(r) for r in rows]
-            self.count_label.setText(f"Найдено: {len(self._terms)} терминов")
+            query = text.strip().lower()
+            self._terms = [
+                term for term in self._all_terms
+                if query in term.term_eng.lower()
+                or query in term.term_rus.lower()
+                or query in term.category.lower()
+            ]
         else:
-            rows = self.db.get_starred_terms()
-            self._terms = [Term.from_row(r) for r in rows]
+            self._terms = list(self._all_terms)
         self._populate_table()
         self._clear_detail()
 
@@ -49,10 +54,16 @@ class FavoritesWidget(QWidget):
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         root.addWidget(title)
 
+        subtitle = QLabel("Соберите личную подборку терминов и возвращайтесь к ней отдельным блоком.")
+        subtitle.setObjectName("mutedLabel")
+        subtitle.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        subtitle.setWordWrap(True)
+        root.addWidget(subtitle)
+
         # ── Search bar ────────────────────────────────────────────────
         search_row = QHBoxLayout()
         self.search_input = QLineEdit()
-        self.search_input.setPlaceholderText("Поиск по всем терминам…")
+        self.search_input.setPlaceholderText("Поиск по избранным терминам…")
         self.search_input.textChanged.connect(self._on_search)
         search_row.addWidget(self.search_input)
         root.addLayout(search_row)
@@ -178,8 +189,8 @@ class FavoritesWidget(QWidget):
         self._selected = None
         self.d_eng.setText("")
         self.d_rus.setText("")
-        self.d_def.setText("")
-        self.d_ex.setText("")
+        self.d_def.setText("Выберите термин слева, чтобы посмотреть перевод, определение и пример.")
+        self.d_ex.setText("Подборка пригодится для точечного повторения перед занятием или тестом.")
         self.listen_btn.setEnabled(False)
         self.unstar_btn.setEnabled(False)
 

@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QLabel, QSpinBox,
-    QCheckBox, QDialogButtonBox, QFormLayout, QGroupBox, QMessageBox
+    QCheckBox, QDialogButtonBox, QFormLayout, QGroupBox, QMessageBox,
+    QComboBox
 )
 from PyQt6.QtWidgets import QApplication
 
@@ -25,6 +26,10 @@ class SettingsDialog(QDialog):
         # ── Интерфейс ─────────────────────────────────────────────────
         iface = QGroupBox("Интерфейс")
         iface_form = QFormLayout(iface)
+        self.theme_combo = QComboBox()
+        self.theme_combo.addItem("Темная", "dark")
+        self.theme_combo.addItem("Светлая", "light")
+        iface_form.addRow("Оформление:", self.theme_combo)
         self.font_spin = QSpinBox()
         self.font_spin.setRange(10, 20)
         self.font_spin.setSuffix(" px")
@@ -102,6 +107,9 @@ class SettingsDialog(QDialog):
 
     def _load(self):
         s = get_settings()
+        theme = s.get("theme", "dark")
+        idx = max(0, self.theme_combo.findData(theme))
+        self.theme_combo.setCurrentIndex(idx)
         self.font_spin.setValue(s["font_size"])
         self.goal_spin.setValue(s["daily_goal"])
         self.quiz_spin.setValue(s["quiz_every"])
@@ -115,6 +123,8 @@ class SettingsDialog(QDialog):
     def _save_and_accept(self):
         s = get_settings()
         old_font = s["font_size"]
+        old_theme = s.get("theme", "dark")
+        s["theme"] = self.theme_combo.currentData()
         s["font_size"] = self.font_spin.value()
         s["daily_goal"] = self.goal_spin.value()
         s["quiz_every"] = self.quiz_spin.value()
@@ -127,10 +137,13 @@ class SettingsDialog(QDialog):
         save_settings(s)
 
         # Apply font size immediately via stylesheet rebuild
-        if s["font_size"] != old_font:
-            from .._stylesheet import build_dark_stylesheet
+        if s["font_size"] != old_font or s["theme"] != old_theme:
+            try:
+                from .._stylesheet import build_stylesheet
+            except ImportError:
+                from _stylesheet import build_stylesheet
             QApplication.instance().setStyleSheet(
-                build_dark_stylesheet(s["font_size"])
+                build_stylesheet(s["font_size"], s["theme"])
             )
 
         self.accept()

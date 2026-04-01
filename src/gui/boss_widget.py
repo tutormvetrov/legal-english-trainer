@@ -69,6 +69,16 @@ class BossWidget(QWidget):
         hdr.addWidget(self.hs_lbl)
         root.addLayout(hdr)
 
+        subtitle = QLabel("Серия быстрых решений на время: каждый верный ответ повышает темп следующего раунда.")
+        subtitle.setObjectName("mutedLabel")
+        subtitle.setWordWrap(True)
+        root.addWidget(subtitle)
+
+        progress_note = QLabel("Режим аркадный: результаты не меняют spaced repetition и не засчитываются в дневной прогресс.")
+        progress_note.setObjectName("mutedLabel")
+        progress_note.setWordWrap(True)
+        root.addWidget(progress_note)
+
         # Timer bar
         self.timer_bar = QProgressBar()
         self.timer_bar.setRange(0, 1000)
@@ -101,6 +111,12 @@ class BossWidget(QWidget):
         self.speed_lbl.setStyleSheet("color: #a8acc8; font-size: 11px;")
         card_layout.addWidget(self.speed_lbl)
 
+        self.helper_lbl = QLabel("Нажмите старт, чтобы начать серию. Ошибка или тайм-аут сразу завершают игру.")
+        self.helper_lbl.setObjectName("mutedLabel")
+        self.helper_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.helper_lbl.setWordWrap(True)
+        card_layout.addWidget(self.helper_lbl)
+
         root.addWidget(card, stretch=1)
 
         # Option buttons (2×2 grid)
@@ -127,11 +143,14 @@ class BossWidget(QWidget):
         rf.setPointSize(14)
         rf.setBold(True)
         self.result_lbl.setFont(rf)
+        self.result_lbl.setObjectName("resultBanner")
+        self.result_lbl.hide()
         root.addWidget(self.result_lbl)
 
         # Start / Restart button
         self.start_btn = QPushButton("Старт")
         self.start_btn.setMinimumHeight(42)
+        self.start_btn.setObjectName("primaryBtn")
         self.start_btn.clicked.connect(self._start)
         root.addWidget(self.start_btn)
 
@@ -140,6 +159,7 @@ class BossWidget(QWidget):
         self._score = 0
         self._time_ms = get_settings().get("boss_start_ms", START_MS)
         self._running = True
+        self.result_lbl.hide()
         self.result_lbl.setText("")
         self.start_btn.setText("Рестарт")
         self.score_lbl.setText("Счёт: 0")
@@ -148,6 +168,7 @@ class BossWidget(QWidget):
     def _next_question(self):
         rows = self.db.get_terms_by_category(None, limit=NUM_OPTIONS * 3)
         if len(rows) < NUM_OPTIONS:
+            self._game_over("Недостаточно терминов для запуска режима.")
             return
         chosen = random.sample(rows, NUM_OPTIONS)
         self._correct_idx = random.randrange(NUM_OPTIONS)
@@ -157,6 +178,7 @@ class BossWidget(QWidget):
         self.term_lbl.setStyleSheet("")
         secs = self._time_ms / 1000
         self.speed_lbl.setText(f"Времени на ответ: {secs:.1f} с")
+        self.helper_lbl.setText("Выберите правильный перевод до истечения шкалы времени.")
 
         for i, btn in enumerate(self.opt_btns):
             btn.setText(Term.from_row(chosen[i]).term_rus)
@@ -219,6 +241,7 @@ class BossWidget(QWidget):
             btn.setEnabled(False)
         self.timer_bar.setValue(0)
         self.term_lbl.setStyleSheet("color: #f38ba8;")
+        self.helper_lbl.setText("Раунд завершён. Можно сразу перезапустить и попытаться улучшить результат.")
 
         new_hs = self._score > self._highscore
         if new_hs:
@@ -226,13 +249,14 @@ class BossWidget(QWidget):
             self._save_hs(self._highscore)
             self.hs_lbl.setText(f"Рекорд: {self._highscore}")
 
-        msg = f"{reason}  Счёт: {self._score}"
+        msg = f"{reason}\nИтоговый счёт: {self._score}"
         if new_hs and self._score > 0:
-            msg += "  🏆 Новый рекорд!"
+            msg += "\nНовый личный рекорд."
         self.result_lbl.setText(msg)
         self.result_lbl.setStyleSheet(
             "color: #ffd700;" if new_hs else "color: #f8b0c0;"
         )
+        self.result_lbl.show()
 
     # ── Highscore persistence ─────────────────────────────────────────
     def _load_hs(self) -> int:

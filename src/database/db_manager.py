@@ -1,6 +1,7 @@
 import sqlite3
 import os
 from pathlib import Path
+import tempfile
 
 
 class DBManager:
@@ -16,24 +17,30 @@ class DBManager:
         schema_path = Path(__file__).parent / "schema.sql"
         with open(schema_path, "r", encoding="utf-8") as f:
             self.conn.executescript(f.read())
-        # Migration: add starred column for existing DBs
-        try:
-            self.conn.execute("ALTER TABLE terms ADD COLUMN starred INTEGER DEFAULT 0")
-            self.conn.commit()
-        except Exception:
-            pass  # column already exists
+        migrations = (
+            ("ALTER TABLE terms ADD COLUMN starred INTEGER DEFAULT 0", "terms.starred"),
+            ("ALTER TABLE progress ADD COLUMN wrong_count INTEGER DEFAULT 0", "progress.wrong_count"),
+        )
+        for sql, _name in migrations:
+            try:
+                self.conn.execute(sql)
+                self.conn.commit()
+            except Exception:
+                pass  # column already exists
 
     def is_terms_empty(self) -> bool:
         cur = self.conn.execute("SELECT COUNT(*) FROM terms")
         return cur.fetchone()[0] == 0
 
-    def import_terms(self, terms: list[dict]):
+    def import_terms(self, terms: list[dict]) -> int:
+        before = self.conn.total_changes
         self.conn.executemany(
             "INSERT OR IGNORE INTO terms (term_eng, term_rus, definition, category, example) "
             "VALUES (:term_eng, :term_rus, :definition, :category, :example)",
             terms
         )
         self.conn.commit()
+        return self.conn.total_changes - before
 
     def get_term(self, term_id: int) -> sqlite3.Row | None:
         cur = self.conn.execute("SELECT * FROM terms WHERE id = ?", (term_id,))
@@ -64,17 +71,21 @@ class DBManager:
         return cur.fetchone()
 
     def upsert_progress(self, term_id: int, last_reviewed: str, ease_factor: float,
-                        interval: int, repetition: int, correct_count: int):
+                        interval: int, repetition: int, correct_count: int,
+                        wrong_count: int):
         self.conn.execute(
-            """INSERT INTO progress (term_id, last_reviewed, ease_factor, interval, repetition, correct_count)
-               VALUES (?, ?, ?, ?, ?, ?)
+            """INSERT INTO progress (
+                    term_id, last_reviewed, ease_factor, interval, repetition, correct_count, wrong_count
+               )
+               VALUES (?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(term_id) DO UPDATE SET
                  last_reviewed = excluded.last_reviewed,
                  ease_factor = excluded.ease_factor,
                  interval = excluded.interval,
                  repetition = excluded.repetition,
-                 correct_count = excluded.correct_count""",
-            (term_id, last_reviewed, ease_factor, interval, repetition, correct_count)
+                 correct_count = excluded.correct_count,
+                 wrong_count = excluded.wrong_count""",
+            (term_id, last_reviewed, ease_factor, interval, repetition, correct_count, wrong_count)
         )
         self.conn.commit()
 
@@ -153,15 +164,49 @@ class DBManager:
         cur = self.conn.execute(
             """SELECT t.term_eng, t.term_rus, t.category,
                       p.ease_factor, p.correct_count,
-                      (p.repetition - p.correct_count) AS errors
+                      p.wrong_count AS errors
                FROM terms t
                JOIN progress p ON t.id = p.term_id
-               WHERE p.repetition > 0
-               ORDER BY p.ease_factor ASC, errors DESC
+               WHERE p.correct_count > 0 OR p.wrong_count > 0
+               ORDER BY p.wrong_count DESC, p.ease_factor ASC, p.correct_count ASC
                LIMIT ?""",
             (limit,)
         )
         return cur.fetchall()
+
+    def backup_to(self, filepath: str) -> None:
+        target = sqlite3.connect(filepath)
+        try:
+            self.conn.backup(target)
+            target.commit()
+        finally:
+            target.close()
+
+    def validate_backup_file(self, filepath: str) -> None:
+        conn = sqlite3.connect(filepath)
+        try:
+            cur = conn.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' AND name IN ('terms', 'progress')"
+            )
+            tables = {row[0] for row in cur.fetchall()}
+            if {"terms", "progress"} - tables:
+                raise ValueError("Выбранный файл не похож на резервную копию Legal English Trainer.")
+        finally:
+            conn.close()
+
+    def replace_with_backup(self, filepath: str) -> None:
+        self.validate_backup_file(filepath)
+        db_path = Path(self.db_path)
+        fd, tmp_path = tempfile.mkstemp(prefix="let_restore_", suffix=".db", dir=str(db_path.parent))
+        os.close(fd)
+        try:
+            with open(filepath, "rb") as src, open(tmp_path, "wb") as dst:
+                dst.write(src.read())
+            self.close()
+            os.replace(tmp_path, self.db_path)
+        finally:
+            if os.path.exists(tmp_path):
+                os.unlink(tmp_path)
 
     def set_starred(self, term_id: int, starred: bool) -> None:
         self.conn.execute(
@@ -187,20 +232,30 @@ class DBManager:
         )
         return cur.fetchall()
 
-    def get_term_with_example(self, category: str | None = None) -> sqlite3.Row | None:
-        """Случайный термин с непустым примером предложения."""
+    def get_term_with_example(self, category: str | None = None,
+                              term_ids: list[int] | None = None) -> sqlite3.Row | None:
+        """Случайный термин с непустым примером предложения.
+
+        Если передан ``term_ids``, выбор ограничивается этим набором.
+        """
+        clauses = ["example IS NOT NULL", "TRIM(example) != ''"]
+        params: list[object] = []
+
         if category and category != "Все категории":
-            cur = self.conn.execute(
-                "SELECT * FROM terms WHERE category = ? "
-                "AND example IS NOT NULL AND TRIM(example) != '' "
-                "ORDER BY RANDOM() LIMIT 1",
-                (category,)
-            )
-        else:
-            cur = self.conn.execute(
-                "SELECT * FROM terms WHERE example IS NOT NULL "
-                "AND TRIM(example) != '' ORDER BY RANDOM() LIMIT 1"
-            )
+            clauses.append("category = ?")
+            params.append(category)
+
+        if term_ids is not None:
+            if not term_ids:
+                return None
+            placeholders = ", ".join("?" for _ in term_ids)
+            clauses.append(f"id IN ({placeholders})")
+            params.extend(term_ids)
+
+        cur = self.conn.execute(
+            f"SELECT * FROM terms WHERE {' AND '.join(clauses)} ORDER BY RANDOM() LIMIT 1",
+            params
+        )
         return cur.fetchone()
 
     def get_term_with_definition(self, category: str | None = None) -> sqlite3.Row | None:
@@ -220,14 +275,22 @@ class DBManager:
         return cur.fetchone()
 
     def search_terms(self, query: str, limit: int = 100) -> list[sqlite3.Row]:
-        """Поиск по term_eng и term_rus (регистронезависимо)."""
-        pattern = f"%{query}%"
-        cur = self.conn.execute(
-            "SELECT * FROM terms WHERE term_eng LIKE ? OR term_rus LIKE ? "
-            "ORDER BY term_eng LIMIT ?",
-            (pattern, pattern, limit)
-        )
-        return cur.fetchall()
+        """Поиск по term_eng и term_rus с корректной case-insensitive фильтрацией для RU/EN."""
+        needle = query.strip().casefold()
+        cur = self.conn.execute("SELECT * FROM terms ORDER BY term_eng")
+        rows = cur.fetchall()
+        if not needle:
+            return rows[:limit]
+        matched = []
+        for row in rows:
+            if (
+                needle in (row["term_eng"] or "").casefold()
+                or needle in (row["term_rus"] or "").casefold()
+            ):
+                matched.append(row)
+                if len(matched) >= limit:
+                    break
+        return matched
 
     def reset_progress(self) -> None:
         """Удаляет всю историю повторений. Термины и избранное сохраняются."""

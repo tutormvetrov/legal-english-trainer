@@ -16,5 +16,6 @@ CREATE TABLE IF NOT EXISTS progress (
     interval INTEGER DEFAULT 1,
     repetition INTEGER DEFAULT 0,
     correct_count INTEGER DEFAULT 0,
+    wrong_count INTEGER DEFAULT 0,
     UNIQUE(term_id)
 );

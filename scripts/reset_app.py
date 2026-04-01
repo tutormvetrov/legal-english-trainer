@@ -13,7 +13,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 LETAPP = pathlib.Path.home() / ".letapp"
 
 FILES = {
-    "license.dat":   "активация и имя пользователя",
+    ".session.bin":  "текущая machine-bound активация",
+    "license.dat":   "legacy-активация и имя пользователя",
     "streak.json":   "streak (серия дней)",
     "highscore.json":"рекорд Boss Mode",
 }
